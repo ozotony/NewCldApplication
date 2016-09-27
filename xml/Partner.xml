@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Partner>
+  <Student>
+    <PartnerID>SX201605030818589</PartnerID>
+    <StudentID>130202003</StudentID>
+    <StudentName>AJAYI SAMUEL</StudentName>
+    <Year>2016</Year>
+    <Term></Term>
+    <Result>
+      <Course>ENGLISH</Course>
+      <Grade>A</Grade>
+       <Score>90</Score>
+      </Result>
+    <Result>
+      <Course>MATHEMATIC</Course>
+      <Grade>C</Grade>
+       <Score>55</Score>
+      </Result>
+
+ <Result>
+      <Course>ACCOUNT</Course>
+      <Grade>B</Grade>
+       <Score>65</Score>
+      </Result>
+ <Result>
+      <Course>ECONOMICS</Course>
+      <Grade>A</Grade>
+       <Score>88</Score>
+      </Result>
+
+ <Result>
+      <Course>BUSINESS STUDIES</Course>
+      <Grade>B</Grade>
+       <Score>65</Score>
+      </Result>
+  </Student>
+  <Student>
+    <PartnerID>SX201605030818589</PartnerID>
+    <StudentID>130202001</StudentID>
+    <StudentName>ADEKOYA BOLU</StudentName>
+    <Year>2016</Year>
+    <Term></Term>
+    <Result>
+      <Course>ENGLISH</Course>
+      <Grade>C</Grade>
+      <Score>55</Score>
+    </Result>
+    <Result>
+      <Course>MATHEMATIC</Course>
+      <Grade>A</Grade>
+      <Score>90</Score>
+    </Result>
+
+    <Result>
+      <Course>ACCOUNT</Course>
+      <Grade>A</Grade>
+      <Score>88</Score>
+    </Result>
+    <Result>
+      <Course>ECONOMICS</Course>
+      <Grade>A</Grade>
+      <Score>88</Score>
+    </Result>
+
+    <Result>
+      <Course>BUSINESS STUDIES</Course>
+      <Grade>B</Grade>
+      <Score>65</Score>
+    </Result>
+  </Student>
+</Partner>

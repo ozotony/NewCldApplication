@@ -1,0 +1,120 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+            <modal-dialog show='dialogShown' dialog-title='Privileges'>
+
+                <table st-table="displayedCollection3" st-safe-src="ListAgent3" class="table table-responsive table-bordered" style="height: 10px; overflow:scroll">
+                    <thead>
+                        <tr>
+                            <th class="tbbg2">MENU NAME</th>
+                            <th class="tbbg2">SELECT</th>
+                            <th class="tbbg2">CREATE</th>
+                            <th class="tbbg2">UPDATE</th>
+                            <th class="tbbg2">DELETE</th>
+
+
+
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection3">
+
+                            <td>{{row.Menu_Code }}</td>
+                            <td>
+                                <label>
+                                    SELECT:
+                                    <input type="checkbox" ng-model="row.View"
+                                           ng-true-value="true" ng-false-value="false">
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    CREATE:
+                                    <input type="checkbox" ng-model="row.CreateNew"
+                                           ng-true-value="true" ng-false-value="false">
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    UPDATE:
+                                    <input type="checkbox" ng-model="row.UpadateNew"
+                                           ng-true-value="true" ng-false-value="false">
+                                </label>
+                            </td>
+
+                            <td>
+                                <label>
+                                    DELETE:
+                                    <input type="checkbox" ng-model="row.DeleteNew"
+                                           ng-true-value="true" ng-false-value="false">
+                                </label>
+                            </td>
+
+
+
+
+
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" class="text-center">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <button type="button" ng-click="EditRow3(displayedCollection3)" class="btn btn-primary"> Update</button>
+            </modal-dialog>
+
+            <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <th class="tbbg2">ROLE NAME</th>
+
+                        <th class="tbbg2"></th>
+
+
+                    </tr>
+                    <tr>
+                        <th colspan="2"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+
+                        <td>{{row}}</td>
+
+
+                        <td>
+                            <button type="button" ng-show="CreateRoleDel" ng-click="DelRole(row)" class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Delete</button>
+                            <button type="button" ng-show="CreateRole" ng-click="EditRow2(row)" class="btn btn-primary"> View Privileges</button>
+                        </td>
+
+
+
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,58 @@
+<Partner>
+  <Student>
+    <PartnerID>ALFKI</PartnerID>
+    <StudentID>ALFKI</StudentID>
+    <StudentName>ALFKI</StudentName>
+    <Year>ALFKI</Year>
+    <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+    <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+
+ <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+ <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+
+ <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+  </Student>
+  <Student>
+    <PartnerID>ALFKI</PartnerID>
+    <StudentID>ALFKI</StudentID>
+    <StudentName>ALFKI</StudentName>
+    <Year>ALFKI</Year>
+    <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+
+ <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+
+ <Result>
+      <Course>10643</Course>
+      <Grade>ALFKI</Grade>
+       <Score>ALFKI</Score>
+      </Result>
+  </Student>
+</Partner>

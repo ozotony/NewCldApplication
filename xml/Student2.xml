@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Partner>
+  <Student>
+    <PartnerID>SX201605071024095</PartnerID>
+    <StudentID>1302020038</StudentID>
+    <StudentName>AJAYI SAMUEL</StudentName>
+    <Year>2013</Year>
+    <Term></Term>
+    <Result>
+      <Course>NA</Course>
+      <Grade>NA</Grade>
+       <Score>NA</Score>
+      </Result>
+
+  </Student>
+  <Student>
+    <PartnerID>SX201605071024095</PartnerID>
+    <StudentID>1302020019</StudentID>
+    <StudentName>ADEKOYA BOLU</StudentName>
+    <Year>2013</Year>
+    <Term></Term>
+    <Result>
+      <Course>NA</Course>
+      <Grade>NA</Grade>
+      <Score>NA</Score>
+    </Result>
+   
+  </Student>
+</Partner>

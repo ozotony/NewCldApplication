@@ -1,0 +1,142 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div id="signupbox" >
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">CREATE ADD ON FEE</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                        <form id="signupform" name="userForm" ng-submit="submitForm(vform,userForm.$valid)" novalidate class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="bank_code" class="col-md-3 col-lg-3 control-label">Fee Code</label>
+                                <div class="col-md-9 col-lg-9">
+                                    <input type="text" class="form-control" ng-model="vform.subscription_code" name="subscription_code" required placeholder="FEE CODE">
+
+                                    <div class="errors" ng-messages="userForm.subscription_code.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">Fee Name</label>
+                                <div class="col-md-9 col-lg-9">
+                                    <input type="text" class="form-control" ng-model="vform.subscription_name" name="subscription_name" required placeholder="FEE NAME">
+
+                                    <div class="errors" ng-messages="userForm.subscription_name.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                           
+
+                            <div class="form-group">
+                                <label for="bank_acct" class="col-md-3 col-lg-3 control-label"> Convienient Fee</label>
+                                <div class="col-md-9 col-lg-9">
+                                    <input  type="number" class="form-control" ng-model="vform.Subscription_Amount" name="Subscription_Amount" required placeholder="Convienient Fee">
+
+                                    <div class="errors" ng-messages="userForm.Subscription_Amount.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9 col-lg-offset-3 col-lg-9">
+                                    <button id="btn-signup" ng-show="AddOnFeeCreate" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Create Fee</button>
+
+                                </div>
+                            </div>
+
+                            <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                </div>
+
+                            </div>-->
+
+
+
+                        </form>
+
+                        <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="tbbg2">FEE CODE</th>
+                                    <th class="tbbg2">FEE NAME</th>
+
+                                 
+                                    <th class="tbbg2">AMOUNT</th>
+
+                                    <th class="tbbg2"></th>
+
+
+                                </tr>
+                                <tr>
+                                    <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in displayedCollection">
+
+                                    <td>{{row.Fee_Code}}</td>
+                                    <td>{{row.Fee_Name}}</td>
+
+                               
+                                    <td>{{row.Amount |currency:""}}</td>
+
+
+                                    <td>
+                                        <button type="submit" ng-show="AddOnFeeDelete" class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Delete</button>
+                                        <!--<a href="#"><i class="icon-trash"></i> Delete</a></td>-->
+
+
+
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="text-center">
+                                        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ba2xai_xpay_backupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="countryID" Type="nvarchar" MaxLength="10" />
+          <Property Name="stateID" Type="nvarchar" MaxLength="10" />
+          <Property Name="lgaID" Type="nvarchar" MaxLength="10" />
+          <Property Name="city" Type="nvarchar" MaxLength="40" />
+          <Property Name="street" Type="text" />
+          <Property Name="zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="telephone1" Type="nvarchar" MaxLength="40" />
+          <Property Name="telephone2" Type="nvarchar" MaxLength="40" />
+          <Property Name="email1" Type="nvarchar" MaxLength="40" />
+          <Property Name="email2" Type="nvarchar" MaxLength="40" />
+          <Property Name="log_staff" Type="nvarchar" MaxLength="40" />
+          <Property Name="reg_date" Type="nvarchar" MaxLength="40" />
+          <Property Name="visible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="admin_lg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminID" Type="varchar" MaxLength="200" />
+          <Property Name="ip_addy" Type="text" />
+          <Property Name="remote_host" Type="text" />
+          <Property Name="remote_user" Type="text" />
+          <Property Name="server_name" Type="text" />
+          <Property Name="server_url" Type="text" />
+          <Property Name="log_date" Type="varchar" MaxLength="200" />
+          <Property Name="log_time" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="applicant">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xname" Type="nvarchar(max)" />
+          <Property Name="address" Type="text" />
+          <Property Name="xemail" Type="nvarchar(max)" />
+          <Property Name="xmobile" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="nchar" MaxLength="10" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fee_details">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fee_listID" Type="nvarchar(max)" />
+          <Property Name="twalletID" Type="nvarchar(max)" />
+          <Property Name="xqty" Type="nvarchar" MaxLength="50" />
+          <Property Name="xused" Type="nvarchar" MaxLength="50" />
+          <Property Name="init_amt" Type="nvarchar(max)" />
+          <Property Name="tech_amt" Type="nvarchar(max)" />
+          <Property Name="tot_amt" Type="nvarchar(max)" />
+          <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="fee_list">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="item" Type="nvarchar(max)" />
+          <Property Name="item_code" Type="nvarchar(max)" />
+          <Property Name="qt_code" Type="nvarchar(max)" />
+          <Property Name="xdesc" Type="text" />
+          <Property Name="init_amt" Type="int" />
+          <Property Name="tech_amt" Type="int" />
+          <Property Name="xcategory" Type="nvarchar(max)" />
+          <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xpay_backup.dbo.fee_listx' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="fee_listx">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" Nullable="false" />
+          <Property Name="item" Type="nvarchar(max)" />
+          <Property Name="item_code" Type="nvarchar(max)" />
+          <Property Name="qt_code" Type="nvarchar(max)" />
+          <Property Name="xdesc" Type="text" />
+          <Property Name="init_amt" Type="int" />
+          <Property Name="tech_amt" Type="int" />
+          <Property Name="switch_party" Type="int" />
+          <Property Name="t_party" Type="int" />
+          <Property Name="xcategory" Type="nvarchar(max)" />
+          <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="hwallet">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transID" Type="nvarchar(max)" />
+          <Property Name="fee_detailsID" Type="nvarchar(max)" />
+          <Property Name="product_title" Type="nvarchar(max)" />
+          <Property Name="used_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="used_date" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InterSwitchPostFields">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="nvarchar(max)" />
+          <Property Name="amount" Type="nvarchar(max)" />
+          <Property Name="isw_conv_fee" Type="nvarchar" MaxLength="50" />
+          <Property Name="currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="site_redirect_url" Type="nvarchar(max)" />
+          <Property Name="txn_ref" Type="nvarchar(max)" />
+          <Property Name="hash" Type="text" />
+          <Property Name="mackey" Type="text" />
+          <Property Name="pay_item_id" Type="nvarchar(max)" />
+          <Property Name="site_name" Type="nvarchar(max)" />
+          <Property Name="cust_id" Type="nvarchar(max)" />
+          <Property Name="cust_id_desc" Type="text" />
+          <Property Name="cust_name" Type="nvarchar(max)" />
+          <Property Name="resp_desc" Type="text" />
+          <Property Name="pay_item_name" Type="nvarchar(max)" />
+          <Property Name="local_date_time" Type="datetime" />
+          <Property Name="TransactionDate" Type="nvarchar(max)" />
+          <Property Name="MerchantReference" Type="nvarchar(max)" />
+          <Property Name="trans_status" Type="nvarchar(max)" />
+          <Property Name="pay_ref" Type="nvarchar(max)" />
+          <Property Name="ret_ref" Type="nvarchar(max)" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xpay_backup.dbo.InterSwitchPostFields2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="InterSwitchPostFields2">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="nvarchar(max)" />
+          <Property Name="amount" Type="nvarchar(max)" />
+          <Property Name="isw_conv_fee" Type="nvarchar" MaxLength="50" />
+          <Property Name="currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="site_redirect_url" Type="nvarchar(max)" />
+          <Property Name="txn_ref" Type="nvarchar(max)" />
+          <Property Name="hash" Type="text" />
+          <Property Name="mackey" Type="text" />
+          <Property Name="pay_item_id" Type="nvarchar(max)" />
+          <Property Name="site_name" Type="nvarchar(max)" />
+          <Property Name="cust_id" Type="nvarchar(max)" />
+          <Property Name="cust_id_desc" Type="text" />
+          <Property Name="cust_name" Type="nvarchar(max)" />
+          <Property Name="resp_desc" Type="text" />
+          <Property Name="pay_item_name" Type="nvarchar(max)" />
+          <Property Name="local_date_time" Type="datetime" />
+          <Property Name="TransactionDate" Type="nvarchar(max)" />
+          <Property Name="MerchantReference" Type="nvarchar(max)" />
+          <Property Name="trans_status" Type="nvarchar(max)" />
+          <Property Name="pay_ref" Type="nvarchar(max)" />
+          <Property Name="ret_ref" Type="nvarchar(max)" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="lga">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="stateID" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ba2xai_xpay_backup.dbo.Load_Data' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Load_Data">
+          <Property Name="ValidationId" Type="nvarchar(max)" />
+        </EntityType>-->
+        <EntityType Name="p_ratio">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xpartnerID" Type="nvarchar(max)" />
+          <Property Name="p_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="xratio" Type="nvarchar" MaxLength="50" />
+          <Property Name="r_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="pwallet">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xmembertype" Type="nvarchar" MaxLength="50" />
+          <Property Name="xmemberID" Type="nvarchar(max)" />
+          <Property Name="xemail" Type="nvarchar(max)" />
+          <Property Name="xmobile" Type="nvarchar(max)" />
+          <Property Name="xpass" Type="nvarchar(max)" />
+          <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="priv" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="scard">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xnum" Type="nvarchar(max)" />
+          <Property Name="xvalid" Type="nvarchar" MaxLength="50" />
+          <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="countryID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="twallet">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transID" Type="nvarchar(max)" />
+          <Property Name="xmemberID" Type="nvarchar(max)" />
+          <Property Name="xmembertype" Type="nvarchar(max)" />
+          <Property Name="xpay_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="xgt" Type="nvarchar" MaxLength="50" />
+          <Property Name="ref_no" Type="nvarchar(max)" />
+          <Property Name="xbankerID" Type="nvarchar(max)" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+          <Property Name="applicantID" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="xadmin">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xname" Type="nvarchar(max)" />
+          <Property Name="cname" Type="nvarchar(max)" />
+          <Property Name="nationality" Type="nvarchar(max)" />
+          <Property Name="addressID" Type="nvarchar(max)" />
+          <Property Name="sys_ID" Type="nvarchar(max)" />
+          <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="xagent">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xname" Type="nvarchar(max)" />
+          <Property Name="cname" Type="nvarchar(max)" />
+          <Property Name="nationality" Type="nvarchar(max)" />
+          <Property Name="addressID" Type="nvarchar(max)" />
+          <Property Name="sys_ID" Type="nvarchar(max)" />
+          <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="xbanker">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xname" Type="nvarchar(max)" />
+          <Property Name="bankname" Type="nvarchar(max)" />
+          <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="nationality" Type="nvarchar(max)" />
+          <Property Name="addressID" Type="nvarchar(max)" />
+          <Property Name="xposition" Type="nvarchar(max)" />
+          <Property Name="sys_ID" Type="nvarchar(max)" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="xmember">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xname" Type="nvarchar(max)" />
+          <Property Name="cname" Type="nvarchar(max)" />
+          <Property Name="nationality" Type="nvarchar(max)" />
+          <Property Name="addressID" Type="nvarchar(max)" />
+          <Property Name="sys_ID" Type="nvarchar(max)" />
+          <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="xpartner">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="xname" Type="nvarchar(max)" />
+          <Property Name="cname" Type="nvarchar(max)" />
+          <Property Name="nationality" Type="nvarchar(max)" />
+          <Property Name="addressID" Type="nvarchar(max)" />
+          <Property Name="sys_ID" Type="nvarchar(max)" />
+          <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+          <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="ba2xai_xpay_backupModelStoreContainer">
+          <EntitySet Name="address" EntityType="Self.address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="admin_lg" EntityType="Self.admin_lg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="applicant" EntityType="Self.applicant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="country" EntityType="Self.country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fee_details" EntityType="Self.fee_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fee_list" EntityType="Self.fee_list" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hwallet" EntityType="Self.hwallet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InterSwitchPostFields" EntityType="Self.InterSwitchPostFields" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lga" EntityType="Self.lga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="p_ratio" EntityType="Self.p_ratio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pwallet" EntityType="Self.pwallet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="scard" EntityType="Self.scard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="state" EntityType="Self.state" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="twallet" EntityType="Self.twallet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xadmin" EntityType="Self.xadmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xagent" EntityType="Self.xagent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xbanker" EntityType="Self.xbanker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xmember" EntityType="Self.xmember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xpartner" EntityType="Self.xpartner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fee_listx" EntityType="Self.fee_listx" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [fee_listx].[xid] AS [xid], 
+    [fee_listx].[item] AS [item], 
+    [fee_listx].[item_code] AS [item_code], 
+    [fee_listx].[qt_code] AS [qt_code], 
+    [fee_listx].[xdesc] AS [xdesc], 
+    [fee_listx].[init_amt] AS [init_amt], 
+    [fee_listx].[tech_amt] AS [tech_amt], 
+    [fee_listx].[switch_party] AS [switch_party], 
+    [fee_listx].[t_party] AS [t_party], 
+    [fee_listx].[xcategory] AS [xcategory], 
+    [fee_listx].[xlogstaff] AS [xlogstaff], 
+    [fee_listx].[xreg_date] AS [xreg_date], 
+    [fee_listx].[xvisible] AS [xvisible], 
+    [fee_listx].[xsync] AS [xsync]
+    FROM [dbo].[fee_listx] AS [fee_listx]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InterSwitchPostFields2" EntityType="Self.InterSwitchPostFields2" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [InterSwitchPostFields2].[xid] AS [xid], 
+    [InterSwitchPostFields2].[product_id] AS [product_id], 
+    [InterSwitchPostFields2].[amount] AS [amount], 
+    [InterSwitchPostFields2].[isw_conv_fee] AS [isw_conv_fee], 
+    [InterSwitchPostFields2].[currency] AS [currency], 
+    [InterSwitchPostFields2].[site_redirect_url] AS [site_redirect_url], 
+    [InterSwitchPostFields2].[txn_ref] AS [txn_ref], 
+    [InterSwitchPostFields2].[hash] AS [hash], 
+    [InterSwitchPostFields2].[mackey] AS [mackey], 
+    [InterSwitchPostFields2].[pay_item_id] AS [pay_item_id], 
+    [InterSwitchPostFields2].[site_name] AS [site_name], 
+    [InterSwitchPostFields2].[cust_id] AS [cust_id], 
+    [InterSwitchPostFields2].[cust_id_desc] AS [cust_id_desc], 
+    [InterSwitchPostFields2].[cust_name] AS [cust_name], 
+    [InterSwitchPostFields2].[resp_desc] AS [resp_desc], 
+    [InterSwitchPostFields2].[pay_item_name] AS [pay_item_name], 
+    [InterSwitchPostFields2].[local_date_time] AS [local_date_time], 
+    [InterSwitchPostFields2].[TransactionDate] AS [TransactionDate], 
+    [InterSwitchPostFields2].[MerchantReference] AS [MerchantReference], 
+    [InterSwitchPostFields2].[trans_status] AS [trans_status], 
+    [InterSwitchPostFields2].[pay_ref] AS [pay_ref], 
+    [InterSwitchPostFields2].[ret_ref] AS [ret_ref], 
+    [InterSwitchPostFields2].[xreg_date] AS [xreg_date], 
+    [InterSwitchPostFields2].[xvisible] AS [xvisible], 
+    [InterSwitchPostFields2].[xsync] AS [xsync]
+    FROM [dbo].[InterSwitchPostFields2] AS [InterSwitchPostFields2]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ba2xai_xpay_backupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="countryID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="stateID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="lgaID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="telephone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="telephone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="email1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="email2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="log_staff" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="reg_date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="visible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="admin_lg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adminID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ip_addy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="remote_host" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="remote_user" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="server_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="server_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="log_date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="log_time" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="applicant">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="xemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xmobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="fee_details">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fee_listID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="twalletID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xqty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xused" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="init_amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tech_amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tot_amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="fee_list">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="item" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="item_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="qt_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xdesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="init_amt" Type="Int32" />
+          <Property Name="tech_amt" Type="Int32" />
+          <Property Name="xcategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hwallet">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fee_detailsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="product_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="used_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="used_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InterSwitchPostField">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isw_conv_fee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="site_redirect_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="txn_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hash" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mackey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pay_item_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="site_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cust_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cust_id_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cust_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="resp_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pay_item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="local_date_time" Type="DateTime" Precision="3" />
+          <Property Name="TransactionDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MerchantReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="trans_status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pay_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ret_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="lga">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stateID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="p_ratio">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xpartnerID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="p_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xratio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="r_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="pwallet">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xmembertype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xmemberID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xmobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xpass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="priv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="scard">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xnum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xvalid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="countryID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="twallet">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xmemberID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xmembertype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xpay_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xgt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ref_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xbankerID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="applicantID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="xadmin">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="xagent">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="xbanker">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bankname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="xmember">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="xpartner">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="fee_listx">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" />
+          <Property Name="item" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="item_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="qt_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xdesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="init_amt" Type="Int32" />
+          <Property Name="tech_amt" Type="Int32" />
+          <Property Name="switch_party" Type="Int32" />
+          <Property Name="t_party" Type="Int32" />
+          <Property Name="xcategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InterSwitchPostFields2">
+          <Key>
+            <PropertyRef Name="xid" />
+          </Key>
+          <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isw_conv_fee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="site_redirect_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="txn_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hash" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mackey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pay_item_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="site_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cust_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cust_id_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cust_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="resp_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pay_item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="local_date_time" Type="DateTime" Precision="3" />
+          <Property Name="TransactionDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MerchantReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="trans_status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pay_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ret_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ba2xai_xpay_backupEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="addresses" EntityType="Self.address" />
+          <EntitySet Name="admin_lg" EntityType="Self.admin_lg" />
+          <EntitySet Name="applicants" EntityType="Self.applicant" />
+          <EntitySet Name="countries" EntityType="Self.country" />
+          <EntitySet Name="fee_details" EntityType="Self.fee_details" />
+          <EntitySet Name="fee_list" EntityType="Self.fee_list" />
+          <EntitySet Name="hwallets" EntityType="Self.hwallet" />
+          <EntitySet Name="InterSwitchPostFields" EntityType="Self.InterSwitchPostField" />
+          <EntitySet Name="lgas" EntityType="Self.lga" />
+          <EntitySet Name="p_ratio" EntityType="Self.p_ratio" />
+          <EntitySet Name="pwallets" EntityType="Self.pwallet" />
+          <EntitySet Name="roles" EntityType="Self.role" />
+          <EntitySet Name="scards" EntityType="Self.scard" />
+          <EntitySet Name="states" EntityType="Self.state" />
+          <EntitySet Name="twallets" EntityType="Self.twallet" />
+          <EntitySet Name="xadmins" EntityType="Self.xadmin" />
+          <EntitySet Name="xagents" EntityType="Self.xagent" />
+          <EntitySet Name="xbankers" EntityType="Self.xbanker" />
+          <EntitySet Name="xmembers" EntityType="Self.xmember" />
+          <EntitySet Name="xpartners" EntityType="Self.xpartner" />
+          <EntitySet Name="fee_listx" EntityType="Self.fee_listx" />
+          <EntitySet Name="InterSwitchPostFields2" EntityType="Self.InterSwitchPostFields2" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ba2xai_xpay_backupModelStoreContainer" CdmEntityContainer="ba2xai_xpay_backupEntities">
+          <EntitySetMapping Name="addresses">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.address">
+              <MappingFragment StoreEntitySet="address">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+                <ScalarProperty Name="stateID" ColumnName="stateID" />
+                <ScalarProperty Name="lgaID" ColumnName="lgaID" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="telephone1" ColumnName="telephone1" />
+                <ScalarProperty Name="telephone2" ColumnName="telephone2" />
+                <ScalarProperty Name="email1" ColumnName="email1" />
+                <ScalarProperty Name="email2" ColumnName="email2" />
+                <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+                <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+                <ScalarProperty Name="visible" ColumnName="visible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admin_lg">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.admin_lg">
+              <MappingFragment StoreEntitySet="admin_lg">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+                <ScalarProperty Name="ip_addy" ColumnName="ip_addy" />
+                <ScalarProperty Name="remote_host" ColumnName="remote_host" />
+                <ScalarProperty Name="remote_user" ColumnName="remote_user" />
+                <ScalarProperty Name="server_name" ColumnName="server_name" />
+                <ScalarProperty Name="server_url" ColumnName="server_url" />
+                <ScalarProperty Name="log_date" ColumnName="log_date" />
+                <ScalarProperty Name="log_time" ColumnName="log_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="applicants">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.applicant">
+              <MappingFragment StoreEntitySet="applicant">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xname" ColumnName="xname" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="xemail" ColumnName="xemail" />
+                <ScalarProperty Name="xmobile" ColumnName="xmobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="countries">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.country">
+              <MappingFragment StoreEntitySet="country">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fee_details">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.fee_details">
+              <MappingFragment StoreEntitySet="fee_details">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="fee_listID" ColumnName="fee_listID" />
+                <ScalarProperty Name="twalletID" ColumnName="twalletID" />
+                <ScalarProperty Name="xqty" ColumnName="xqty" />
+                <ScalarProperty Name="xused" ColumnName="xused" />
+                <ScalarProperty Name="init_amt" ColumnName="init_amt" />
+                <ScalarProperty Name="tech_amt" ColumnName="tech_amt" />
+                <ScalarProperty Name="tot_amt" ColumnName="tot_amt" />
+                <ScalarProperty Name="xlogstaff" ColumnName="xlogstaff" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fee_list">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.fee_list">
+              <MappingFragment StoreEntitySet="fee_list">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="item" ColumnName="item" />
+                <ScalarProperty Name="item_code" ColumnName="item_code" />
+                <ScalarProperty Name="qt_code" ColumnName="qt_code" />
+                <ScalarProperty Name="xdesc" ColumnName="xdesc" />
+                <ScalarProperty Name="init_amt" ColumnName="init_amt" />
+                <ScalarProperty Name="tech_amt" ColumnName="tech_amt" />
+                <ScalarProperty Name="xcategory" ColumnName="xcategory" />
+                <ScalarProperty Name="xlogstaff" ColumnName="xlogstaff" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hwallets">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.hwallet">
+              <MappingFragment StoreEntitySet="hwallet">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="transID" ColumnName="transID" />
+                <ScalarProperty Name="fee_detailsID" ColumnName="fee_detailsID" />
+                <ScalarProperty Name="product_title" ColumnName="product_title" />
+                <ScalarProperty Name="used_status" ColumnName="used_status" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="used_date" ColumnName="used_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InterSwitchPostFields">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.InterSwitchPostField">
+              <MappingFragment StoreEntitySet="InterSwitchPostFields">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="isw_conv_fee" ColumnName="isw_conv_fee" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="site_redirect_url" ColumnName="site_redirect_url" />
+                <ScalarProperty Name="txn_ref" ColumnName="txn_ref" />
+                <ScalarProperty Name="hash" ColumnName="hash" />
+                <ScalarProperty Name="mackey" ColumnName="mackey" />
+                <ScalarProperty Name="pay_item_id" ColumnName="pay_item_id" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+                <ScalarProperty Name="cust_id_desc" ColumnName="cust_id_desc" />
+                <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+                <ScalarProperty Name="resp_desc" ColumnName="resp_desc" />
+                <ScalarProperty Name="pay_item_name" ColumnName="pay_item_name" />
+                <ScalarProperty Name="local_date_time" ColumnName="local_date_time" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="MerchantReference" ColumnName="MerchantReference" />
+                <ScalarProperty Name="trans_status" ColumnName="trans_status" />
+                <ScalarProperty Name="pay_ref" ColumnName="pay_ref" />
+                <ScalarProperty Name="ret_ref" ColumnName="ret_ref" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lgas">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.lga">
+              <MappingFragment StoreEntitySet="lga">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="stateID" ColumnName="stateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="p_ratio">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.p_ratio">
+              <MappingFragment StoreEntitySet="p_ratio">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xpartnerID" ColumnName="xpartnerID" />
+                <ScalarProperty Name="p_type" ColumnName="p_type" />
+                <ScalarProperty Name="xratio" ColumnName="xratio" />
+                <ScalarProperty Name="r_type" ColumnName="r_type" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pwallets">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.pwallet">
+              <MappingFragment StoreEntitySet="pwallet">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xmembertype" ColumnName="xmembertype" />
+                <ScalarProperty Name="xmemberID" ColumnName="xmemberID" />
+                <ScalarProperty Name="xemail" ColumnName="xemail" />
+                <ScalarProperty Name="xmobile" ColumnName="xmobile" />
+                <ScalarProperty Name="xpass" ColumnName="xpass" />
+                <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.role">
+              <MappingFragment StoreEntitySet="roles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="priv" ColumnName="priv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="scards">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.scard">
+              <MappingFragment StoreEntitySet="scard">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xnum" ColumnName="xnum" />
+                <ScalarProperty Name="xvalid" ColumnName="xvalid" />
+                <ScalarProperty Name="xlogstaff" ColumnName="xlogstaff" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="states">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.state">
+              <MappingFragment StoreEntitySet="state">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="countryID" ColumnName="countryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="twallets">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.twallet">
+              <MappingFragment StoreEntitySet="twallet">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="transID" ColumnName="transID" />
+                <ScalarProperty Name="xmemberID" ColumnName="xmemberID" />
+                <ScalarProperty Name="xmembertype" ColumnName="xmembertype" />
+                <ScalarProperty Name="xpay_status" ColumnName="xpay_status" />
+                <ScalarProperty Name="xgt" ColumnName="xgt" />
+                <ScalarProperty Name="ref_no" ColumnName="ref_no" />
+                <ScalarProperty Name="xbankerID" ColumnName="xbankerID" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+                <ScalarProperty Name="applicantID" ColumnName="applicantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xadmins">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.xadmin">
+              <MappingFragment StoreEntitySet="xadmin">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xname" ColumnName="xname" />
+                <ScalarProperty Name="cname" ColumnName="cname" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+                <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xagents">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.xagent">
+              <MappingFragment StoreEntitySet="xagent">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xname" ColumnName="xname" />
+                <ScalarProperty Name="cname" ColumnName="cname" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+                <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xbankers">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.xbanker">
+              <MappingFragment StoreEntitySet="xbanker">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xname" ColumnName="xname" />
+                <ScalarProperty Name="bankname" ColumnName="bankname" />
+                <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="xposition" ColumnName="xposition" />
+                <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xmembers">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.xmember">
+              <MappingFragment StoreEntitySet="xmember">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xname" ColumnName="xname" />
+                <ScalarProperty Name="cname" ColumnName="cname" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+                <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xpartners">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.xpartner">
+              <MappingFragment StoreEntitySet="xpartner">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="xname" ColumnName="xname" />
+                <ScalarProperty Name="cname" ColumnName="cname" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+                <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fee_listx">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.fee_listx">
+              <MappingFragment StoreEntitySet="fee_listx">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="item" ColumnName="item" />
+                <ScalarProperty Name="item_code" ColumnName="item_code" />
+                <ScalarProperty Name="qt_code" ColumnName="qt_code" />
+                <ScalarProperty Name="xdesc" ColumnName="xdesc" />
+                <ScalarProperty Name="init_amt" ColumnName="init_amt" />
+                <ScalarProperty Name="tech_amt" ColumnName="tech_amt" />
+                <ScalarProperty Name="switch_party" ColumnName="switch_party" />
+                <ScalarProperty Name="t_party" ColumnName="t_party" />
+                <ScalarProperty Name="xcategory" ColumnName="xcategory" />
+                <ScalarProperty Name="xlogstaff" ColumnName="xlogstaff" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InterSwitchPostFields2">
+            <EntityTypeMapping TypeName="ba2xai_xpay_backupModel.InterSwitchPostFields2">
+              <MappingFragment StoreEntitySet="InterSwitchPostFields2">
+                <ScalarProperty Name="xid" ColumnName="xid" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="isw_conv_fee" ColumnName="isw_conv_fee" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="site_redirect_url" ColumnName="site_redirect_url" />
+                <ScalarProperty Name="txn_ref" ColumnName="txn_ref" />
+                <ScalarProperty Name="hash" ColumnName="hash" />
+                <ScalarProperty Name="mackey" ColumnName="mackey" />
+                <ScalarProperty Name="pay_item_id" ColumnName="pay_item_id" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+                <ScalarProperty Name="cust_id_desc" ColumnName="cust_id_desc" />
+                <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+                <ScalarProperty Name="resp_desc" ColumnName="resp_desc" />
+                <ScalarProperty Name="pay_item_name" ColumnName="pay_item_name" />
+                <ScalarProperty Name="local_date_time" ColumnName="local_date_time" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="MerchantReference" ColumnName="MerchantReference" />
+                <ScalarProperty Name="trans_status" ColumnName="trans_status" />
+                <ScalarProperty Name="pay_ref" ColumnName="pay_ref" />
+                <ScalarProperty Name="ret_ref" ColumnName="ret_ref" />
+                <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+                <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+                <ScalarProperty Name="xsync" ColumnName="xsync" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

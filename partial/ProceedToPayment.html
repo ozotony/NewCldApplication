@@ -1,0 +1,175 @@
+﻿<div id="signupbox" class="mainbox col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1  col-sm-9 col-sm-offset-1">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title"><span class="text-center"></div>
+            <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+        </div>
+        <div class="panel-body">
+
+
+            <table style="width:90%;" align="center">
+                <tr>
+                    <td colspan="2">
+                        <table class="center-align" style="width:100%;">
+
+
+                            <tr>
+                                <td class="center-align"
+                                    style="background-color:#1C5E55; color:#ffffff; font-size:16px;">
+                                    WEB PAYMENT GUIDE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left-align">
+                                    <span class="notice_header"> Step One:</span><br />
+                                    <span class="notice_text">You should have either an Interswitch powered Debit card or Verve card</span><br />
+                                    <br />
+                                    <span class="notice_header">Step Two:</span><br />
+                                    <span class="notice_text">Please ensure that the card provided is still valid (Check the expiry date!)</span><br />
+                                    <br />
+                                    <span class="notice_header">Step Three:</span><br />
+                                    <span class="notice_text">
+                                        Please ensure that you have the required amount (As shown on the details page!)
+                                        on the selected card type to pay for the required items
+                                    </span><br />
+                                    <br />
+                                    <span class="notice_header">Step Four:</span><br />
+                                    <span class="notice_text">
+                                        On the payment gateway, select the card type and provide the card details,PIN
+                                        and any other required information
+                                    </span><br />
+                                    <br />
+                                    <span class="notice_header">Step Five:</span><br />
+                                    <span class="notice_text">Always cross-check the details before you proceed to the payment gateway</span><br />
+                                    <br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center-align">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center-align"
+                                    style="background-color:#1C5E55; color:#ffffff;font-size:16px;">
+                                    BANK DEPOSIT PAYMENT GUIDE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center-align">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="left-align">
+                                    <span class="notice_header">Step One:</span><br />
+                                    <span class="notice_text">
+                                        Make sure you have either recieved an alert (SMS/E-mail) or have printed a copy
+                                        of your invoice
+                                    </span><br />
+                                    <br />
+                                    <span class="notice_header">Step Two:</span><br />
+                                    <span class="notice_text">Kindly go to any of the designated banks for the service to make payment</span><br />
+                                    <br />
+                                    <span class="notice_header">Step Three:</span><br />
+                                    <span class="notice_text">
+                                        Always cross-check the details before you proceed to generate the payment
+                                        invoice
+                                    </span><br />
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="notice_footer">
+                                    Thank you for adhering to the above instructions!!
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="center-align">
+                                    &nbsp;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="center-align" style="background-color:#1C5E55; color:#ffffff;">
+                                    PLEASE SELECT AN OPTION BELOW
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="center-align"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+
+                            <tr align="center">
+                                <td>
+                                    <label>
+                                        <input type="radio" name="chickenEgg" value="interswitch" ng-click="getdata($event)" ng-model="chickenEgg">
+                                        <img alt="interswitch" width="92px" height="30px" src="images/isw_logo_small.gif" />
+                                        <img alt="mastercard" class="style1" src="images/mastercard-logo.png" />
+                                        <img alt="verve" class="style1" src="images/verve.png" />
+                                    </label>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <label>
+                                        <input type="radio" name="chickenEgg" value="bank" ng-click="getdata($event)" ng-model="chickenEgg">
+                                        <img alt="recharge_pin" class="style1" src="images/recharge_pin.png" />
+                                    </label>
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">
+                                    <input id="Button1" type="button" class="btn btn-info" ng-click="dashboard()" value="Back to Dashboard" />
+
+
+
+
+                                    &nbsp;
+                                    <input id="Button1" type="button" class="btn btn-info" ng-click="submitForm()" value="Back to Payment Summary" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+
+                            <tr>
+                                <td align="center" colspan="4">
+                                    POWERED BY<br />
+                                    <img src="images/payxlogo.jpg" alt="XPay" width="90px" height="40px" /> <br />
+                                    Plot 4. Oluwakayode Jacobs Street Ikate,Lekki Phase 1<br />
+                                    <a href="http://www.einaosolutions.com">www.einaosolutions.com</a><br />
+                                    Support E-mail(s): <a href="mailto:paymentsupport@einaosolutions.com">paymentsupport@einaosolutions.com</a><br />
+                                    Customer Contact Support Line(s): +2349038979681
+                                </td>
+                            </tr>
+
+                          
+
+
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            </div>
+
+        </div>
+    </div>

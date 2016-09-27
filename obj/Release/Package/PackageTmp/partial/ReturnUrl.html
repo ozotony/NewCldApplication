@@ -1,0 +1,288 @@
+﻿<div id="searchform">
+    <table style="width:90%;" align="center">
+        <tr>
+            <td>
+                <table style="width:100%;" align="center" class="form">
+                    <tr align="center">
+                        <td colspan="2">
+                          
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" style="background-color:#1C5E55; color:#ffffff;" colspan="2">
+                            PAYMENT CONFIRMATION SECTION
+                        </td>
+                    </tr>
+                  
+                    <tr align="center" ng-show="visible2">
+                        <td style="font-size:20px;" colspan="2">
+                            <strong>PAYMENT COMPLETED SUCCESSFULLY</strong><br />
+                            <div class="payment_success">
+                                <div class="x_succ_img">
+                                    An e-mail has been sent to: {{agent.Email}}<br />
+                                    Transaction Reference:&nbsp;{{twallet.transID}}<br />
+                                    Payment Reference:&nbsp;{{InterSwitchPostFields.pay_ref}}<br /><br />
+                                    Please check your "Payment Status" or "History Log" to view more details!!
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr id="invoice" ng-show="visible2">
+                        <td colspan="2">
+                            <table style="font-size:16px;text-align:center;font-weight:normal;width:100%;  border:1px solid #000000;" class="form">
+
+                                <tr>
+                                    <td colspan="4" style="text-align:center;">
+                                        <img alt="Coat of Arms" src="images/LOGOCLD.jpg" width="458" height="76" />
+                                    </td>
+                                </tr>
+
+                                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;">
+                                    <td colspan="4">
+                                        PAYMENT RECIEPT FOR TRANSACTION :&nbsp;"{{twallet.transID}}"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="width:50%;" colspan="2">
+                                        <strong> TRANSACTION ID:</strong> {{twallet.transID}}
+                                    </td>
+                                    <td align="center" style="width:50%;" colspan="2">
+                                        <strong>DATE:</strong> {{twallet.xreg_date}} 
+                                    </td>
+                                </tr>
+
+                                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;font-weight:bold;">
+                                    <td align="center" colspan="4">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr style=" text-align:center;font-weight:bold;">
+                                    <td align="center" colspan="4">
+                                        &nbsp;
+                                        PAYMENT REFERENCE:&nbsp;"{{InterSwitchPostFields.pay_ref}}"
+                                    </td>
+                                </tr>
+                                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;font-weight:bold;">
+                                    <td align="center" colspan="4">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2" style="background-color:#666; color:#ffffff;font-weight:bold;">
+                                        ---
+                                        APPLICANT INFORMATION ---
+                                    </td>
+                                    <td align="center" colspan="2" style="background-color:#666; color:#ffffff;font-weight:bold;">
+                                        ---
+                                        AGENT INFORMATION ---
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="left" style="width:7%;">
+                                        NAME:
+                                    </td>
+                                    <td align="left" style="width:43%;">
+                                      {{ applicant.applicantname}}
+                                    </td>
+                                    <td align="left" style="width:7%;">
+                                        NAME:
+                                    </td>
+                                    <td align="left" style="width:43%;">
+                                       {{agent.Surname}}
+                                    </td>
+                                </tr>
+
+                                <tr style="background-color:#E3EAEB;">
+                                    <td align="left">
+                                        ADDRESS:
+                                    </td>
+                                    <td align="left">
+                                        {{applicant.address}}
+                                    </td>
+                                    <td align="left">
+                                        CODE:
+                                    </td>
+                                    <td align="left">
+                                        {{agent.Sys_ID}}    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        E-MAIL:
+                                    </td>
+                                    <td align="left">
+                                        {{applicant.email}}      
+                                    </td>
+                                    <td align="left">
+                                        E-MAIL:
+                                    </td>
+                                    <td align="left">
+                                        {{agent.Email}}
+                                    </td>
+                                </tr>
+                                <tr style="background-color:#E3EAEB;">
+                                    <td align="left">
+                                        MOBILE:
+                                    </td>
+                                    <td align="left">
+                                        {{applicant.mobile}}
+                                        
+                                    </td>
+                                    <td align="left">
+                                        MOBILE:
+                                    </td>
+                                    <td align="left">
+                                        {{agent.PhoneNumber}}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="4"
+                                        style="background-color:#666; color:#ffffff;font-weight:bold;">
+                                        <strong>--- PAYMENT DETAILS ---</strong>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="left" colspan="4" style="font-size:12px;">
+                                        <table style="width:100%;" id="mitems"  class="tiger-stripe table table-responsive" st-table="displayedCollection" st-safe-src="ListAgent">
+                                            <tr style="background-color:#1C5E55; color:#ffffff;">
+
+                                                <td>
+                                                    <strong>S/N</strong> 
+                                                </td>
+                                                <td>
+                                                    <strong>TRANSACTION ID</strong>
+                                                </td>
+                                                <td>
+                                                    <strong>ITEM CODE</strong>
+                                                </td>
+                                                <td> <strong>ITEM DESCRIPTION</strong></td>
+                                                <td> <strong>QTY</strong></td>
+                                                <td style="text-align:center;"><strong>APPLICATION FEE(NGN)</strong></td>
+                                                <td style="text-align:center;"><strong>TECH. FEE(NGN)</strong></td>
+                                                <td style="text-align:center;"><strong>TOTAL (NGN)</strong></td>
+                                            </tr>
+                                          
+                                            <tr ng-repeat="row in displayedCollection">
+                                                <td>
+                                                    {{row.sn}}
+                                                </td>
+                                                <td>
+                                                    {{row.item_code}}
+                                                </td>
+
+                                                <td>
+                                                    {{row.item_desc}}
+
+                                                </td>
+                                                <td>
+                                                    {{row.qty}}
+                                                </td>
+
+                                                <td align="right">
+                                                    {{row.init_amt|currency:""}}
+
+                                                </td>
+
+                                                <td align="right">
+                                                    {{row.tech_amt|currency:""}}
+
+                                                </td>
+
+                                                <td align="right">
+                                                    {{row.amt|currency:""}}
+
+                                                </td>
+                                            </tr>
+                                       
+
+                                            <tr>
+                                                <td colspan="7" style="text-align:right;font-weight:bold;">
+                                                    PayX Convenience Fee:&nbsp;
+                                                </td>
+
+                                                <td align="right">
+                                                {{ InterSwitchPostFields.isw_conv_fee|currency:""}}   
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;">
+                                    <td colspan="4"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+
+                                <tr style="font-size:13px;text-decoration:underline; color:#1C5E55;font-weight:bold;" align="right">
+                                    <td colspan="4" class="right-align">
+
+                                        TOTAL AMOUNT:&nbsp; NGN&nbsp;{{vTotal|currency:""}}
+                                    </td>
+                                </tr>
+
+                                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;">
+                                    <td colspan="4"></td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" colspan="4">
+                                        POWERED BY<br />
+                                        <img alt="Pay X" src="images/payxlogo.jpg" width="90px" height="40px" />
+                                        <br />
+                                        Plot 4. Oluwakayode Jacobs Street Ikate,Lekki Phase 1<br />
+                                        <a href="http://www.einaosolutions.com" style="color:#0000ff;font-weight:normal;">www.einaosolutions.com</a><br />
+                                        Support E-mail(s): <a href="mailto:paymentsupport@einaosolutions.com" style="color:#0000ff; font-weight:normal;">paymentsupport@einaosolutions.com</a><br />
+                                        Customer Contact Support Line(s): +2349038979681
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr align="center">
+                        <td colspan="2">
+                            <input type="button" name="Printform" id="Printform" value="Print" onclick="printXreturnAssessment('invoice');return false" class="button" />
+                        </td>
+                        <
+                    </tr>
+                  
+                    <tr align="center" ng-show="visible3">
+                        <td style="font-size:20px;" colspan="2">
+                            <strong>PAYMENT NOT COMPLETED SUCCESSFULLY</strong><br />
+                            <div class="payment_failure">
+                                <div class="x_fail_img">
+                                    An e-mail has been sent to: {{agent.Email}}<br />
+                                    Reason:&nbsp;{{InterSwitchPostFields.ResponseDescription}}<br />
+                                    Transaction Reference:&nbsp;{{twallet.transID}}<br />
+                                    Payment Reference:&nbsp;{{InterSwitchPostFields.pay_ref}}<br /><br />
+
+
+                                   
+                                    Please check your "Payment Status" or "History Log" to view more details!!
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+               
+                
+                    <tr>
+                        <td align="center" style="background-color:#1C5E55; color:#ffffff;" colspan="2"></td>
+                    </tr>
+
+              
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    
+</div>

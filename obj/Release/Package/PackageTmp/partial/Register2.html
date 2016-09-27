@@ -1,0 +1,264 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3  col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Register  User</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#/login" onclick="$('#signupbox').hide(); $('#loginbox').show()"></a></div>
+                    </div>
+                    <div class="panel-body">
+                        <form id="signupform" name="userForm" ng-submit="submitForm(vform,userForm.$valid)" novalidate class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+                            <table class="table">
+                                <tr>
+                                    <td style="text-align:right">
+
+
+                                        <b> Email <span style="color:red">*</span></b>
+                                        <p></p>
+                                        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block input-group-addon">Enter a valid email.</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="email" class="form-control input-lg" ng-model="vform.email" ng-blur="change()" name="email" id="vvemail" required placeholder="Email Address">
+
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align:right">
+                                        <b>  First Name <span style="color:red">*</span></b>
+
+                                        <p></p>
+                                        <p ng-show="userForm.firstname.$invalid && !userForm.firstname.$pristine" class="help-block input-group-addon">First Name Is Required</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="text" class="form-control input-lg" ng-model="vform.firstname" name="firstname" required placeholder="First Name">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <td style="text-align:right">
+                                        <b>Last Name <span style="color:red">*</span></b>
+
+                                        <p></p>
+                                        <p ng-show="userForm.lastname.$invalid && !userForm.lastname.$pristine" class="help-block input-group-addon">Last  Name Is Required</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="text" class="form-control input-lg" ng-model="vform.lastname" name="lastname" required placeholder="Last Name">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <td style="text-align:right">
+                                        <b> Phone Number <span style="color:red">*</span></b>
+
+                                        <p></p>
+                                        <p ng-show="userForm.passwd.$invalid && !userForm.passwd.$pristine" class="help-block input-group-addon">Password Is Required</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="text" class="form-control input-lg" ng-model="vform.phone_number" name="icode" required placeholder="">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <td style="text-align:right">
+                                        <b> USER ROLE <span style="color:red">*</span></b>
+
+                                        <p></p>
+                                        <p ng-show="userForm.passwd.$invalid && !userForm.passwd.$pristine" class="help-block input-group-addon">Password Is Required</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <select class="form-control" data-ng-change="GetStates()" data-ng-options="c.role_name as c.role_name for c in varray44" name="vvroles"  ng-model="vform.vvroles" required>
+                                            <option value="">-- Select    --</option>
+                                        </select>
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr ng-show="VCORPORATE">
+                                    <td style="text-align:right">
+                                        <b> Subscription <span style="color:red"></span></b>
+
+                                        <p></p>
+                                       
+
+
+                                    </td>
+
+                                    <td ng-show="VCORPORATE">
+
+                                        <select class="form-control" data-ng-options="c.Subscription_Code as c.Subscription_Name for c in varray6" name="Institution" data-ng-change="GetIns2(vform.Institution)" ng-model="vform.Institution" >
+                                            <option value="">-- Select Subscription   --</option>
+                                        </select>
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr ng-show="VCORPORATE">
+                                    <td style="text-align:right">
+                                        <b> Paid Fee <span style="color:red"></span> </b>
+
+                                        <p></p>
+
+
+
+                                    </td>
+
+                                    <td ng-show="VCORPORATE">
+
+                                        <input type="checkbox" ng-change='newValue(vform.master)' ng-model="vform.master">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+                                <tr ng-show="vform.master">
+                                    <td style="text-align:right">
+                                        <b> Fee Amount <span style="color:red"></span> </b>
+
+                                        <p></p>
+
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="number" class="form-control input-lg" disabled ng-model="vform.Fee" name="fee" placeholder="">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr ng-show="VPARTNER">
+                                    <td style="text-align:right">
+                                        <b> Institution <span style="color:red"></span></b>
+
+                                        <p></p>
+                                       
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <select class="form-control" data-ng-options="c.Institution_Code as c.Institution_Name for c in varray9" name="Institution2" ng-model="vform.Institution2" >
+                                            <option value="">-- Select Instititution   --</option>
+                                        </select>
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup"  type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Register</button>
+
+                                </div>
+                            </div>
+
+                            <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                        <div class="col-md-offset-3 col-md-9">
+                            <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                        </div>
+
+                    </div>-->
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+      
+   

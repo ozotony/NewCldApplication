@@ -1,0 +1,101 @@
+﻿<div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3  col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">APPLICANT INFORMATION FORM</div>
+            <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+        </div>
+        <div class="panel-body">
+            <table>
+
+                <tr>
+                    <td align="center" style="background-color:#1C5E55; color:#ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="notice_header">USER GUIDE:</span><br /><br />
+
+                        <strong> Step 1:</strong> Please complete the Applicant Information form and Click &quot;Proceed to Purchase&quot; to continue<br />
+
+
+
+                        <strong> Step 2:</strong>  This section enables you add and remove items from your online basket.
+                        <br />
+                        <br />
+                        You can add/remove as many items as needed to generate a single invoice and transaction ID for bulk payment using either the Web payment or Bank Deposit gateway<br /><br />
+
+
+                        <strong> --&nbsp;</strong>To add a service to your basket, type in the quantity and Click &quot;Add&quot; &nbsp;<i class="glyphicon glyphicon-ok-circle"></i><br />
+                     
+                        <strong> --&nbsp;</strong>To edit the applicant information, Click &quot;Back to Applicant Form&quot;  <br />
+                        <strong> --&nbsp;</strong>To continue, click &quot;Confirm Selected Items&quot;
+                        <br />
+                        <br />
+
+
+
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table id="applicant_info">
+                      
+                            <tr>
+                                <td>
+
+                                    NAME:<span style="color:red">*</span>
+                                    <br />
+                                    <input type="text" class="form-control" ng-model="applicantname" name="applicantname" required placeholder="NAME">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    ADDRESS:<span style="color:red">*</span><br />
+                                    <textarea name="address" id="address" ng-model="address" required class="input-xlarge span5" placeholder="ADDRESS" rows="7"></textarea>
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    E-MAIL:<span style="color:red">*</span><br />
+                                    <input type="text" class="form-control" ng-model="email" name="email" placeholder="EMAIL">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    MOBILE NUMBER:<span style="color:red">*</span><br />
+                                    <input type="text" class="form-control" ng-model="mobile" name="email" required placeholder="MOBILE NUMBER">
+
+                                </td>
+                            </tr>
+                            <tr style="background-color:#666; color:#ffffff;">
+                                <td>
+
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr align="center">
+                                <td>
+                                    <button id="btn-signup" type="button" class="btn btn-info"> &nbsp Back to Dashboard</button>
+                                    <button id="btn-signup" type="button" ng-click="submitForm()" class="btn btn-info"> &nbsp Proceed to Purchase</button>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+

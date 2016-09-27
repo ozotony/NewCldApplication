@@ -1,0 +1,164 @@
+﻿
+
+
+<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3  col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign Up</div>
+
+                    </div>
+                    <div class="panel-body">
+
+                        <form id="signupform" name="userForm" ng-submit="submitForm(vform,userForm.$valid)" novalidate class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+                            <table class="table">
+                                <tr>
+                                    <td style="text-align:right">
+
+
+                                        <b> Email <span style="color:red">*</span></b>
+                                        <p></p>
+                                        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block input-group-addon">Enter a valid email.</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="email" class="form-control input-lg" ng-model="vform.email" ng-blur="change()" id="vvemail" name="email" required placeholder="Email Address">
+
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align:right">
+                                        <b>  First Name <span style="color:red">*</span></b>
+
+                                        <p></p>
+                                        <p ng-show="userForm.firstname.$invalid && !userForm.firstname.$pristine" class="help-block input-group-addon">First Name Is Required</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="text" class="form-control input-lg" ng-model="vform.firstname" name="firstname" required placeholder="First Name">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <td style="text-align:right">
+                                        <b>Last Name <span style="color:red">*</span></b>
+
+                                        <p></p>
+                                        <p ng-show="userForm.lastname.$invalid && !userForm.lastname.$pristine" class="help-block input-group-addon">Last  Name Is Required</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="text" class="form-control input-lg" ng-model="vform.lastname" name="lastname" required placeholder="Last Name">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+                                    <td style="text-align:right">
+                                        <b>  Phone Number <span style="color:red">*</span> </b>
+
+                                        <p></p>
+                                        <p ng-show="userForm.icode.$invalid && !userForm.icode.$pristine" class="help-block input-group-addon">Required</p>
+
+
+                                    </td>
+
+                                    <td>
+
+                                        <input type="text" class="form-control input-lg" ng-model="vform.phone_number" name="icode" required placeholder="Phone">
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2" style="text-align:center">
+
+                                        <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                    </td>
+
+                                </tr>
+
+
+                            </table>
+
+
+                        </form>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                    <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                        <div class="col-md-offset-3 col-md-9">
+                            <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                        </div>
+
+                    </div>-->
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+

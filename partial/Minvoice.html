@@ -1,0 +1,198 @@
+﻿<div id="signupbox" class="mainbox col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1  col-sm-9 col-sm-offset-1">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title"><span class="text-center"></div>
+            <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+        </div>
+        <div class="panel-body">
+
+            <table class="inv left-align" style="font-size:16px;text-align:center;font-weight:normal;width:100%;border:1px solid #000000;">
+
+                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;font-weight:bold;border:1px solid #000000;">
+                    <td colspan="4" style="font-size:14px;">
+                        PAYMENT INVOICE SLIP FOR TRANSACTION :&nbsp;{{twallet.ref_no}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="left" colspan="4">
+                        <span class="notice_header">USER GUIDE:</span><br /><br />
+                        <div style="font-weight:normal;">
+                            This section displays your Payment Invoice Slip<br />
+                            --&nbsp;To select your preferred mode of payment, Click &quot;Proceed to Payment&quot;<br />
+                            <br />
+                            <div style="font-weight:bolder; font-size:16px; color:#f00; text-align:center"> PLEASE NOTE THAT THIS IS NOT A &quot;PAYMENT RECIEPT&quot; !!!</div><br />
+                        </div>
+
+                    </td>
+                </tr>
+                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;font-weight:bold;">
+                    <td align="center" colspan="4">
+                        &nbsp;
+                    </td>
+                </tr>
+
+                <tr style="font-weight:bold;">
+                    <td align="center" style="width:50%;" colspan="2">
+                        <strong> TRANSACTION ID:</strong> {{twallet.transID}}
+                    </td>
+                    <td align="center" style="width:50%;" colspan="2">
+                        <strong>DATE:</strong>  {{twallet.xreg_date}}
+                    </td>
+                </tr>
+
+                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;font-weight:bold;">
+                    <td align="center" colspan="4">
+                        &nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" colspan="2" style="background-color:#666; color:#ffffff;font-weight:bold;">
+                        ---
+                        APPLICANT INFORMATION ---
+                    </td>
+                    <td align="center" colspan="2" style="background-color:#666; color:#ffffff;font-weight:bold;">
+                        ---
+                        AGENT INFORMATION ---
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="left" style="width:7%;"> NAME:</td>
+                    <td align="left" style="width:43%;"> {{applicant.applicantname}}</td>
+                    <td align="left" style="width:7%;">NAME:  </td>
+
+                    <td align="left" style="width:43%;"> {{agent.Surname}}</td>
+                </tr>
+
+                <tr style="background-color:#E3EAEB;">
+                    <td align="left">ADDRESS:</td>
+                    <td align="left"> {{applicant.address}}</td>
+                    <td align="left"> CODE:</td>
+                    <td align="left"> {{agent.Sys_ID}}</td>
+                </tr>
+                <tr>
+                    <td align="left">  E-MAIL:   </td>
+                    <td align="left"> {{applicant.email}}</td>
+                    <td align="left"> E-MAIL:</td>
+                    <td align="left"> {{agent.Email}}</td>
+                </tr>
+                <tr style="background-color:#E3EAEB;">
+                    <td align="left">MOBILE: </td>
+                    <td align="left">{{applicant.mobile}}</td>
+                    <td align="left"> MOBILE: </td>
+
+                    <td align="left">{{agent.PhoneNumber}}</td>
+                </tr>
+
+
+                <tr>
+                    <td align="center" colspan="4"
+                        style="background-color:#666; color:#ffffff;font-weight:bold;">
+                        --- PAYMENT DETAILS ---
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" colspan="4" style="font-size:14px;">
+                        <table style="width:100%;" id="mitems" class="tiger-stripe table table-responsive" st-table="displayedCollection" st-safe-src="ListAgent">
+                            <tr style="background-color:#1C5E55; color:#ffffff;">
+                                <td>
+                                    S/N
+                                </td>
+                                <td> ITEM CODE</td>
+
+                                <td>ITEM DESCRIPTION</td>
+                                <td>
+                                    QTY
+                                </td>
+                                <td style="text-align:center;"> APPLICATION FEE(NGN)</td>
+                                <td style="text-align:center;"> TECH. FEE(NGN)</td>
+                                <td style="text-align:center;">
+                                    TOTAL (NGN)
+                                </td>
+                            </tr>
+
+                            <tr ng-repeat="row in displayedCollection">
+                                <td>
+                                    {{row.sn}}
+                                </td>
+                                <td>
+                                    {{row.item_code}}
+                                </td>
+
+                                <td>
+                                    {{row.item_desc}}
+
+                                </td>
+                                <td>
+                                    {{row.qty}}
+                                </td>
+
+                                <td align="right">
+                                    {{row.init_amt|currency:""}}
+
+                                </td>
+
+                                <td align="right">
+                                    {{row.tech_amt|currency:""}}
+
+                                </td>
+
+                                <td align="right">
+                                    {{row.amt|currency:""}}
+
+                                </td>
+                            </tr>
+
+
+
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="right-align">&nbsp;</td>
+                </tr>
+
+                <tr style="font-size:13px;text-decoration:underline; color:#1C5E55;font-weight:bold;" align="right">
+                    <td colspan="4" class="right-align">
+                       
+                        TOTAL AMOUNT:&nbsp; NGN&nbsp;{{vTotal|currency:""}}
+                    </td>
+                </tr>
+
+                <tr style="background-color:#1C5E55; color:#ffffff; text-align:center;">
+                    <td colspan="4"></td>
+                </tr>
+
+
+                <tr>
+                    <td align="center" colspan="4">
+                        POWERED BY<br />
+                        <img src="images/payxlogo.jpg" alt="XPay" width="90px" height="40px" /> <br />
+                        Plot 4. Oluwakayode Jacobs Street Ikate,Lekki Phase 1<br />
+                        <a href="http://www.einaosolutions.com">www.einaosolutions.com</a><br />
+                        Support E-mail(s): <a href="mailto:paymentsupport@einaosolutions.com">paymentsupport@einaosolutions.com</a><br />
+                        Customer Contact Support Line(s): +2349038979681
+                    </td>
+                </tr>
+
+            </table>
+
+            <table width="100%">
+                <tr>
+                    <td style="text-align:center;">
+                        <input id="Button1" type="button" class="btn btn-info" ng-click="dashboard()" value="Back to Dashboard" />
+
+                        
+                       
+
+                        &nbsp;
+                        <input id="Button1" type="button" class="btn btn-info" ng-click="submitForm()" value="Proceed To Payment" />
+                    </td>
+                </tr>
+            </table>
+
+            </div>
+        </div>
+    </div>

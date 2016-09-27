@@ -1,0 +1,73 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3  col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">CREATE MENU</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                        <form id="signupform" name="userForm" ng-submit="submitForm(vform,userForm.$valid)" novalidate class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="Role_Name" class="col-md-3 control-label">Menu Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" ng-model="vform.role_name" name="vrole" required placeholder="MENU NAME">
+
+                                    <div class="errors" ng-messages="userForm.vrole.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Create Menu</button>
+
+                                </div>
+                            </div>
+
+                            <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                </div>
+
+                            </div>-->
+
+
+
+                        </form>
+
+                   
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>

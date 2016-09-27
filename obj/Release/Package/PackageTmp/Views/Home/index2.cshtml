@@ -1,0 +1,385 @@
+﻿@*<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">*@
+<!DOCTYPE html>
+@*<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" ng-app="app">*@
+
+<html ng-app="app">
+<head>
+    <title>UVP | Home </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--<link href="css/style.css" rel="stylesheet" type="text/css" />-->
+    @*<link href="style.css" rel="stylesheet" />*@
+    <link href="~/css/menus.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+   
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/arial.js"></script>
+    <script type="text/javascript" src="js/cuf_run.js"></script>
+    <link rel="shortcut icon" type="../Image/x-icon" href="images/favicon.png" />
+
+
+    @*<base href="/ups/" />*@
+
+
+
+
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+
+
+    <script src="~/Scripts/jquery-ui-1.8.16.custom.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    @*
+        <link href="~/Content/style.css" rel="stylesheet" />*@
+
+
+
+    <script src="~/Scripts/bs_leftnavi.js"></script>
+
+    <!--<script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>-->
+    <!--<script src="Scripts/urlRouter.js"></script>-->
+    <script src="~/Scripts/angular.js"></script>
+
+
+
+
+    <script src="~/Scripts/angular-animate.js"></script>
+
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+
+    <script src="~/Scripts/app.js"></script>
+
+    <link href="~/Content/bs_leftnavi.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-local-storage.js"></script>
+    <script src="~/Scripts/LoginInterceptor.js"></script>
+    <script src="~/Scripts/GetData.js"></script>
+    <script src="~/Scripts/angular-messages.min.js"></script>
+    <script src="~/Scripts/sweet-alert.min.js"></script>
+    <link href="~/Content/sweet-alert.css" rel="stylesheet" />
+    <script src="~/Scripts/loading-bar.js"></script>
+    <link href="~/Content/loading-bar.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-facebook.min.js"></script>
+    <link href="~/Content/Tiles.css" rel="stylesheet" />
+    <script src="~/Scripts/smart-table.min.js"></script>
+    <link href="~/Content/ng-modal.css" rel="stylesheet" />
+    <script src="~/Scripts/ng-modal.min.js"></script>
+
+    <script src="~/Scripts/angular-datepicker.min.js"></script>
+    <link href="~/Content/angular-datepicker.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/metro-bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/alasql.min.js"></script>
+    <script src="~/Scripts/ng-csv.min.js"></script>
+    <script src="~/Scripts/xlsx.core.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/tableExport.js"></script>
+    <script src="~/Scripts/sprintf.js"></script>
+    <script src="~/Scripts/jspdf.js"></script>
+    <script src="~/Scripts/jquery.base64.js"></script>
+   
+    <script src="~/Scripts/base64.js"></script>
+
+    @*<link href="~/Content/Menu2.css" rel="stylesheet" />*@
+    
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            //var docHeight = $(window).height();
+            //var footerHeight = $('#footer').height();
+            //var footerTop = $('#footer').position().top + footerHeight;
+
+            //if (footerTop < docHeight) {
+            //    $('#footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+            //}
+
+            //$(window).on('resize load', function () {
+            //    $('body').css({ "padding-top": $(".navbar").height() + "px" });
+            //});
+
+        });
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel({
+                interval: 2000
+            });
+        });
+
+
+        $(document).ready(function () {
+            var mCarouselTO = setTimeout(function () {
+                $('.carousel').carousel({
+                    interval: 2000,
+                    cycle: true,
+                }).trigger('slide');
+            }, 2000);
+            var q = mCarouselTO;
+        });
+
+    </script>
+
+    <style type="text/css">
+        .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline {
+            color: #a94442;
+        }
+
+        .help-block {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: red;
+        }
+
+        span.ng-scope {
+            color: red;
+        }
+        /*input.ng-invalid {
+          border: 1px solid red;
+
+        }
+        input.ng-valid {
+          border: 1px solid green;
+
+        }
+
+
+        :focus ~ .error {
+            display:none;
+        }*/
+        form.ng-submitted .ng-invalid {
+            border-color: red;
+            border-width: 2px;
+        }
+    </style>
+
+    <style>
+        .btn-warning2 {
+            color: white;
+            background-color: #520B00;
+            border-color: #eea236;
+        }
+
+
+        @@media print {
+
+            .no-print, .no-print * {
+                display: none !important;
+            }
+        }
+
+        /*body {
+            padding-top: 70px;
+        }*/
+    </style>
+
+    <style>
+        @@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bree Serif', serif;
+        }
+
+        /*.jumbotron {
+    position: relative;
+    background: #000 url("jumbotron-bg.png") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}*/
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <div class="container ">
+            <div class="header no-print">
+                <div class="container">
+                    <div class="header_resize">
+                        <img src="Images/hbg_img4.png" width="100" style="text-align:left;margin-top:22px;float:left" height="100" alt="" />
+                        <div class="logo">
+                            <h1 class="uvp" style=" text-decoration:none ">
+                               
+                                <a href="#">
+                                    <span>U</span>nified Verification Portal
+                                </a>
+                                <small>Result Printout, Transcript, Certificate...</small>
+
+                                <br />
+
+                            </h1>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="menu_nav navbar cf">
+                            <div  class="login">
+
+
+                                <ul  style="padding-top:8px">
+                                    <li><b><span> <a style="display:block" btn=btn btn-warning=btn-warning ui-sref="login" ng-show=islogout aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>  Login</a></span></b> </li>
+                                    <li><b><a style="display:block" btn=btn btn-warning=btn-warning ui-sref="Register" ng-show=islogout aria-expanded="false"><span class="glyphicon glyphicon-user"></span>  Register</a></b></li>
+                                    <li><b><span ng-show=islogin ng-bind="username"></span> <span ng-show=islogin></span></b></li>
+                                    <li><b><a role="button" ui-sref="logout" ng-show=islogin aria-expanded="false"><span class="glyphicon glyphicon-log-out"></span>  Logout</a></b></li>
+
+                                </ul>
+
+                              
+                            </div>
+                            <div class="login2 ">
+
+                                <ul  style="padding-top:8px">
+                                    @*<li class=flyout ng-class="{'active': vhome}">*@
+                                     <li class=flyout >
+                                        <a href="#">Home</a>
+                                    </li>
+                                    @*<li class=flyout ng-class="{'active': vhome2}">*@
+                                      <li class=flyout >
+                                        <a href="#/About">About</a>
+                                    </li>
+                                    @*<li class=flyout ng-class="{'active': vhome3}">*@
+
+
+
+                                    <li ng-show =" ! isAdmin" ng-hide=" isInstitution " class=" flyout">
+
+                                        <a href=# style="font-size:13px;color:black;background: transparent;padding: 13px 24px;"> SERVICES</a>
+
+                                        <!-- Flyout -->
+                                        <ul class="flyout-content nav site-nav stacked  ">
+                                            <li><a href=#/form/search?service=SV001>VERIFY RESULT</a></li>
+                                            <li><a href=#/form/search?service=SV003>PRINT TRANSCRIPT</a></li>
+                                            <li><a href=#/form/search?service=SV002>GENERATE CERTIFICATE</a></li>
+                                           
+                                         
+                                        </ul>
+                                    </li> 
+
+                                    <li ng-show="isInstitution"  class=" flyout">
+
+                                        <a href=# style="font-size:13px;color:black;background: transparent;padding: 13px 24px;"> PARTNER REPORT</a>
+
+                                        <!-- Flyout -->
+                                        <ul class="flyout-content nav site-nav stacked  ">
+                                            <li><a href=#/transaction2b>VIEW TRANSACTIONS</a></li>
+                                           
+
+
+                                        </ul>
+                                    </li> 
+                                    <li class=flyout >
+                                        <a href="#/contact">Contact Us</a>
+                                    </li>
+
+                                    <li ng-show="isAdmin" class=" flyout" >
+
+                                        <a href=# style="font-size:13px;color:black;background: transparent;padding: 13px 24px;"> Administrator</a>
+
+                                        <!-- Flyout -->
+                                        <ul class="flyout-content nav site-nav stacked  ">
+                                            <li><a href=#/Register2>REGISTER CORPORATE CLIENT</a></li>
+
+                                          
+                                            <li><a href=#/User>VIEW USERS</a></li>
+                                            <li><a href=#/Roles>CREATE ROLE</a></li>
+                                            <li><a href=#/AssignRole>ASSIGN ROLE</a></li>
+                                            <li><a href=#/transaction2>VIEW TRANSACTIONS</a></li>
+                                            <li><a href=#/transaction12>USER WITH ACTIVE SUBSCRIPTION</a></li>
+                                            <li><a href=#/Bank>SET UP BANK</a></li>
+                                            <li><a href=#/Subscription>SET UP SUBSCRIPTION</a></li>
+                                            <li><a href=#/Client>SET UP INSTITUTION</a></li>
+                                            <li class="flyout-alt">
+
+                                                <a href=#>Partnering Organization</a>
+
+                                                <!-- Flyout -->
+                                                <ul class="flyout-content nav stacked">
+                                                    <li><a href=#/Register3>REGISTER PARTNERING ORGANISATION</a></li>
+                                                    <li><a href=#/Agreement>INSTITUTIONAL ORGANIZATION AGREEMENT</a></li>
+                                                  
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_resize row">
+                    <div class="container ">
+                        <div class="row no-print ">
+                          
+
+                            @*<img src="Images/hbg_img4.png" width="474" height="200" alt="" class="col-sm-12  col-md-12   col-md-12 " />*@
+                         
+                        </div>
+                            <div class="clr"></div>
+                        <div class="row ">
+                            <div class="col-sm-12  col-md-12   col-lg-12 ">
+                                <div >
+
+                                    <div id=" form-views" ui-view>
+
+                                    </div>
+                                </div>
+                            </div>
+                           
+                         
+                        </div>
+                            <div class="clr"></div>
+                        </div>
+
+                </div>
+            </div>
+        
+        </div>
+        <div class="footer no-print">
+            <div class="footer_resize">
+                <div class="menu_nav navbar cf">
+                    <div class="login">
+                        <ul ng-show=" ! isAdmin" ng-hide=" isInstitution ">
+
+                            <li class=flyout>
+                                <a href=#/form/search?service =SV001>VERIFY RESULT</a>
+                            </li>
+
+                            <li class=flyout>
+                                <a href=#/form/search?service =SV003>PRINT TRANSCRIPT</a>
+                            </li>
+
+                            <li class=flyout>
+                                <a href=#/form/search?service =SV002>GENERATE CERTIFICATE</a>
+                            </li>
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                        <p class="lf">
+                            &copy; Copyright
+                            <a href="#">Unified Verification Portal</a>.
+                        </p>
+                        <div class="clr"></div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
+
+
+

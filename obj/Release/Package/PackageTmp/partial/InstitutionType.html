@@ -1,0 +1,148 @@
+﻿
+<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div id="signupbox" >
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">CREATE INSTITUTION TYPE</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                        <modal-dialog show='dialogShown' dialog-title='UPDATE INSTITUTION TYPE'>
+
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 control-label">Instution Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" id="bank_name2" ng-model="bank_name2" name="bank_name" required placeholder="INSTUTION NAME">
+
+                                    <div class="errors" ng-messages="userForm.bank_name2.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                     
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9 col-lg-offset-3 col-lg-9">
+                                    <button id="btn-signup" type="button" ng-click="EditRow2()" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Update Institution Type</button>
+
+                                </div>
+                            </div>
+
+
+                        </modal-dialog>
+
+                        <form id="signupform" name="userForm" ng-submit="submitForm(vform,userForm.$valid)" novalidate class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+
+
+                          
+
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 control-label">Instution Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" ng-model="vform.bank_name" name="bank_name" required placeholder="INSTUTION NAME">
+
+                                    <div class="errors" ng-messages="userForm.bank_name.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                         
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="submit" ng-show="SetUpInstitutionTypeCreate" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Create Institution</button>
+
+                                </div>
+                            </div>
+
+                            <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                </div>
+
+                            </div>-->
+
+
+
+                        </form>
+                        <div class="table-responsive">
+                            <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="tbbg2">INSTITUTION CODE</th>
+                                        <th class="tbbg2">INSTUTION  NAME</th>
+
+
+                                        <th class="tbbg2"></th>
+
+
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="row in displayedCollection">
+
+                                        <td>{{row.InstitutionType_Code}}</td>
+                                        <td>{{row.InstitutionType_Name}}</td>
+
+
+
+                                        <td>
+                                            <button type="submit" ng-show="SetUpInstitutionTypeDelete" ng-click="DelForm(row)" class="btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Delete</button>
+                                            <!--<a href="#"><i class="icon-trash"></i> Delete</a></td>-->
+                                            <button type="submit" ng-show="SetUpInstitutionTypeUpadate" ng-click="EditRow(row)" class="btn btn-primary"><span class="glyphicon  glyphicon-edit"></span>Edit</button>
+
+
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4" class="text-center">
+                                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,334 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+            <style>
+                table thead > tr > th {
+                    border-top: 0px none white;
+                }
+
+                .custom-counter {
+                    margin-left: 0;
+                    padding-right: 0;
+                    list-style-type: none;
+                }
+
+                    .custom-counter li {
+                        counter-increment: step-counter;
+                    }
+
+                        .custom-counter li::before {
+                            content: counter(step-counter);
+                            margin-right: 5px;
+                            font-size: 80%;
+                            background-color: rgb(200,200,200);
+                            color: white;
+                            font-weight: bold;
+                            padding: 3px 8px;
+                            border-radius: 3px;
+                        }
+            </style>
+
+            <div id="signupbox" class="mainbox col-md-12   col-lg-12   col-sm-12 ">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <div style="font-size: 36px">
+                                <!-- pretend an enclosing class has big font size -->
+                                <span class="label label-success label-as-badge">PAYMENT DETAILS</span>
+                                <button type="submit" ng-click="vback()" class="btn btn-primary pull-right   " style="margin-top:10px"><span class="glyphicon glyphicon-backward"></span> BACK</button>
+                            </div>
+                        </div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-responsive table-bordered ">
+                            <tr>
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;">
+                                    PLEASE SELECT AN OPTION BELOW
+                                </td>
+                            </tr>
+
+                            <tr align="center">
+                                <td style="text-align:left" >
+                                    <label style="padding-left:150px">
+                                        <input type="radio" ng-model="formData.Searchname2"  ng-change='newValue2a(value)' value="online">
+                                         <span >Pay Online </span>  
+                                        <img src="Images/mastercard-logo.png" />
+                                        <img src="Images/visa.png" />
+                                        <img src="Images/verve.png" />
+                                        
+                                    </label>
+                                </td>
+                                <td style="text-align:right " >
+                                    <label  ng-show="bankvisible">
+                                        <input type="radio" ng-model="formData.Searchname2" ng-change='newValue2a(value)' value="bank">
+
+
+                                        Pay at Bank
+
+                                        <img src="Images/recharge_pin.png" style="padding-right:120px" />
+                                    </label>
+
+                                </td>
+
+
+                               
+                            </tr>
+                            <tr ng-show="online">
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff; font-size:16px;">
+                                    ONLINE PAYMENT GUIDE
+                                </td>
+                            </tr>
+                            <tr ng-show="online">
+                                <td colspan="2" class="left-align">
+                                    <span class="notice_header"> Step One:</span><br />
+                                    <span class="notice_text">You should have either an UVP powered Debit card or Verve card</span><br />
+                                    <br />
+                                    <span class="notice_header">Step Two:</span><br />
+                                    <span class="notice_text">Please ensure that the card provided is still valid (Check the expiry date!)</span><br />
+                                    <br />
+                                    <span class="notice_header">Step Three:</span><br />
+                                    <span class="notice_text">
+                                        Please ensure that you have the required amount (As shown on the details page!)
+                                        on the selected card type to pay for the required items
+                                    </span><br />
+                                    <br />
+                                    <span class="notice_header">Step Four:</span><br />
+                                    <span class="notice_text">
+                                        On the payment gateway, select the card type and provide the card details,PIN
+                                        and any other required information
+                                    </span><br />
+                                    <br />
+                                    <span class="notice_header">Step Five:</span><br />
+                                    <span class="notice_text">Always cross-check the details before you proceed to the payment gateway</span><br />
+                                    <br />
+
+                                </td>
+                            </tr>
+
+                            <tr ng-show="online">
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;font-size:16px;">
+                                    Enroll Your Card for Verified By Visa This site is protected with Verified by Visa (VbV)
+                                </td>
+
+                            <tr ng-show="online">
+                                <td colspan="2" class="left-align">
+
+                                    <ol class="custom-counter">
+                                        <li> Locate the nearest VISA/VPAY enabled ATM </li>
+                                        <li> Insert your card and punch in your PIN </li>
+                                        <li> Select the PIN change option </li>
+                                        <li>  Select Internet PIN (i-PIN) change option </li>
+                                        <li>  Insert any four - six digits of your choice as your i-PIN </li>
+                                        <li>  Re-entered the digits entered in step 5 </li>
+
+
+                                    </ol>
+                                    <p> If you have done the above correctly, a message is displayed that your PIN was changed successfully. This means your card is now enrolled in the VbV program and you have an Internet PIN (i-PIN) which can be used for any internet related transaction  </p>
+                                    <p>Note the the word "i-PIN", "Password" and "VbV Code" are the same</p>
+                                    <p> You can now visit your favourite VbV enabled site to shop securely </p>
+                                </td>
+                            </tr>
+
+
+                            <tr ng-show="online">
+                                <td colspan="2" class="notice_footer">
+                                   <table class="table table-responsive">
+                                       <tr>
+                                           <td>
+                                               <b>   Transaction Amount </b>
+                                                
+                                           </td>
+
+                                           <td>
+                                              {{formData.vamount |currency:""}}
+
+                                           </td>
+
+                                       </tr>
+
+                                       <tr>
+                                           <td>
+                                               <b>  Convienient Fee </b>
+
+                                           </td>
+
+                                           <td>
+                                               {{formData.covienient |currency:""}}
+
+                                           </td>
+
+                                       </tr>
+
+                                       <tr>
+                                           <td>
+                                               <b>     Total  </b>
+
+                                           </td>
+
+                                           <td>
+                                               {{formData.TransTotal |currency:""}}
+
+                                           </td>
+
+                                       </tr>
+
+                                   </table>
+                                </td>
+                            </tr>
+
+                            <tr ng-show="online">
+                                <td colspan="2" class="notice_footer">
+                                    Thank you for adhering to the above instructions!!
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="center-align">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr ng-show="bank">
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;font-size:16px;">
+                                    BANK DEPOSIT PAYMENT GUIDE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="center-align">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+
+                            <tr ng-show="bank">
+                                <td colspan="2" class="left-align">
+                                    <span class="notice_header">Step One:</span><br />
+                                    <span class="notice_text">
+                                        Make sure you have either recieved an alert (SMS/E-mail) or have printed a copy
+                                        of your invoice
+                                    </span><br />
+                                    <br />
+                                    <span class="notice_header">Step Two:</span><br />
+                                    <span class="notice_text">Kindly go to any of the designated banks for the service to make payment</span><br />
+                                    <br />
+                                    <span class="notice_header">Step Three:</span><br />
+                                    <span class="notice_text">
+                                        Always cross-check the details before you proceed to generate the payment
+                                        invoice
+                                    </span><br />
+                                    <br />
+                                </td>
+                            </tr>
+
+                            <tr ng-show="bank">
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;font-size:16px;">
+                                    <!--Enroll Your Card for Verified By Visa This site is protected with Verified by Visa (VbV)-->
+                                </td>
+
+                            </tr>
+
+                            <tr ng-show="bank">
+                                <td colspan="2" class="left-align"></td>
+                            </tr>
+                            <tr ng-show="formData.BankDeposit">
+                                <td colspan="2" class="center-align">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr ng-show="formData.BankDeposit">
+                                <td colspan="2" class="left-align">
+
+                                    <!--Visa Password-Protected Identity Checking Service, and requires that the card is enrolled to participate in the VbV program. If your Visa Card issued by Nigerian Banks is not enrolled, kindly follow the steps outlined below.<ol><li>  Locate the nearest VISA/VPAY enabled ATM  </li> <li>  Insert your card and punch in your PIN </li> <li>   Select the PIN change option </li> <li>   Select Internet PIN (i-PIN) change option </li> <li>   Insert any four - six digits of your choice as your i-PIN </li> <li>   Re-entered the digits entered in step 5  </li> <li> If you have done the above correctly, a message is displayed that your PIN was changed successfully. This means your card is now enrolled in the VbV program and you have an Internet PIN (i-PIN) which can be used for any internet related transaction 8. Note the the word "i-PIN", "Password" and "VbV Code" are the same 9. You can now visit your favourite VbV enabled site to shop securely Important Please note that this is only for internet related transactions and it does not change your regular PIN on ATM and POS.</li></ol>-->
+                                </td>
+
+                            </tr>
+
+
+                            <tr ng-show="formData.BankDeposit">
+                                <td colspan="2" class="notice_footer">
+                                    Thank you for adhering to the above instructions!!
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="center-align">
+                                    &nbsp;
+                                </td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td colspan="2" class="center-align"></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="center-align" style="background-color:#1C5E55; color:#ffffff;"></td>
+                            </tr>
+
+
+                            <tr align="center" ng-show="formData.bank2">
+                                <td>
+                                    <select class="form-control" data-ng-options="c.Bank_Code as c.Bank_Name for c in varray3" data-ng-change="GetIns2()" name="Bank_Code" ng-model="formData.Bank_Code">
+                                        <option value="">-- Select BANK --</option>
+                                    </select>
+
+
+                                </td>
+
+                                <td>
+
+                                    <div>
+                                        <div class="alert alert-info">
+                                            <a href="#/form/payment2" class="close" data-dismiss="alert">&times;</a>
+                                            <strong> ACCOUNT NUMBER - <span ng-bind="formData.AcctNum" /></strong>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+
+                                    <button ng-show="bank" ng-click="add3()" id="btn-signup2" type="button" class="btn btn-info"><i class="glyphicon glyphicon-saved"></i> &nbsp Proceed</button>
+
+                                    <button ng-show="online" ng-click="newValue2()" id="btn-signup2" type="button" class="btn btn-info"><i class="glyphicon glyphicon-saved"></i> &nbsp Proceed</button>
+
+                                </td>
+
+                            </tr>
+
+
+                        </table>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+   

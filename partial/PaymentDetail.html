@@ -1,0 +1,186 @@
+﻿
+<div id="signupbox" class="mainbox col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1  col-sm-9 col-sm-offset-1">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title"><span class="text-center"></div>
+            <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+        </div>
+        <div class="panel-body">
+            <table style="width:100%;" class="center-align">
+
+                <tr>
+                    <td align="left" colspan="2">
+                        <span class="notice_header">USER GUIDE:</span><br /><br />
+                        <div style="font-weight:normal;">
+                            <strong> --&nbsp;</strong>
+                            To proceed with web payment using your debit card, Click &quot; Confirm Details&quot;<br /><br />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color:#1C5E55; color:#ffffff;margin: 0 auto; " colspan="2">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:#666; color:#ffffff;" class="center-align">
+                        ---
+                        APPLICANT INFORMATION ---
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Name:&nbsp;
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{applicant.applicantname}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Mobile Number: &nbsp;
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{applicant.mobile}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        E-mail: &nbsp;
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{applicant.email}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Address:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{applicant.address}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="center-align" colspan="2" style="background-color:#666; color:#ffffff;">
+                        ---
+                        AGENT INFORMATION ---
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Name:&nbsp;
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{agent.Surname}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Code:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{agent.Sys_ID}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Company:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{agent.CompanyName}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Address:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{agent.CompanyAddress}}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center-align" colspan="2" style="background-color:#666; color:#ffffff;">
+                        ---
+                        PAYMENT INFORMATION ---
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Transaction ID:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>{{twallet.ref_no}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Amount:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>NGN&nbsp;{{vTotal2 |currency:""}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        PayX Convenience Fee:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>NGN&nbsp;{{isw_conv_fee2|currency:""}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width:50%;" class="right-align">
+                        Total Amount to be charged:
+                    </td>
+                    <td style="width:50%;" class="left-align">
+                        &nbsp;<b>NGN&nbsp;{{vtotal|currency:""}}</b>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td align="center" colspan="4">
+                        <input id="Button1" type="button" class="btn btn-info" ng-click="dashboard()" value="Back to Dashboard" />
+
+
+
+
+                        &nbsp;
+                        <input id="Button1" type="button" class="btn btn-info" ng-click="submitForm()" value="Confirm Details" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="center-align" style="background-color:#1C5E55; color:#ffffff;" colspan="2"></td>
+                </tr>
+
+                <tr>
+                    <td align="center" colspan="4">
+                        POWERED BY<br />
+                        <img src="images/payxlogo.jpg" alt="XPay" width="90px" height="40px" /> <br />
+                        Plot 4. Oluwakayode Jacobs Street Ikate,Lekki Phase 1<br />
+                        <a href="http://www.einaosolutions.com">www.einaosolutions.com</a><br />
+                        Support E-mail(s): <a href="mailto:paymentsupport@einaosolutions.com">paymentsupport@einaosolutions.com</a><br />
+                        Customer Contact Support Line(s): +2349038979681
+                    </td>
+                </tr>
+
+            </table>
+
+            </div>
+        </div>
+    </div>

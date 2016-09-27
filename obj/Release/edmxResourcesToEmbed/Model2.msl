@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ba2xai_xhome_backupModelStoreContainer" CdmEntityContainer="ba2xai_xhome_backupEntities">
+    <EntitySetMapping Name="addresses">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.address">
+        <MappingFragment StoreEntitySet="address">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="lgaID" ColumnName="lgaID" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="telephone1" ColumnName="telephone1" />
+          <ScalarProperty Name="telephone2" ColumnName="telephone2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_lg">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.admin_lg">
+        <MappingFragment StoreEntitySet="admin_lg">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="ip_addy" ColumnName="ip_addy" />
+          <ScalarProperty Name="remote_host" ColumnName="remote_host" />
+          <ScalarProperty Name="remote_user" ColumnName="remote_user" />
+          <ScalarProperty Name="server_name" ColumnName="server_name" />
+          <ScalarProperty Name="server_url" ColumnName="server_url" />
+          <ScalarProperty Name="log_date" ColumnName="log_date" />
+          <ScalarProperty Name="log_time" ColumnName="log_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agent_Mail">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.Agent_Mail">
+        <MappingFragment StoreEntitySet="Agent_Mail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Date_Sent" ColumnName="Date_Sent" />
+          <ScalarProperty Name="Agent_Code" ColumnName="Agent_Code" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.country">
+        <MappingFragment StoreEntitySet="country">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fee_list">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.fee_list">
+        <MappingFragment StoreEntitySet="fee_list">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="item_code" ColumnName="item_code" />
+          <ScalarProperty Name="qt_code" ColumnName="qt_code" />
+          <ScalarProperty Name="xdesc" ColumnName="xdesc" />
+          <ScalarProperty Name="init_amt" ColumnName="init_amt" />
+          <ScalarProperty Name="tech_amt" ColumnName="tech_amt" />
+          <ScalarProperty Name="xcategory" ColumnName="xcategory" />
+          <ScalarProperty Name="xlogstaff" ColumnName="xlogstaff" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lgas">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.lga">
+        <MappingFragment StoreEntitySet="lga">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pwallets">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.pwallet">
+        <MappingFragment StoreEntitySet="pwallet">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="xmembertype" ColumnName="xmembertype" />
+          <ScalarProperty Name="xmemberID" ColumnName="xmemberID" />
+          <ScalarProperty Name="xemail" ColumnName="xemail" />
+          <ScalarProperty Name="xmobile" ColumnName="xmobile" />
+          <ScalarProperty Name="xpass" ColumnName="xpass" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registrations">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.registration">
+        <MappingFragment StoreEntitySet="registrations">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="AccrediationType" ColumnName="AccrediationType" />
+          <ScalarProperty Name="Sys_ID" ColumnName="Sys_ID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="DateOfBrith" ColumnName="DateOfBrith" />
+          <ScalarProperty Name="IncorporatedDate" ColumnName="IncorporatedDate" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactPersonPhone" ColumnName="ContactPersonPhone" />
+          <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+          <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Principal" ColumnName="Principal" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xstatus" ColumnName="xstatus" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="priv" ColumnName="priv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.state">
+        <MappingFragment StoreEntitySet="state">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subagents">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.subagent">
+        <MappingFragment StoreEntitySet="subagents">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="AssignID" ColumnName="AssignID" />
+          <ScalarProperty Name="Sys_ID" ColumnName="Sys_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AgentPassport" ColumnName="AgentPassport" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xstatus" ColumnName="xstatus" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xagents">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.xagent">
+        <MappingFragment StoreEntitySet="xagent">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xmembers">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.xmember">
+        <MappingFragment StoreEntitySet="xmember">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Xrole_Granted">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.Xrole_Granted">
+        <MappingFragment StoreEntitySet="Xrole_Granted">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Agent_Code" ColumnName="Agent_Code" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registration2">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.registration2">
+        <MappingFragment StoreEntitySet="registration2">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="AccrediationType" ColumnName="AccrediationType" />
+          <ScalarProperty Name="Sys_ID" ColumnName="Sys_ID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="DateOfBrith" ColumnName="DateOfBrith" />
+          <ScalarProperty Name="IncorporatedDate" ColumnName="IncorporatedDate" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactPersonPhone" ColumnName="ContactPersonPhone" />
+          <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+          <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Principal" ColumnName="Principal" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xstatus" ColumnName="xstatus" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subagents2">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.subagents2">
+        <MappingFragment StoreEntitySet="subagents2">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="AssignID" ColumnName="AssignID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AgentPassport" ColumnName="AgentPassport" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xstatus" ColumnName="xstatus" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xbankers">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.xbanker">
+        <MappingFragment StoreEntitySet="xbanker">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="bankname" ColumnName="bankname" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="xposition" ColumnName="xposition" />
+          <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xpartners">
+      <EntityTypeMapping TypeName="ba2xai_xhome_backupModel.xpartner">
+        <MappingFragment StoreEntitySet="xpartner">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="sys_ID" ColumnName="sys_ID" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,126 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <style>
+                @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+                body, h1, h2, h3, h4, h5, h6 {
+                    font-family: 'Bree Serif', serif;
+                }
+            </style>
+            <script type="text/javascript">
+    function printAll() {
+
+        window.print();
+    }
+
+            </script>
+
+
+            <div id="1">
+                <div style="width:98%; margin:auto; overflow-y: scroll;   border: 6px solid #1861a4;">
+
+                    <div class="row">
+                        <div class="col-xs-6">
+
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <h1>INVOICE</h1>
+                            <h1><small>Invoice #001</small></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h4>Transaction  Details</h4>
+                                </div>
+                                <div class="panel-body">
+
+                                    <p>Transaction Date</p><span ng-bind="TranDateTime2"> </span>
+
+                                    <p>Transaction Status :</p> <span ng-bind="ResponseDescription2"> </span>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h4>Subscription Type</h4>
+                                </th>
+
+                                <th>
+                                    <h4>User Id</h4>
+                                </th>
+                                <th>
+                                    <h4>Transaction Id</h4>
+                                </th>
+
+
+                                <th>
+                                    <h4>Rate/Price</h4>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td ng-bind="vdata.Subscription_Name"></td>
+
+                                <td ng-bind="vdata.User_Name"></td>
+                                <td ng-bind="vdata.Transaction_Code"></td>
+
+                                <td class="text-right" ng-bind="vdata.amount"></td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="row text-right">
+                        <div class="col-xs-2 col-xs-offset-8">
+                            <p>
+                                <strong>
+                                    Sub Total :  <br>
+                                    TAX : <br>
+                                    Total : <br>
+                                </strong>
+                            </p>
+                        </div>
+                        <div class="col-xs-2">
+                            <strong>
+                                <span ng-bind="vdata.amount"> </span> <br>
+                                N/A <br>
+                                <span ng-bind="vdata.amount"> </span> <br>
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <input id="Button1" type="button" ng-click="Result()"  class="no-print" value="View Result" />
+                        <input id="Button1" type="button" onclick="printAll();" class=" col-lg-offset-7 col-md-offset-7 col-sm-offset-7 no-print" value="Print" />
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+  

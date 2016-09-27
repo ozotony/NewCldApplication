@@ -1,0 +1,384 @@
+﻿<!DOCTYPE>
+<html ng-app="app">
+<head>
+    <title>UVP | Home </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--<link href="css/style.css" rel="stylesheet" type="text/css" />-->
+    <link href="style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <script type="text/javascript" src="js/arial.js"></script>
+    <script type="text/javascript" src="js/cuf_run.js"></script>
+    <link rel="shortcut icon" type="../Image/x-icon" href="images/favicon.png">
+
+
+    <base href="/ups/" />
+
+
+
+  
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+
+
+    <script src="~/Scripts/jquery-ui-1.8.16.custom.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    @*
+    <link href="~/Content/style.css" rel="stylesheet" />*@
+
+
+
+    <script src="~/Scripts/bs_leftnavi.js"></script>
+
+    <!--<script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>-->
+    <!--<script src="Scripts/urlRouter.js"></script>-->
+    <script src="~/Scripts/angular.js"></script>
+
+
+
+
+    <script src="~/Scripts/angular-animate.js"></script>
+
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+
+    <script src="~/Scripts/app.js"></script>
+
+    <link href="~/Content/bs_leftnavi.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-local-storage.js"></script>
+    <script src="~/Scripts/LoginInterceptor.js"></script>
+    <script src="~/Scripts/GetData.js"></script>
+    <script src="~/Scripts/angular-messages.min.js"></script>
+    <script src="~/Scripts/sweet-alert.min.js"></script>
+    <link href="~/Content/sweet-alert.css" rel="stylesheet" />
+    <script src="~/Scripts/loading-bar.js"></script>
+    <link href="~/Content/loading-bar.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-facebook.min.js"></script>
+    <link href="~/Content/Tiles.css" rel="stylesheet" />
+    <script src="~/Scripts/smart-table.min.js"></script>
+    <link href="~/Content/ng-modal.css" rel="stylesheet" />
+    <script src="~/Scripts/ng-modal.min.js"></script>
+
+    <script src="~/Scripts/angular-datepicker.min.js"></script>
+    <link href="~/Content/angular-datepicker.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/metro-bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/alasql.min.js"></script>
+    <script src="~/Scripts/ng-csv.min.js"></script>
+    <script src="~/Scripts/xlsx.core.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/tableExport.js"></script>
+    <script src="~/Scripts/jquery.base64.js"></script>
+    <script src="~/Scripts/sprintf.js"></script>
+    <script src="~/Scripts/jspdf.js"></script>
+    <script src="~/Scripts/base64.js"></script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            //var docHeight = $(window).height();
+            //var footerHeight = $('#footer').height();
+            //var footerTop = $('#footer').position().top + footerHeight;
+
+            //if (footerTop < docHeight) {
+            //    $('#footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+            //}
+
+            //$(window).on('resize load', function () {
+            //    $('body').css({ "padding-top": $(".navbar").height() + "px" });
+            //});
+
+        });
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel({
+                interval: 2000
+            });
+        });
+
+
+        $(document).ready(function () {
+            var mCarouselTO = setTimeout(function () {
+                $('.carousel').carousel({
+                    interval: 2000,
+                    cycle: true,
+                }).trigger('slide');
+            }, 2000);
+            var q = mCarouselTO;
+        });
+
+    </script>
+
+    <style type="text/css">
+        .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline {
+            color: #a94442;
+        }
+
+        .help-block {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: red;
+        }
+
+        span.ng-scope {
+            color: red;
+        }
+        /*input.ng-invalid {
+          border: 1px solid red;
+
+        }
+        input.ng-valid {
+          border: 1px solid green;
+
+        }
+
+
+        :focus ~ .error {
+            display:none;
+        }*/
+        form.ng-submitted .ng-invalid {
+            border-color: red;
+            border-width: 2px;
+        }
+    </style>
+
+    <style>
+        .btn-warning2 {
+            color: white;
+            background-color: #520B00;
+            border-color: #eea236;
+        }
+
+
+        @@media print {
+
+            .no-print, .no-print * {
+                display: none !important;
+            }
+        }
+
+        body {
+            padding-top: 70px;
+        }
+    </style>
+
+    <style>
+        @@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bree Serif', serif;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header_resize">
+                <div class="logo">
+                    <h1 class="uvp" style=" text-decoration:none ">
+                        <a href="#">
+                            <span>U</span>nified Verification Portal
+                        </a>
+                        <br>
+                        <small>Result printout, Transcript, Certificate...</small>
+                    </h1>
+                </div>
+                <div class="clr"></div>
+                <div class="menu_nav">
+                    <div class="login">
+                        <ul>
+                            <li>
+                                <a href="register.html">Login/Signup</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li class="active">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="clr"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content_resize">
+
+                <img src="../Images/hbg_img.jpg" width="948" height="295" alt="" class="hbg_img" />
+                <div class="clr"></div>
+                <div class="mainbar">
+
+                    <div id="form-views" ui-view></div>
+
+                </div>
+                <div class="sidebar">
+                    <div class="gadget">
+                        <div></div>
+                        
+                    
+                    </div>
+                    <div class="gadget">
+                        <div class="gw-sidebar no-print" style="font-weight:bold">
+                            <div id="gw-sidebar" class="gw-sidebar">
+                                <div class="nano-content">
+                                    <ul class="gw-nav gw-nav-list" style="background-color:black">
+                                        <li class="init-un-active"> <a ui-sref="home"> <span class="gw-menu-text">HOME</span> </a> </li>
+                                        <li class="init-arrow-down">
+                                            <a href="javascript:void(0)"> <span class="gw-menu-text">APPLICATION REQUEST</span> <b class="gw-arrow"></b> </a>
+                                            <ul class="gw-submenu">
+                                                <li> <a href="#">START APPLICATION</a> </li>
+
+                                                <li ng-show="islogin"> <a ui-sref="ChangePassword">Change Password</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li ng-show="isInstitution" class="init-arrow-down">
+                                            <a href="javascript:void(0)"> <span class="gw-menu-text">PARTNERS ORGANIZATION</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+                                            <ul class="gw-submenu">
+                                                @*
+                                                <li> <a href="#/Register2">REGISTER</a> </li>*@
+                                                <li> <a href="#/transaction3">VIEW PAID PAYMENT</a> </li>
+
+
+
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li ng-show="isAdmin" class="init-arrow-down">
+                                            <a href="javascript:void(0)"> <span class="gw-menu-text">Administration</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+                                            <ul class="gw-submenu">
+                                                <li class="init-arrow-down">
+                                                    <a href="javascript:void(0)"> <span class="gw-menu-text">PARTNERING ORGANIZATION</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+                                                    <ul class="init-arrow-down">
+                                                        @*added by tony*@
+                                                        <li ng-show="isAdmin" class="init-arrow-down">
+
+                                                            <ul class="gw-submenu"> <li> <a href="#/Agreement">INSTITUTIONAL ORGANIZATION AGREEMENT</a> </li> <li> <a href="#/Client">SET UP INSTUTION </a> </li></ul>
+                                                        </li>
+
+
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                            <ul class="gw-submenu">
+                                                @*added by tony*@
+
+                                                <li> <a href="#/Register2">REGISTER CORPORATE CLIENT</a> </li>
+
+
+
+                                                <li> <a href="#/User">VIEW USERS</a> </li>
+
+
+                                                @*
+                                                <li> <a href="#/Roles">CREATE ROLE</a> </li>*@
+
+                                                <li> <a href="#/AssignRole">ASSIGN ROLE</a> </li>
+                                                <li> <a href="#/transaction2">VIEW TRANSACTIONS</a> </li>
+
+                                                <li> <a href="#/transaction12">USER WITH ACTIVE SUBSCRIPTION</a> </li>
+
+
+
+                                                <li> <a href="#/Bank">SET UP BANK</a> </li>
+                                                <li> <a href="#/Subscription">SET UP SUBSCRIPTION</a> </li>
+                                                <li> <a href="#/Client">SET UP INSTITUTION</a> </li>
+
+
+                                            </ul>
+                                        </li>
+
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div></div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        <div class="fbg">
+            <div class="fbg_resize">
+                <div class="col c1">
+                    <h2>
+                        <span>Image Gallery</span>
+                    </h2>
+                    <a href="#">
+                        <img src="images/img1.png" width="58" height="58" alt="" />
+                    </a>
+                    <a href="#">
+                        <img src="images/img1.png" width="58" height="58" alt="" />
+                    </a>
+                    <a href="#">
+                        <img src="images/img1.png" width="58" height="58" alt="" />
+                    </a>
+                    <a href="#">
+                        <img src="images/img1.png" width="58" height="58" alt="" />
+                    </a>
+                    <a href="#">
+                        <img src="images/img1.png" width="58" height="58" alt="" />
+                    </a>
+                    <a href="#">
+                        <img src="images/img1.png" width="58" height="58" alt="" />
+                    </a>
+                </div>
+                <div class="col c2">
+                    <h2>
+                        <span>Just add some dummy text here</span>
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna.
+                        <a href="#">Morbi tincidunt, orci ac convallis aliquam</a>, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.
+                    </p>
+                </div>
+                <div class="col c3">
+                    <h2>
+                        <span>Contact</span>
+                    </h2>
+                    <p>
+                        <a href="#">support@veriportal.com</a>
+                    </p>
+                    <p>
+                        +1 (123) 444-5677
+                        <br />
+                        +1 (123) 444-5678
+                    </p>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_resize">
+                <p class="lf">
+                    &copy; Copyright
+                    <a href="#">Unified Verification Portal</a>.
+                </p>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div class="table-responsive col-sm-12 col-md-12 col-lg-12">
+                <modal-dialog show='dialogShown' dialog-title='RAW XML'>
+
+                    <span>{{vrawxml}} </span>
+
+
+                </modal-dialog>
+                <!--<div class="panel panel-info ">
+                <div class="panel-heading">-->
+
+                <table class="table   table-bordered">
+                    <tr>
+                        <td>
+                            Start Date
+                        </td>
+
+                        <td>
+                            <datepicker button-next="&lt;i class='fa fa-arrow-right'&gt;&lt;/i&gt;" button-prev="&lt;i class='fa fa-arrow-left'&gt;&lt;/i&gt;" date-format="yyyy-M-d">
+                                <input name="application_date" id="txt_application_date" class="form-control" required ng-model="application_date" type="text" />
+                            </datepicker>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            End  Date
+                        </td>
+
+                        <td style="text-align:center">
+                            <datepicker button-next="&lt;i class='fa fa-arrow-right'&gt;&lt;/i&gt;" button-prev="&lt;i class='fa fa-arrow-left'&gt;&lt;/i&gt;" date-format="yyyy-M-d">
+                                <input name="application_date2" id="txt_application_date2" class="form-control" required ng-model="application_date2" type="text" />
+                            </datepicker>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Student Number
+                        </td>
+
+                        <td style="text-align:center">
+                            <input class="form-control " type="text" ng-model="student_no" name="student_no" required placeholder="STUDENT NO">
+                        </td>
+
+                    </tr>
+
+
+                  
+
+
+                    <tr>
+                        <td>
+                            Subscription
+                        </td>
+
+                        <td style="text-align:center">
+                            <select class="form-control " data-ng-options="c.Subscription_Code as c.Subscription_Name for c in varray3" name="subscription" ng-model="subscription">
+                                <option value="">-- Select   --</option>
+                            </select>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Payment Status
+                        </td>
+
+                        <td style="text-align:center">
+                            <select class="form-control " data-ng-options="c.Transaction_Status as c.Transaction_Status for c in varray44" name="paymentstatus" ng-model="paymentstatus">
+                                <option value="">-- Select   --</option>
+                            </select>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" ng-click="search()" class="btn   btn-info "><i class="fa fa-search"></i>Search</button>
+
+                            <button type="button" ng-click="Export()" class="btn   btn-info "><i class="fa fa-file"></i>Export To Excel</button>
+
+                            <button type="button" ng-click="Export2()" class="btn   btn-info "><i class="fa fa-file"></i>Export To Pdf</button>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+                <table st-table="displayedCollection3" st-safe-src="ListAgent3" class="table   table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="9"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th>USER ID</th>
+                            <th class="tbbg2">ORDER ID</th>
+                            <th class="tbbg2">PAYMENT STATUS</th>
+                            <th class="tbbg2">TRANSACTION STATUS DESCRIPTION</th>
+                            <th class="tbbg2">SUBSCRIPTION TYPE</th>
+                            <th class="tbbg2">INSTITUTION NAME</th>
+                            <th class="tbbg2">TRANSACTION DATE</th>
+                            <th class="tbbg2">AMOUNT</th>
+
+                            <th> </th>
+
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection3">
+
+                            <td>{{row.User_Name}}</td>
+
+                            <td>{{row.Order_Id}}</td>
+                            <td>{{row.Payment_Status}}</td>
+                            <td>{{row.Transaction_Status}}</td>
+                            <td>{{row.Subscription_Name}}</td>
+                            <td>{{row.Institution_Name}}</td>
+                            <td>{{row.Transaction_Date}}</td>
+                            <td>{{row.amount|currency:""}}</td>
+                            <td>
+                                <button type="button" ng-click="EditRow(row)"><span class="glyphicon glyphicon-edit"></span> View Payment xml</button>
+
+                            </td>
+
+
+
+
+
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="9" class="text-center">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--</div>
+</div>-->

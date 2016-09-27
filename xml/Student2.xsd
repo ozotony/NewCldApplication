@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Partner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Student">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PartnerID" type="xs:string" />
+              <xs:element name="StudentID" type="xs:string" />
+              <xs:element name="StudentName" type="xs:string" />
+              <xs:element name="Year" type="xs:string" />
+                <xs:element name="Term" type="xs:string" />
+              <xs:element maxOccurs="unbounded" name="Result">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Course" type="xs:string" />
+                    <xs:element name="Grade" type="xs:string" />
+                    <xs:element name="Score" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

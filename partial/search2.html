@@ -1,0 +1,188 @@
+﻿
+<div class="main-block">
+
+    <div class="container" ng-show="SearchAll">
+        <div>
+
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3  col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <div style="font-size: 36px">
+                                <!-- pretend an enclosing class has big font size -->
+                                <span class="label label-success label-as-badge">STEP 1</span>
+                            </div>
+                        </div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                        <form id="signupform" name="userForm" novalidate class="form-horizontal" role="form">
+                            <div class="table-responsive">
+                                <table class="table ">
+                                    <tr>
+                                        <td style="text-align:right">
+
+
+                                            <b> STUDENT NUMBER <span style="color:red">*</span></b>
+                                            <p></p>
+                                            <p ng-show="userForm.student_no.$invalid && !userForm.student_no.$pristine" class="help-block input-group-addon">Required</p>
+
+
+                                        </td>
+
+                                        <td style="text-align:left">
+                                            <div>
+                                                <input class="form-control " type="text" ng-model="formData.student_no" name="student_no" required placeholder="STUDENT NO">
+
+                                            </div>
+
+
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td style="text-align:right">
+                                            <b>  TYPE <span style="color:red">*</span></b>
+
+                                            <p></p>
+                                            <p ng-show="userForm.Institution_Type.$invalid && !userForm.Institution_Type.$pristine" class="help-block input-group-addon"> Required</p>
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <select class="form-control " data-ng-options="c.InstitutionType_Code as c.InstitutionType_Name for c in varray4" name="Institution_Type" data-ng-change="GetIns(formData.Institution_Type)" ng-model="formData.Institution_Type" required>
+                                                <option value="">-- Select --</option>
+                                            </select>
+
+
+
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td style="text-align:right">
+                                            <b>INSTITUTION <span style="color:red">*</span></b>
+
+                                            <p></p>
+                                            <p ng-show="userForm.Institution.$invalid && !userForm.Institution.$pristine" class="help-block input-group-addon"> Required</p>
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <select class="form-control " data-ng-options="c.Institution_Code as c.Institution_Name for c in varray2" name="Institution" ng-model="formData.Institution" required>
+                                                <option value="">-- Select   --</option>
+                                            </select>
+
+
+
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr ng-show="vshow2">
+                                        <td style="text-align:right">
+                                            <b>YEAR <span style="color:red"></span></b>
+
+                                            <p></p>
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <select class="form-control" data-ng-options="c.Year as c.Year for c in varray44" name="Year" ng-model="formData.Year">
+                                                <option value="">-- Select Year   --</option>
+                                            </select>
+
+
+
+
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td style="text-align:right">
+                                            <b>SEARCH RESULT <span style="color:red">*</span></b>
+
+                                            <p></p>
+                                            <p ng-show="userForm.Institution.$invalid && !userForm.Institution.$pristine" class="help-block input-group-addon"> Required</p>
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <select class="form-control " data-ng-options="c.Fee_Code as c.Fee_Name for c in varray6" name="AdditionalFee" ng-model="formData.AdditionalFee" required>
+                                                <option value="">-- Select   --</option>
+                                            </select>
+
+
+
+
+                                        </td>
+
+                                    </tr>
+
+
+
+
+                                </table>
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-5 col-md-7 col-lg-offset-5 col-lg-7">
+                                    <button id="btn-signup" type="button" ng-click="add()" class="btn btn-info"><i class="glyphicon glyphicon-search"></i> &nbsp Search Certificate</button>
+
+                                </div>
+                            </div>
+
+                            <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                </div>
+
+                            </div>-->
+
+
+
+
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+</html>

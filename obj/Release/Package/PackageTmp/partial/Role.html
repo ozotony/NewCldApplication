@@ -1,0 +1,132 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+         
+            <div id="signupbox" class="mainbox col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">CREATE ROLE</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                 
+                        <form id="signupform" name="userForm" ng-submit="submitForm(vform,userForm.$valid)" novalidate class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="Role_Name" class="col-md-3 control-label">Role Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" ng-model="vform.role_name" name="vrole" required placeholder="ROLE NAME">
+
+                                    <div class="errors" ng-messages="userForm.vrole.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="submit" ng-show="CreateRoleCreate" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Create Role</button>
+
+                                </div>
+                            </div>
+
+                            <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                        <div class="col-md-offset-3 col-md-9">
+                            <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                        </div>
+
+                    </div>-->
+                            <table st-table="displayedCollection2" st-safe-src="ListAgent2" class="table table-responsive table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="tbbg2">MENU NAME</th>
+                                        <th class="tbbg2">SELECT</th>
+                                        <th class="tbbg2">CREATE</th>
+                                        <th class="tbbg2">UPDATE</th>
+                                        <th class="tbbg2">DELETE</th>
+
+                                      
+
+
+                                    </tr>
+                                  
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="row in displayedCollection2">
+
+                                        <td>{{row.Menu_Name}}</td>
+                                        <td><label>
+    SELECT:
+    <input type="checkbox" ng-model="row.SelectMenu"
+           ng-true-value="true" ng-false-value="false">
+</label></td>
+                                        <td><label>
+    CREATE:
+    <input type="checkbox" ng-model="row.CreateMenu"
+           ng-true-value="true" ng-false-value="false">
+</label></td>
+                                        <td><label>
+    UPDATE:
+    <input type="checkbox" ng-model="row.UpdateMenu"
+           ng-true-value="true" ng-false-value="false">
+</label></td>
+
+                                        <td><label>
+    DELETE:
+    <input type="checkbox" ng-model="row.DeleteMenu"
+           ng-true-value="true" ng-false-value="false">
+</label></td>
+
+
+                                      
+
+
+
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2" class="text-center">
+                                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+
+                        </form>
+
+                        <div id="form-views" ui-view></div>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+       
+   

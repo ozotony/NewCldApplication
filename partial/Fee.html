@@ -1,0 +1,99 @@
+﻿<div id="signupbox" class="mainbox col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1  col-sm-9 col-sm-offset-1">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title"><span class="text-center">( TOTAL ITEM IN CART <span class="label label-danger">{{vcount}}</span>  ) </span></div>
+            <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+        </div>
+        <div class="panel-body">
+
+            <div class="table-responsive col-sm-12 col-md-12 col-lg-12">
+                <div class="table-responsive">
+                    <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive">
+                        <thead>
+                            <tr bgcolor="#E3EAEB">
+                                <th class="tbbg2">S/N</th>
+                                <th st-sort="oai_no" class="tbbg2">ITEM CODE</th>
+                                <th st-sort="reg_dt" class="tbbg2">ITEM DESCRIPTION</th>
+                                <th st-sort="reg_no" class="tbbg2"> APPLICATION FEE(NGN)</th>
+                                <th st-sort="applicant_name" class="tbbg2">TECH FEE(NGN)</th>
+                                <th st-sort="product_title" class="tbbg2">AMOUNT(NGN)</th>
+                                <th st-sort="product_title" class="tbbg2">QUANTITY</th>
+
+
+                                <th class="tbbg2"></th>
+
+                            <tr>
+                                <th colspan="8"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                            </tr>
+
+                            </tr>
+
+                        <tbody>
+                            <tr ng-repeat="row in displayedCollection">
+
+
+
+                                <td align="center">{{row.sn}}</td>
+                                <td align="center">{{row.item_code}}</td>
+                                <td>{{row.xdesc}}</td>
+                                <td align="center">{{row.init_amt|currency:""}}</td>
+                                <td align="center">{{row.tech_amt|currency:""}}</td>
+                                <td align="center">{{row.amt|currency:""}}</td>
+                                <td align="center"><input type="text" ng-model="row.qt_code"></td>
+
+
+
+
+
+
+                                <td> <input id="Button1" type="button" class="btn btn-success" ng-show="showbtn2(row)" ng-click="EditRow(row)" value="Add" />   <input id="Button2" type="button" class="btn btn-danger" ng-show="showbtn3(row)" ng-click="EditRow2(row)" value="Remove" />  </td>
+
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7" class="text-center">
+                                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+
+
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+                    <table class="table table-responsive">
+
+
+                        <tr>
+                            <td align="center">
+
+                                <input id="Button1" type="button" class="btn btn-info" ng-click="dashboard()" value="Back to Dashboard" />
+
+                                <input id="Button1" type="button" class="btn btn-info" ng-click="submitForm()" value="Confirm Selected Items" />
+
+
+
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+
+
+            </div>
+
+            </div>
+
+        </div>
+
+   
+
+
+
+
+    </div>
+

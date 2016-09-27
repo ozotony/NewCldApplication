@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ba2xai_xpay_backupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="10" />
+    <Property Name="stateID" Type="nvarchar" MaxLength="10" />
+    <Property Name="lgaID" Type="nvarchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="40" />
+    <Property Name="street" Type="text" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="telephone1" Type="nvarchar" MaxLength="40" />
+    <Property Name="telephone2" Type="nvarchar" MaxLength="40" />
+    <Property Name="email1" Type="nvarchar" MaxLength="40" />
+    <Property Name="email2" Type="nvarchar" MaxLength="40" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="40" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="40" />
+    <Property Name="visible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="admin_lg">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminID" Type="varchar" MaxLength="200" />
+    <Property Name="ip_addy" Type="text" />
+    <Property Name="remote_host" Type="text" />
+    <Property Name="remote_user" Type="text" />
+    <Property Name="server_name" Type="text" />
+    <Property Name="server_url" Type="text" />
+    <Property Name="log_date" Type="varchar" MaxLength="200" />
+    <Property Name="log_time" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="applicant">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="address" Type="text" />
+    <Property Name="xemail" Type="nvarchar(max)" />
+    <Property Name="xmobile" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nchar" MaxLength="10" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="fee_details">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fee_listID" Type="nvarchar(max)" />
+    <Property Name="twalletID" Type="nvarchar(max)" />
+    <Property Name="xqty" Type="nvarchar" MaxLength="50" />
+    <Property Name="xused" Type="nvarchar" MaxLength="50" />
+    <Property Name="init_amt" Type="nvarchar(max)" />
+    <Property Name="tech_amt" Type="nvarchar(max)" />
+    <Property Name="tot_amt" Type="nvarchar(max)" />
+    <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="fee_list">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item" Type="nvarchar(max)" />
+    <Property Name="item_code" Type="nvarchar(max)" />
+    <Property Name="qt_code" Type="nvarchar(max)" />
+    <Property Name="xdesc" Type="text" />
+    <Property Name="init_amt" Type="int" />
+    <Property Name="tech_amt" Type="int" />
+    <Property Name="xcategory" Type="nvarchar(max)" />
+    <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xpay_backup.dbo.fee_listx' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="fee_listx">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" Nullable="false" />
+    <Property Name="item" Type="nvarchar(max)" />
+    <Property Name="item_code" Type="nvarchar(max)" />
+    <Property Name="qt_code" Type="nvarchar(max)" />
+    <Property Name="xdesc" Type="text" />
+    <Property Name="init_amt" Type="int" />
+    <Property Name="tech_amt" Type="int" />
+    <Property Name="switch_party" Type="int" />
+    <Property Name="t_party" Type="int" />
+    <Property Name="xcategory" Type="nvarchar(max)" />
+    <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="hwallet">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transID" Type="nvarchar(max)" />
+    <Property Name="fee_detailsID" Type="nvarchar(max)" />
+    <Property Name="product_title" Type="nvarchar(max)" />
+    <Property Name="used_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="used_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InterSwitchPostFields">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="nvarchar(max)" />
+    <Property Name="amount" Type="nvarchar(max)" />
+    <Property Name="isw_conv_fee" Type="nvarchar" MaxLength="50" />
+    <Property Name="currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="site_redirect_url" Type="nvarchar(max)" />
+    <Property Name="txn_ref" Type="nvarchar(max)" />
+    <Property Name="hash" Type="text" />
+    <Property Name="mackey" Type="text" />
+    <Property Name="pay_item_id" Type="nvarchar(max)" />
+    <Property Name="site_name" Type="nvarchar(max)" />
+    <Property Name="cust_id" Type="nvarchar(max)" />
+    <Property Name="cust_id_desc" Type="text" />
+    <Property Name="cust_name" Type="nvarchar(max)" />
+    <Property Name="resp_desc" Type="text" />
+    <Property Name="pay_item_name" Type="nvarchar(max)" />
+    <Property Name="local_date_time" Type="datetime" />
+    <Property Name="TransactionDate" Type="nvarchar(max)" />
+    <Property Name="MerchantReference" Type="nvarchar(max)" />
+    <Property Name="trans_status" Type="nvarchar(max)" />
+    <Property Name="pay_ref" Type="nvarchar(max)" />
+    <Property Name="ret_ref" Type="nvarchar(max)" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xpay_backup.dbo.InterSwitchPostFields2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="InterSwitchPostFields2">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="nvarchar(max)" />
+    <Property Name="amount" Type="nvarchar(max)" />
+    <Property Name="isw_conv_fee" Type="nvarchar" MaxLength="50" />
+    <Property Name="currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="site_redirect_url" Type="nvarchar(max)" />
+    <Property Name="txn_ref" Type="nvarchar(max)" />
+    <Property Name="hash" Type="text" />
+    <Property Name="mackey" Type="text" />
+    <Property Name="pay_item_id" Type="nvarchar(max)" />
+    <Property Name="site_name" Type="nvarchar(max)" />
+    <Property Name="cust_id" Type="nvarchar(max)" />
+    <Property Name="cust_id_desc" Type="text" />
+    <Property Name="cust_name" Type="nvarchar(max)" />
+    <Property Name="resp_desc" Type="text" />
+    <Property Name="pay_item_name" Type="nvarchar(max)" />
+    <Property Name="local_date_time" Type="datetime" />
+    <Property Name="TransactionDate" Type="nvarchar(max)" />
+    <Property Name="MerchantReference" Type="nvarchar(max)" />
+    <Property Name="trans_status" Type="nvarchar(max)" />
+    <Property Name="pay_ref" Type="nvarchar(max)" />
+    <Property Name="ret_ref" Type="nvarchar(max)" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="lga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateID" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ba2xai_xpay_backup.dbo.Load_Data' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Load_Data">
+          <Property Name="ValidationId" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="p_ratio">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xpartnerID" Type="nvarchar(max)" />
+    <Property Name="p_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="xratio" Type="nvarchar" MaxLength="50" />
+    <Property Name="r_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="pwallet">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xmembertype" Type="nvarchar" MaxLength="50" />
+    <Property Name="xmemberID" Type="nvarchar(max)" />
+    <Property Name="xemail" Type="nvarchar(max)" />
+    <Property Name="xmobile" Type="nvarchar(max)" />
+    <Property Name="xpass" Type="nvarchar(max)" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="priv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="scard">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xnum" Type="nvarchar(max)" />
+    <Property Name="xvalid" Type="nvarchar" MaxLength="50" />
+    <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="twallet">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transID" Type="nvarchar(max)" />
+    <Property Name="xmemberID" Type="nvarchar(max)" />
+    <Property Name="xmembertype" Type="nvarchar(max)" />
+    <Property Name="xpay_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xgt" Type="nvarchar" MaxLength="50" />
+    <Property Name="ref_no" Type="nvarchar(max)" />
+    <Property Name="xbankerID" Type="nvarchar(max)" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+    <Property Name="applicantID" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="xadmin">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="cname" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="xagent">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="cname" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="xbanker">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="bankname" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="xposition" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="xmember">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="cname" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="xpartner">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="cname" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="ba2xai_xpay_backupModelStoreContainer">
+    <EntitySet Name="address" EntityType="Self.address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_lg" EntityType="Self.admin_lg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="applicant" EntityType="Self.applicant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="country" EntityType="Self.country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fee_details" EntityType="Self.fee_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fee_list" EntityType="Self.fee_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hwallet" EntityType="Self.hwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterSwitchPostFields" EntityType="Self.InterSwitchPostFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lga" EntityType="Self.lga" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="p_ratio" EntityType="Self.p_ratio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pwallet" EntityType="Self.pwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="scard" EntityType="Self.scard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="state" EntityType="Self.state" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="twallet" EntityType="Self.twallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xadmin" EntityType="Self.xadmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xagent" EntityType="Self.xagent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xbanker" EntityType="Self.xbanker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xmember" EntityType="Self.xmember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xpartner" EntityType="Self.xpartner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fee_listx" EntityType="Self.fee_listx" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [fee_listx].[xid] AS [xid], 
+    [fee_listx].[item] AS [item], 
+    [fee_listx].[item_code] AS [item_code], 
+    [fee_listx].[qt_code] AS [qt_code], 
+    [fee_listx].[xdesc] AS [xdesc], 
+    [fee_listx].[init_amt] AS [init_amt], 
+    [fee_listx].[tech_amt] AS [tech_amt], 
+    [fee_listx].[switch_party] AS [switch_party], 
+    [fee_listx].[t_party] AS [t_party], 
+    [fee_listx].[xcategory] AS [xcategory], 
+    [fee_listx].[xlogstaff] AS [xlogstaff], 
+    [fee_listx].[xreg_date] AS [xreg_date], 
+    [fee_listx].[xvisible] AS [xvisible], 
+    [fee_listx].[xsync] AS [xsync]
+    FROM [dbo].[fee_listx] AS [fee_listx]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="InterSwitchPostFields2" EntityType="Self.InterSwitchPostFields2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [InterSwitchPostFields2].[xid] AS [xid], 
+    [InterSwitchPostFields2].[product_id] AS [product_id], 
+    [InterSwitchPostFields2].[amount] AS [amount], 
+    [InterSwitchPostFields2].[isw_conv_fee] AS [isw_conv_fee], 
+    [InterSwitchPostFields2].[currency] AS [currency], 
+    [InterSwitchPostFields2].[site_redirect_url] AS [site_redirect_url], 
+    [InterSwitchPostFields2].[txn_ref] AS [txn_ref], 
+    [InterSwitchPostFields2].[hash] AS [hash], 
+    [InterSwitchPostFields2].[mackey] AS [mackey], 
+    [InterSwitchPostFields2].[pay_item_id] AS [pay_item_id], 
+    [InterSwitchPostFields2].[site_name] AS [site_name], 
+    [InterSwitchPostFields2].[cust_id] AS [cust_id], 
+    [InterSwitchPostFields2].[cust_id_desc] AS [cust_id_desc], 
+    [InterSwitchPostFields2].[cust_name] AS [cust_name], 
+    [InterSwitchPostFields2].[resp_desc] AS [resp_desc], 
+    [InterSwitchPostFields2].[pay_item_name] AS [pay_item_name], 
+    [InterSwitchPostFields2].[local_date_time] AS [local_date_time], 
+    [InterSwitchPostFields2].[TransactionDate] AS [TransactionDate], 
+    [InterSwitchPostFields2].[MerchantReference] AS [MerchantReference], 
+    [InterSwitchPostFields2].[trans_status] AS [trans_status], 
+    [InterSwitchPostFields2].[pay_ref] AS [pay_ref], 
+    [InterSwitchPostFields2].[ret_ref] AS [ret_ref], 
+    [InterSwitchPostFields2].[xreg_date] AS [xreg_date], 
+    [InterSwitchPostFields2].[xvisible] AS [xvisible], 
+    [InterSwitchPostFields2].[xsync] AS [xsync]
+    FROM [dbo].[InterSwitchPostFields2] AS [InterSwitchPostFields2]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

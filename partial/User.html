@@ -1,0 +1,114 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div class="table-responsive col-sm-12 col-md-12 col-lg-12">
+                <modal-dialog show='dialogShown' dialog-title='PARTNER DETAIL'>
+
+                    <table st-table="displayedCollection2" st-safe-src="ListAgent2" class="table table-responsive table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="tbbg2">INSTITUTION CODE</th>
+                                <th class="tbbg2">INSTITUTION NAME</th>
+                                <th class="tbbg2">INSTITUTION TYPE NAME</th>
+                                <th class="tbbg2">DATA MODEL</th>
+                                <th class="tbbg2">ACCOUNT STATUS</th>
+
+                               
+
+
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in displayedCollection2">
+
+                                <td>{{row.Institution_Code}}</td>
+                                <td>{{row.Institution_Name}}</td>
+                                <td>{{row.InstitutionType_Code}}</td>
+                                <td>{{row.Data_Model}}</td>
+                              
+                                <td>{{row.AccountStatus}}</td>
+
+
+
+
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+                </modal-dialog>
+
+                <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="tbbg2">USER ID</th>
+                            <th class="tbbg2">FIRST NAME</th>
+                            <th class="tbbg2">SURNAME</th>
+                            <th class="tbbg2">USER TYPE</th>
+                            <th class="tbbg2">ROLE</th>
+                           
+                            <th> </th>
+                            <th class="tbbg2"></th>
+
+
+                        </tr>
+                        <tr>
+                            <th colspan="7"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection">
+
+                            <td>{{row.UserName}}</td>
+                            <td>{{row.First_Name}}</td>
+                            <td>{{row.Surname_Name}}</td>
+                            <td>{{row.User_Type}}</td>
+                            <td>{{row.UserRole}}</td>
+
+                            <td>
+                                <button type="button" ng-show="checkSomething(row)" ng-click="EditRow2(row)" class="btn"><span ></span> View Partner Detail </button>
+
+                            </td>
+
+
+                            <td>
+                                <button type="button" ng-show="ViewUsersDel" ng-click="EditRow(row)" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-remove"></span> Delete User </button>
+                                <!--<a href="#"><i class="icon-trash"></i> Delete</a></td>-->
+
+
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7" class="text-center">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+

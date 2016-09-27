@@ -1,0 +1,102 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div class="table-responsive col-sm-12 col-md-12 col-lg-12">
+
+            <div id="signupbox">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">TRANSACTION</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body table-responsive">
+
+                        <!--<modal-dialog show='dialogShown' dialog-title='PAYMENT DETAILS'>
+
+                        <table class="table-bordered" style="height:500px;">
+
+                            <tr>
+                                <td> Select Payment Date </td>
+                                <td align="left">
+                                    <datepicker button-next="&lt;i class='fa fa-arrow-right'&gt;&lt;/i&gt;" button-prev="&lt;i class='fa fa-arrow-left'&gt;&lt;/i&gt;" date-format="yyyy-M-d">
+                                        <input name="application_date" id="txt_application_date" class="form-control" ng-model="application_date" type="text" />
+                                    </datepicker>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding-top:11px;">
+
+
+                                    <input type="button" ng-click="add3(application_date)" class="submit" value="UPDATE" />
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+
+                    </modal-dialog>-->
+                        <div class="table-responsive ">
+                            <table st-table="displayedCollection" st-safe-src="ListAgent" class="table  table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="tbbg2">USER ID</th>
+                                        <th class="tbbg2">TRANSACTION ID</th>
+                                        <th class="tbbg2">SUBSCRIPTION TYPE</th>
+                                        <th class="tbbg2">INSTITUTION NAME</th>
+
+                                        <th class="tbbg2">AMOUNT</th>
+
+
+                                        <!--<th class="tbbg2"></th>-->
+
+
+                                    </tr>
+                                    <tr>
+                                        <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="row in displayedCollection">
+
+                                        <td>{{row.User_Name}}</td>
+                                        <td>{{row.Transaction_Code}}</td>
+                                        <td>{{row.Subscription_Name}}</td>
+                                        <td>{{row.Institution_Name}}</td>
+                                        <td>{{row.amount}}</td>
+
+
+
+                                        <!--<td>
+                                        <button type="button" ng-click="EditRow(row)" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Update Payment</button>
+
+                                    </td>-->
+
+
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="text-center">
+                                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+

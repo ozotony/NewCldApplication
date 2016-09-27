@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ba2xai_xpay_backupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countryID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="stateID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="lgaID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="telephone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="telephone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="admin_lg">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adminID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ip_addy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="remote_host" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="remote_user" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="server_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="server_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="log_time" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="applicant">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xmobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="fee_details">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fee_listID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="twalletID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xqty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xused" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="init_amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tech_amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tot_amt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="fee_list">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="item" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="item_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="qt_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xdesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="init_amt" Type="Int32" />
+    <Property Name="tech_amt" Type="Int32" />
+    <Property Name="xcategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="hwallet">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fee_detailsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="product_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="used_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="used_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InterSwitchPostField">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isw_conv_fee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="site_redirect_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="txn_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hash" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="mackey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pay_item_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="site_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cust_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cust_id_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cust_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resp_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pay_item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="local_date_time" Type="DateTime" Precision="3" />
+    <Property Name="TransactionDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MerchantReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="trans_status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pay_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ret_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="lga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stateID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="p_ratio">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xpartnerID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="p_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xratio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="r_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="pwallet">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xmembertype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xmemberID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xmobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="priv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="scard">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xnum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xvalid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="countryID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="twallet">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xmemberID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xmembertype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpay_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xgt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ref_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xbankerID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="applicantID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="xadmin">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="xagent">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="xbanker">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="bankname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="xmember">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="xpartner">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="addressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sys_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="fee_listx">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" />
+    <Property Name="item" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="item_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="qt_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xdesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="init_amt" Type="Int32" />
+    <Property Name="tech_amt" Type="Int32" />
+    <Property Name="switch_party" Type="Int32" />
+    <Property Name="t_party" Type="Int32" />
+    <Property Name="xcategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xlogstaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InterSwitchPostFields2">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isw_conv_fee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="site_redirect_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="txn_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hash" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="mackey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pay_item_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="site_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cust_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cust_id_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cust_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="resp_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pay_item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="local_date_time" Type="DateTime" Precision="3" />
+    <Property Name="TransactionDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MerchantReference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="trans_status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pay_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ret_ref" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ba2xai_xpay_backupEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="addresses" EntityType="Self.address" />
+    <EntitySet Name="admin_lg" EntityType="Self.admin_lg" />
+    <EntitySet Name="applicants" EntityType="Self.applicant" />
+    <EntitySet Name="countries" EntityType="Self.country" />
+    <EntitySet Name="fee_details" EntityType="Self.fee_details" />
+    <EntitySet Name="fee_list" EntityType="Self.fee_list" />
+    <EntitySet Name="hwallets" EntityType="Self.hwallet" />
+    <EntitySet Name="InterSwitchPostFields" EntityType="Self.InterSwitchPostField" />
+    <EntitySet Name="lgas" EntityType="Self.lga" />
+    <EntitySet Name="p_ratio" EntityType="Self.p_ratio" />
+    <EntitySet Name="pwallets" EntityType="Self.pwallet" />
+    <EntitySet Name="roles" EntityType="Self.role" />
+    <EntitySet Name="scards" EntityType="Self.scard" />
+    <EntitySet Name="states" EntityType="Self.state" />
+    <EntitySet Name="twallets" EntityType="Self.twallet" />
+    <EntitySet Name="xadmins" EntityType="Self.xadmin" />
+    <EntitySet Name="xagents" EntityType="Self.xagent" />
+    <EntitySet Name="xbankers" EntityType="Self.xbanker" />
+    <EntitySet Name="xmembers" EntityType="Self.xmember" />
+    <EntitySet Name="xpartners" EntityType="Self.xpartner" />
+    <EntitySet Name="fee_listx" EntityType="Self.fee_listx" />
+    <EntitySet Name="InterSwitchPostFields2" EntityType="Self.InterSwitchPostFields2" />
+  </EntityContainer>
+</Schema>

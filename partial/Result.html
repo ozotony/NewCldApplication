@@ -1,0 +1,161 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div class="table-responsive col-sm-12 col-md-12 col-lg-12">
+
+            <style>
+                @@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+                body, h1, h2, h3, h4, h5, h6 {
+                    font-family: 'Bree Serif', serif;
+                }
+            </style>
+            <script type="text/javascript">
+                function printAll() {
+
+                    window.print();
+                }
+
+            </script>
+
+
+            <div id="1t">
+                <div style="width:98%;  overflow-y: scroll;    border: 6px solid #1861a4;">
+
+                    <div class="row">
+                        <div class="col-xs-6">
+
+                        </div>
+                        <div class=" text-center" style="text-align:center">
+                            <h1>{{vdescription2}}</h1>
+                            <!--<h1><small>Invoice #001</small></h1>-->
+                        </div>
+                    </div>
+                    <table st-table="displayedCollection" st-safe-src="ListAgent" class="table  table-bordered export-table">
+                        <thead>
+                            <tr>
+                                <th class="tbbg2">STUDENT ID</th>
+                                <th class="tbbg2">STUDENT NAME</th>
+                                <th class="tbbg2">YEAR</th>
+                                <th class="tbbg2">TERM</th>
+
+                                <th class="tbbg2">INSTITUTION  NAME</th>
+
+                                <th class="tbbg2"></th>
+
+
+                                <!--<th class="tbbg2"></th>-->
+
+
+                            </tr>
+                           
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in displayedCollection">
+
+                                <td>{{row.Matric_Number}}</td>
+                                <td>{{row.Student_name}}</td>
+                                <td>{{row.Year}}</td>
+                                <td>{{row.Term}}</td>
+                                <td>{{row.Institution.Institution_Name}}</td>
+                                <td>
+                                    <table>
+                                        <thead>
+                                        <th class="tbbg2">COURSE</th>
+                                        <th class="tbbg2">GRADE</th>
+
+                                        </thead>
+
+                                        <tbody>
+                                            <tr ng-repeat="x in row.Results">
+                                                <td>{{ x.Course_Code }}</td>
+                                                <td>{{ x.Grade }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+
+
+                                <!--<td>
+                    <button type="button" ng-click="EditRow(row)" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Update Payment</button>
+
+                </td>-->
+
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td style="text-align:right">
+                                <b> Email Result <span style="color:red"></span> </b>
+
+                                <p></p>
+
+
+
+                            </td>
+
+                            <td>
+
+                                <input type="checkbox"  ng-model="formData.master">
+
+
+
+
+                            </td>
+
+                        </tr>
+
+                        <tr ng-show="formData.master">
+                            <td style="text-align:right">
+                                <b> Email Address <span style="color:red"></span> </b>
+
+                                <p></p>
+
+
+
+                            </td>
+
+                            <td>
+
+                                <input type="text" class="form-control input-lg" ng-model="formData.vemail" name="vemail" placeholder="">
+
+
+
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    <div class="row">
+
+                        <button type="button" ng-click="Export()" ng-show="viewDownload" class="btn btn-default"><span class=" glyphicon glyphicon-export"></span> Export To PDF</button>
+
+                        <button type="button" ng-show="formData.master" ng-click="Export2()"  class="btn btn-default"><span class=" glyphicon glyphicon-export"></span> Email</button>
+                        <input id="Button1" type="button" ng-show="viewPrint" onclick="printAll();" class=" col-lg-offset-7 col-md-offset-7 col-sm-offset-7" value="Print" />
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+</div>

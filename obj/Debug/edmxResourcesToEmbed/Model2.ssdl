@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ba2xai_xhome_backupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="10" />
+    <Property Name="stateID" Type="nvarchar" MaxLength="10" />
+    <Property Name="lgaID" Type="nvarchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="40" />
+    <Property Name="street" Type="text" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="telephone1" Type="nvarchar" MaxLength="40" />
+    <Property Name="telephone2" Type="nvarchar" MaxLength="40" />
+    <Property Name="email1" Type="nvarchar" MaxLength="40" />
+    <Property Name="email2" Type="nvarchar" MaxLength="40" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="40" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="40" />
+    <Property Name="visible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="admin_lg">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminID" Type="varchar" MaxLength="200" />
+    <Property Name="ip_addy" Type="text" />
+    <Property Name="remote_host" Type="text" />
+    <Property Name="remote_user" Type="text" />
+    <Property Name="server_name" Type="text" />
+    <Property Name="server_url" Type="text" />
+    <Property Name="log_date" Type="varchar" MaxLength="200" />
+    <Property Name="log_time" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Agent_Mail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subject" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="500" />
+    <Property Name="Date_Sent" Type="datetime" />
+    <Property Name="Agent_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ba2xai_xhome_backup.dbo.branchcollecttransactions' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="branchcollecttransactions">
+          <Property Name="id" Type="text" />
+          <Property Name="DevID" Type="varchar" MaxLength="200" />
+          <Property Name="MerchantID" Type="text" />
+          <Property Name="MerchantCode" Type="text" />
+          <Property Name="TransactionID" Type="nvarchar(max)" />
+          <Property Name="MAC" Type="text" />
+          <Property Name="InstallmentID" Type="text" />
+          <Property Name="Split" Type="text" />
+          <Property Name="TotalAmount" Type="nvarchar(max)" />
+          <Property Name="CustomerID" Type="text" />
+          <Property Name="CustomerSurname" Type="text" />
+          <Property Name="CustomerFirstname" Type="nvarchar(max)" />
+          <Property Name="CustomerOthernames" Type="text" />
+          <Property Name="CustomerEmail" Type="varchar" MaxLength="200" />
+          <Property Name="CustomerGSM" Type="varchar" MaxLength="200" />
+          <Property Name="UpdateURL" Type="text" />
+          <Property Name="ItemDescription" Type="nvarchar(max)" />
+          <Property Name="ItemName" Type="text" />
+          <Property Name="ItemAmount" Type="nvarchar(max)" />
+          <Property Name="CustomFieldLabel" Type="text" />
+          <Property Name="CustomFieldValue" Type="text" />
+          <Property Name="CBankID" Type="text" />
+          <Property Name="BankID" Type="text" />
+          <Property Name="AccountName" Type="text" />
+          <Property Name="AccountNo" Type="text" />
+          <Property Name="SplitAmount" Type="text" />
+          <Property Name="UseBranchTransactionID" Type="text" />
+          <Property Name="ipaddress" Type="text" />
+          <Property Name="Approved" Type="text" />
+          <Property Name="TransactionDate" Type="nvarchar(max)" />
+          <Property Name="paymentcode" Type="nvarchar(max)" />
+          <Property Name="SentXmlMessage" Type="text" />
+          <Property Name="ref_token" Type="text" />
+          <Property Name="subAgentID" Type="text" />
+          <Property Name="AgentCode" Type="nvarchar(max)" />
+          <Property Name="ApplicantName" Type="text" />
+          <Property Name="ApplicantEmail" Type="nvarchar(max)" />
+          <Property Name="ApplicantPhone" Type="nvarchar(max)" />
+          <Property Name="Applicantaddress" Type="text" />
+          <Property Name="ReturnedXML" Type="text" />
+          <Property Name="ReferenceID" Type="text" />
+          <Property Name="ReturnedSystemMessage" Type="text" />
+          <Property Name="TransactionApprovedDate" Type="text" />
+          <Property Name="registrationnumber" Type="text" />
+          <Property Name="UpdateURLThirdParty" Type="text" />
+          <Property Name="ItemCode" Type="text" />
+          <Property Name="regularstatus" Type="text" />
+          <Property Name="QuickTeller" Type="text" />
+          <Property Name="AgentName" Type="text" />
+          <Property Name="AgentEmail" Type="nvarchar(max)" />
+          <Property Name="AgentPhone" Type="nvarchar(max)" />
+        </EntityType>-->
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nchar" MaxLength="10" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="fee_list">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item" Type="nvarchar(max)" />
+    <Property Name="item_code" Type="nvarchar(max)" />
+    <Property Name="qt_code" Type="nvarchar(max)" />
+    <Property Name="xdesc" Type="text" />
+    <Property Name="init_amt" Type="int" />
+    <Property Name="tech_amt" Type="int" />
+    <Property Name="xcategory" Type="nvarchar(max)" />
+    <Property Name="xlogstaff" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="lga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateID" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="pwallet">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xmembertype" Type="nvarchar" MaxLength="50" />
+    <Property Name="xmemberID" Type="nvarchar(max)" />
+    <Property Name="xemail" Type="nvarchar(max)" />
+    <Property Name="xmobile" Type="nvarchar(max)" />
+    <Property Name="xpass" Type="nvarchar(max)" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xhome_backup.dbo.registration2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="registration2">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccrediationType" Type="nvarchar(max)" />
+    <Property Name="Sys_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Firstname" Type="nvarchar(max)" />
+    <Property Name="Surname" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="text" />
+    <Property Name="DateOfBrith" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncorporatedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="CompanyAddress" Type="text" />
+    <Property Name="ContactPerson" Type="text" />
+    <Property Name="ContactPersonPhone" Type="nvarchar(max)" />
+    <Property Name="CompanyWebsite" Type="nvarchar(max)" />
+    <Property Name="Certificate" Type="text" />
+    <Property Name="Introduction" Type="text" />
+    <Property Name="Principal" Type="text" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xstatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="registrations">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccrediationType" Type="varchar(max)" />
+    <Property Name="Sys_ID" Type="varchar(max)" />
+    <Property Name="Firstname" Type="varchar(max)" />
+    <Property Name="Surname" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="xpassword" Type="varchar(max)" />
+    <Property Name="DateOfBrith" Type="varchar(max)" />
+    <Property Name="IncorporatedDate" Type="varchar(max)" />
+    <Property Name="Nationality" Type="varchar(max)" />
+    <Property Name="PhoneNumber" Type="varchar(max)" />
+    <Property Name="CompanyName" Type="varchar(max)" />
+    <Property Name="CompanyAddress" Type="text" />
+    <Property Name="ContactPerson" Type="varchar(max)" />
+    <Property Name="ContactPersonPhone" Type="varchar(max)" />
+    <Property Name="CompanyWebsite" Type="varchar(max)" />
+    <Property Name="Certificate" Type="text" />
+    <Property Name="Introduction" Type="text" />
+    <Property Name="Principal" Type="text" />
+    <Property Name="xreg_date" Type="varchar(max)" />
+    <Property Name="xstatus" Type="varchar(max)" />
+    <Property Name="xvisible" Type="varchar(max)" />
+    <Property Name="xsync" Type="varchar(max)" />
+    <Property Name="logo" Type="text" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="priv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="subagents">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegistrationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar(max)" />
+    <Property Name="Firstname" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="text" />
+    <Property Name="Telephone" Type="nvarchar(max)" />
+    <Property Name="AssignID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sys_ID" Type="nvarchar(max)" />
+    <Property Name="Address" Type="text" />
+    <Property Name="AgentPassport" Type="text" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xstatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xhome_backup.dbo.subagents2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="subagents2">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegistrationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar(max)" />
+    <Property Name="Firstname" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="text" />
+    <Property Name="Telephone" Type="nvarchar(max)" />
+    <Property Name="AssignID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="text" />
+    <Property Name="AgentPassport" Type="text" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xstatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="xagent">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="cname" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xhome_backup.dbo.xbanker' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="xbanker">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="bankname" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="xposition" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="xmember">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="cname" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_xhome_backup.dbo.xpartner' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="xpartner">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="cname" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar(max)" />
+    <Property Name="addressID" Type="nvarchar(max)" />
+    <Property Name="sys_ID" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Xrole_Granted">
+    <Key>
+      <PropertyRef Name="Agent_Code" />
+      <PropertyRef Name="Role_Name" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Agent_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ba2xai_xhome_backupModelStoreContainer">
+    <EntitySet Name="address" EntityType="Self.address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_lg" EntityType="Self.admin_lg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Agent_Mail" EntityType="Self.Agent_Mail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="country" EntityType="Self.country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fee_list" EntityType="Self.fee_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lga" EntityType="Self.lga" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pwallet" EntityType="Self.pwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="registrations" EntityType="Self.registrations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="state" EntityType="Self.state" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subagents" EntityType="Self.subagents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xagent" EntityType="Self.xagent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xmember" EntityType="Self.xmember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Xrole_Granted" EntityType="Self.Xrole_Granted" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="registration2" EntityType="Self.registration2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [registration2].[xid] AS [xid], 
+    [registration2].[AccrediationType] AS [AccrediationType], 
+    [registration2].[Sys_ID] AS [Sys_ID], 
+    [registration2].[Firstname] AS [Firstname], 
+    [registration2].[Surname] AS [Surname], 
+    [registration2].[Email] AS [Email], 
+    [registration2].[xpassword] AS [xpassword], 
+    [registration2].[DateOfBrith] AS [DateOfBrith], 
+    [registration2].[IncorporatedDate] AS [IncorporatedDate], 
+    [registration2].[Nationality] AS [Nationality], 
+    [registration2].[PhoneNumber] AS [PhoneNumber], 
+    [registration2].[CompanyName] AS [CompanyName], 
+    [registration2].[CompanyAddress] AS [CompanyAddress], 
+    [registration2].[ContactPerson] AS [ContactPerson], 
+    [registration2].[ContactPersonPhone] AS [ContactPersonPhone], 
+    [registration2].[CompanyWebsite] AS [CompanyWebsite], 
+    [registration2].[Certificate] AS [Certificate], 
+    [registration2].[Introduction] AS [Introduction], 
+    [registration2].[Principal] AS [Principal], 
+    [registration2].[xreg_date] AS [xreg_date], 
+    [registration2].[xstatus] AS [xstatus], 
+    [registration2].[xvisible] AS [xvisible], 
+    [registration2].[xsync] AS [xsync]
+    FROM [dbo].[registration2] AS [registration2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="subagents2" EntityType="Self.subagents2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [subagents2].[xid] AS [xid], 
+    [subagents2].[RegistrationID] AS [RegistrationID], 
+    [subagents2].[Surname] AS [Surname], 
+    [subagents2].[Firstname] AS [Firstname], 
+    [subagents2].[Email] AS [Email], 
+    [subagents2].[xpassword] AS [xpassword], 
+    [subagents2].[Telephone] AS [Telephone], 
+    [subagents2].[AssignID] AS [AssignID], 
+    [subagents2].[Address] AS [Address], 
+    [subagents2].[AgentPassport] AS [AgentPassport], 
+    [subagents2].[xreg_date] AS [xreg_date], 
+    [subagents2].[xstatus] AS [xstatus], 
+    [subagents2].[xvisible] AS [xvisible], 
+    [subagents2].[xsync] AS [xsync]
+    FROM [dbo].[subagents2] AS [subagents2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="xbanker" EntityType="Self.xbanker" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [xbanker].[xid] AS [xid], 
+    [xbanker].[xname] AS [xname], 
+    [xbanker].[bankname] AS [bankname], 
+    [xbanker].[xpassword] AS [xpassword], 
+    [xbanker].[nationality] AS [nationality], 
+    [xbanker].[addressID] AS [addressID], 
+    [xbanker].[xposition] AS [xposition], 
+    [xbanker].[sys_ID] AS [sys_ID], 
+    [xbanker].[xreg_date] AS [xreg_date], 
+    [xbanker].[xvisible] AS [xvisible], 
+    [xbanker].[xsync] AS [xsync]
+    FROM [dbo].[xbanker] AS [xbanker]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="xpartner" EntityType="Self.xpartner" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [xpartner].[xid] AS [xid], 
+    [xpartner].[xname] AS [xname], 
+    [xpartner].[cname] AS [cname], 
+    [xpartner].[nationality] AS [nationality], 
+    [xpartner].[addressID] AS [addressID], 
+    [xpartner].[sys_ID] AS [sys_ID], 
+    [xpartner].[xpassword] AS [xpassword], 
+    [xpartner].[xreg_date] AS [xreg_date], 
+    [xpartner].[xvisible] AS [xvisible], 
+    [xpartner].[xsync] AS [xsync]
+    FROM [dbo].[xpartner] AS [xpartner]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

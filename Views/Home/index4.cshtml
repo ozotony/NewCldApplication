@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" ng-app="app">
+<head>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+    @*<base href="/ups/" />*@
+
+
+
+    <title>UNIFIED VERIFICATION PORTAL</title>
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+   
+
+    <script src="~/Scripts/jquery-ui-1.8.16.custom.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+  
+
+    <script src="~/Scripts/bs_leftnavi.js"></script>
+   
+    <!--<script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>-->
+    <!--<script src="Scripts/urlRouter.js"></script>-->
+    <script src="~/Scripts/angular.js"></script>
+
+    
+    <script src="~/Scripts/angular-animate.js"></script>
+
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+
+    <script src="~/Scripts/app.js"></script>
+
+    <link href="~/Content/bs_leftnavi.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-local-storage.js"></script>
+    <script src="~/Scripts/LoginInterceptor.js"></script>
+    <script src="~/Scripts/GetData.js"></script>
+    <script src="~/Scripts/angular-messages.min.js"></script>
+    <script src="~/Scripts/sweet-alert.min.js"></script>
+    <link href="~/Content/sweet-alert.css" rel="stylesheet" />
+    <script src="~/Scripts/loading-bar.js"></script>
+    <link href="~/Content/loading-bar.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-facebook.min.js"></script>
+    <link href="~/Content/Tiles.css" rel="stylesheet" />
+    <script src="~/Scripts/smart-table.min.js"></script>
+    <style>
+        .btn-warning2 {
+            color: white;
+            background-color: #520B00;
+            border-color: #eea236;
+           
+        }
+        
+    </style>
+
+   
+    <script>
+
+    $(document).ready(function () {
+
+        var docHeight = $(window).height();
+        var footerHeight = $('#footer').height();
+        var footerTop = $('#footer').position().top + footerHeight;
+
+        if (footerTop < docHeight) {
+            $('#footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+        }
+
+        $(window).on('resize load', function () {
+            $('body').css({ "padding-top": $(".navbar").height() + "px" });
+        });
+
+    });
+    </script>
+
+   
+
+    <script>
+        //$(document).ready(function () {
+        //    $('.carousel').carousel({
+        //        interval: 2000
+        //    });
+        //});
+
+
+        $(document).ready(function () {
+            var mCarouselTO = setTimeout(function () {
+                $('.carousel').carousel({
+                    interval: 2000,
+                    cycle: true,
+                }).trigger('slide');
+            }, 2000);
+            var q = mCarouselTO;
+        });
+
+    </script>
+
+    <style type="text/css">
+     
+     
+    .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline {
+        color: #a94442;
+    }
+
+    .help-block {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        color: red;
+    }
+   span.ng-scope {
+        color:red;
+    }
+    /*input.ng-invalid {
+  border: 1px solid red;
+ 
+}
+input.ng-valid {
+  border: 1px solid green;
+ 
+}
+  
+   
+:focus ~ .error {
+    display:none;
+}*/
+   form.ng-submitted .ng-invalid {
+  border-color: red;
+  border-width: 2px;
+} 
+
+    </style>
+</head>
+
+
+<body>
+
+
+  
+
+
+
+
+    <!--<div id="contain">-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+           
+            <div id="navbar" class="navbar-collapse collapse " >
+                <ul class="nav navbar-nav navbar-left  " style=" font-weight:bold">
+                    <li style="margin-left:0px"><a style=" font-weight:bold"  class="btn btn-warning btn-warning2" href="#">Home</a></li>
+                    <li><a style=" font-weight:bold" class="btn btn-warning btn-warning2" href="#/About">ABOUT</a></li>
+                    <li><a style=" font-weight:bold" class="btn btn-warning btn-warning2" href="#/contact">CONTACT</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-top:30px">
+                    <li><b><a btn=btn btn-warning=btn-warning ui-sref="login" ng-show=islogout aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>  Login</a></b>/<b><a btn=btn btn-warning=btn-warning ui-sref="Register" ng-show=islogout aria-expanded="false"><span class="glyphicon glyphicon-user"></span>  Register</a></b></li>
+                    <li><b><span ng-show=islogin ng-bind="username"></span> <span ng-show=islogin>/</span><a role="button" ui-sref="logout" ng-show=islogin aria-expanded="false"><span class="glyphicon glyphicon-log-out"></span>  Logout</a></b></li>
+
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    
+        <div id="contain" class="container">
+
+            <div class="row ">
+
+                <div id="header">
+                    <h1 class="style7">UNIFIED VERIFICATION PORTAL</h1>
+
+
+
+
+
+                </div>
+
+            </div>
+
+            <div class="well-lg">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <!--<div id="leftcol">
+                    <h3>Links</h3>
+                    <div id="navcontainer">
+                        <ul id="navlist">
+
+
+
+                            <li><a href="">Home</a></li>
+
+
+
+                            <li><a href="">About Us</a></li>
+
+
+
+                            <li><a href="">News</a></li>
+
+
+
+                            <li><a href="">Contact Us</a></li>
+
+
+
+                            <li><a href="">Links</a></li>
+
+
+
+                        </ul>
+
+
+                    </div>
+
+
+
+
+
+                </div>-->
+
+                            <div class="gw-sidebar">
+                                <div id="gw-sidebar" class="gw-sidebar">
+                                    <div class="nano-content">
+                                        <ul class="gw-nav gw-nav-list">
+                                            <li class="init-un-active"> <a ui-sref="home"> <span class="gw-menu-text">HOME</span> </a> </li>
+                                            <li class="init-arrow-down">
+                                                <a href="javascript:void(0)"> <span class="gw-menu-text">APPLICATION REQUEST</span> <b class="gw-arrow"></b> </a>
+                                                <ul class="gw-submenu">
+                                                    <li> <a href="#">START APPLICATION</a> </li>
+
+                                                    <li ng-show="islogin"> <a ui-sref="home">VIEW APPLICATION</a> </li>
+                                                </ul>
+                                            </li>
+                                            <li ng-show="isAdmin" class="init-arrow-down">
+                                                <a href="javascript:void(0)"> <span class="gw-menu-text">Administration</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+                                                <ul class="gw-submenu">
+                                                    <li> <a href="#/Roles">CREATE ROLE</a> </li>
+
+                                                    <li> <a href="#/AssignRole">ASSIGN ROLE</a> </li>
+
+                                                    <li> <a href="#/Bank">SET UP BANK</a> </li>
+                                                    <li> <a href="#/Subscription">SET UP SUBSCRIPTION</a> </li>
+                                                    <li> <a href="#/Client">SET UP INSTITUTION</a> </li>
+                                                    
+                                                    
+                                                </ul>
+                                            </li>
+                                         
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="col-sm-9 col-md-9 col-lg-9">
+
+                            <div id="content">
+                               
+
+                                <div id="form-views" ui-view></div>
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                </div>
+
+                <div id="footer" class="row footer">
+                    <div>
+
+                        <p class="style5 style6">Copyright © 2015 | All Rights Reserved  </p>
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+   </body>
+</html>

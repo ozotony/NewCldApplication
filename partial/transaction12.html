@@ -1,0 +1,68 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div class="table-responsive col-sm-12 col-md-12 col-lg-12">
+                <!--<div class="panel panel-info">-->
+                <!--<div class="panel-heading">
+            <div class="panel-title">ACTIVE SUBSCRIPTION</div>
+            <div ></div>
+        </div>-->
+                <!--<div class="table-responsive">-->
+                <table st-table="displayedCollection" st-safe-src="ListAgent" class="table  table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="tbbg2">USER ID</th>
+
+                            <th class="tbbg2">SUBSCRIPTION TYPE</th>
+
+
+                            <th class="tbbg2">AMOUNT</th>
+
+                            <th class="tbbg2">PAYMENT DATE</th>
+
+
+                        </tr>
+                        <tr>
+                            <th colspan="7"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayedCollection">
+
+                            <td>{{row.User_Name}}</td>
+
+                            <td>{{row.Subscription_Name}}</td>
+
+                            <td>{{row.amount}}</td>
+
+                            <td>{{row.TranDateTime2}}</td>
+
+                            <!--<a href="#"><i class="icon-trash"></i> Delete</a></td>-->
+
+
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+

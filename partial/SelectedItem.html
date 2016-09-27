@@ -1,0 +1,101 @@
+﻿
+<div id="signupbox" class="mainbox col-md-9 col-md-offset-1 col-lg-9 col-lg-offset-1  col-sm-9 col-sm-offset-1">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title"><span class="text-center"></span></div>
+            <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive col-sm-12 col-md-12 col-lg-12">
+                <div class="table-responsive">
+                    <table st-table="displayedCollection2" st-safe-src="Shopping_card3" class="table  table-responsive">
+                        <thead>
+                            <tr bgcolor="#E3EAEB">
+                                <th class="tbbg2">S/N</th>
+                                <th st-sort="oai_no" class="tbbg2">ITEM CODE</th>
+                                <th st-sort="reg_dt" class="tbbg2">ITEM DESCRIPTION</th>
+                                <th st-sort="reg_dt" class="tbbg2">QTY</th>
+                                <th st-sort="reg_no" class="tbbg2"> APPLICATION FEE(NGN)</th>
+                                <th st-sort="applicant_name" class="tbbg2">TECH FEE(NGN)</th>
+                                <th st-sort="product_title" class="tbbg2">TOTAL (NGN)</th>
+
+
+
+
+
+                            </tr>
+
+                        <tbody>
+                            <tr ng-repeat="row in displayedCollection2">
+
+
+
+                                <td align="center">{{row.sn}}</td>
+                                <td align="center">{{row.item_code}}</td>
+                                <td>{{row.item_desc}}</td>
+                                <td>{{row.qty}}</td>
+                                <td align="center">{{row.init_amt|currency:""}}</td>
+                                <td align="center">{{row.tech_amt|currency:""}}</td>
+                                <td align="center">{{row.amt|currency:""}}</td>
+
+
+
+
+
+
+
+
+
+
+                            </tr>
+
+                            <tr style="font-size:13px;text-decoration:underline; color:#1C5E55;">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="right-align"> <strong>TOTAL AMOUNT:</strong>&nbsp;NGN&nbsp;<strong>{{vTotal|currency:""}}</strong></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7" class="text-center">
+                                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+
+
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+                    <table class="table table-responsive">
+
+
+                        <tr>
+                            <td align="center">
+
+                                <input id="Button1" type="button" class="btn btn-info" ng-click="dashboard()" value="Back to Dashboard" />
+
+                                <input id="Button1" type="button" class="btn btn-info" ng-click="submitForm()" value="Check Out" />
+
+
+
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+
+
+            </div>
+
+            </div>
+        </div>
+
+    </div>
+

@@ -1,0 +1,125 @@
+﻿<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <style>
+                table thead > tr > th {
+                    border-top: 0px none white;
+                }
+            </style>
+
+            <div id="signupbox" class="mainbox col-md-9 col-md-offset-2 col-lg-9 col-lg-offset-2   col-sm-9 col-sm-offset-2 ">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <div style="font-size: 36px">
+                                <!-- pretend an enclosing class has big font size -->
+                                <span class="label label-success label-as-badge">PAYMENT SUMMARY </span>
+                                <button type="submit" ng-click="vback()" class="btn btn-primary pull-right   " style="margin-top:10px"><span class="glyphicon glyphicon-backward"></span> BACK</button>
+                            </div>
+                        </div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-responsive table-bordered ">
+                            <tr>
+                                <td style="align-content:center">
+
+
+
+                   
+
+                    </td>
+
+                    <td>
+
+                        <div class="alert alert-info fade in">
+                            <strong>No Active Subscription Found . Please select a plan and pay to proceed.</strong> <br />
+                            
+                        </div>
+
+                        <table st-table="displayedCollection" st-safe-src="ListAgent" class="table table-responsive table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="tbbg2">Subscription Name</th>
+                                    <th class="tbbg2">Amount</th>
+
+                                    <th class="tbbg2">Covienient Fee </th>
+
+                                    <th class="tbbg2">Duration </th>
+                                    <th class="tbbg2">Transaction Id </th>
+                                    <th> </th>
+
+
+
+                                </tr>
+                                <tr>
+                                    <th colspan="6"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in vdata11">
+
+                                    <td>{{row.Subscription_Name}}</td>
+                                    <td>{{row.Amount|currency:" "}}</td>
+                                    <td>{{row.CovienientFee|currency:" "}}</td>
+                                    <td>{{row.Duration}}</td>
+                                    <td>{{row.Transactionid}}</td>
+                                    <td><button id="btn-signup2" type="button" ng-click="add2(row)" class="btn btn-info"><i class="glyphicon glyphicon-transfer"></i> &nbsp Make Payment</button></td>
+
+
+
+                              
+
+
+
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6" class="text-center">
+                                        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                   
+                     
+
+
+
+                    </td>
+
+                    <td>
+
+
+                      
+
+                    </td>
+
+                    </tr>
+
+
+                    </table>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+    

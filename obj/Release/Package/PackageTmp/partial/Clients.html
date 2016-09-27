@@ -1,0 +1,222 @@
+﻿
+<div class="main-block">
+
+    <div class="container">
+        <div>
+
+            <div id="signupbox" class="">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">CREATE INSTITUTION</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+                    </div>
+                    <div class="panel-body">
+                        <modal-dialog show='dialogShown' dialog-title='UPDATE INSTITUTION '>
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">Institution Name</label>
+                                <div class="col-md-9 ">
+                                    <input type="text" class="form-control" ng-model="Client_name2" id="Client_name2" name="Client_name" required placeholder="CLIENT NAME">
+
+                                    <div class="errors" ng-messages="userForm.Client_name.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">Institution Type</label>
+                                <div class="col-md-9 ">
+                                    <select class="form-control" data-ng-options="c.InstitutionType_Code as c.InstitutionType_Name for c in varray" id="Institution_Type" name="Institution_Type" ng-model="Institution_Type2" required>
+                                        <option value="">-- Select Institution  Type --</option>
+                                    </select>
+                                    <div class="errors" ng-messages="userForm.Institution_Type2.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">Data Model</label>
+                                <div class="col-md-9 ">
+                                    <select class="form-control" data-ng-options="c.id as c.name for c in varray7" id="Data_model2"  name="Data_model2" ng-model="Data_model2" required>
+                                        <option value="">-- Select Data Model --</option>
+                                    </select>
+
+
+                                    <div class="errors" ng-messages="userForm.Data_model2.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">STATUS</label>
+                                <div class="col-md-9 ">
+                                    <select class="form-control" data-ng-options="c.id as c.name for c in varray8" id="Data_model3" name="Data_model3" ng-model="Data_model3" >
+                                        <option value="">-- Reactivate--</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+                   
+
+
+
+
+
+
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9 col-lg-offset-3 col-lg-9">
+                                    <button id="btn-signup" type="button" ng-click="EditRow2()" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Update Institution </button>
+
+                                </div>
+                            </div>
+
+
+                        </modal-dialog>
+
+                        <form id="signupform" name="userForm" ng-submit="submitForm(vform,Page_Path,userForm.$valid)" novalidate class="form-horizontal" role="form">
+
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>
+
+
+
+                           
+
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">Institution Name</label>
+                                <div class="col-md-9 ">
+                                    <input type="text" class="form-control" ng-model="vform.Client_name" name="Client_name" required placeholder="CLIENT NAME">
+
+                                    <div class="errors" ng-messages="userForm.Client_name.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">Institution Type</label>
+                                <div class="col-md-9 ">
+                                    <select class="form-control" data-ng-options="c.InstitutionType_Code as c.InstitutionType_Name for c in varray" name="Institution_Type" ng-model="vform.Institution_Type" required>
+                                        <option value="">-- Select Institution  Type --</option>
+                                    </select>
+                                    <div class="errors" ng-messages="userForm.Institution_Type.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bank_name" class="col-md-3 col-lg-3 control-label">Data Model</label>
+                                <div class="col-md-9 ">
+                                    <select class="form-control" data-ng-options="c.id as c.name for c in varray7" name="Data_model" ng-model="vform.Data_model" required>
+                                        <option value="">-- Select Data Model --</option>
+                                    </select>
+                                  
+
+                                    <div class="errors" ng-messages="userForm.Data_model.$error" role="alert">
+                                        <span ng-message="required"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9 col-lg-offset-3 col-lg-9">
+                                    <button id="btn-signup" ng-show="SetUpInstitutionCreate" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Create Institution</button>
+
+                                </div>
+                            </div>
+
+                            <!--<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                        <div class="col-md-offset-3 col-md-9">
+                            <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                        </div>
+
+                    </div>-->
+
+                            <div class="table-responsive">
+                                <table st-table="displayedCollection" st-safe-src="ListAgent"  class="table table-responsive table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="tbbg2">INSTITUTION CODE</th>
+                                            <th class="tbbg2">INSTITUTION NAME</th>
+                                            <th class="tbbg2">INSTITUTION TYPE NAME</th>
+                                            <th class="tbbg2">DATA MODEL</th>
+                                            <th class="tbbg2">STATUS</th>
+
+
+                                            <th class="tbbg2"></th>
+
+
+                                        </tr>
+                                        <tr>
+                                            <th colspan="6"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in displayedCollection">
+
+                                            <td>{{row.Institution_Code}}</td>
+                                            <td>{{row.Institution_Name}}</td>
+                                            <td>{{row.InstitutionType_Code}}</td>
+                                            <td>{{row.Data_Model}}</td>
+                                            <td>{{row.AccountStatus}}</td>
+
+
+
+                                            <td>
+                                                <button type="submit" ng-show="SetUpInstitutionDeleteNew" ng-click="delete(row);" class=" btn btn-primary"><span class="glyphicon glyphicon-remove-sign"></span> Delete</button>
+                                                <button type="submit" ng-show="SetUpInstitutionUpadate" ng-click="EditRow(row)" class="btn btn-primary"><span class="glyphicon  glyphicon-edit"></span>Edit</button>
+                                            </td>
+
+
+
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6" class="text-center">
+                                                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="2"></div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+    
