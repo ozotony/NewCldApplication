@@ -13,6 +13,7 @@ using WebApplication4.Models;
 using WebApplication4.App_Start;
 using System.Threading.Tasks;
 using Microsoft.Owin.Cors;
+using WebApplication4.Model2;
 
 namespace WebApplication4
 {
@@ -33,10 +34,12 @@ namespace WebApplication4
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request
-
+            app.CreatePerOwinContext(ApplicationDbContext2.Create);
             app.CreatePerOwinContext(ApplicationDbContext.Create);
+
+            app.CreatePerOwinContext(Model2.Model1.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.UseCors(CorsOptions.AllowAll);
+           // app.UseCors(CorsOptions.AllowAll);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider

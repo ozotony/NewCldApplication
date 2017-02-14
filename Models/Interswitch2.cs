@@ -13,5 +13,7 @@ namespace WebApplication4.Models
         public string pay_item_id { get; set; }
         public string pd_payment_page { get; set; }
 
+        public string amount { get; set; }
+
     }
 }

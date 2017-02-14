@@ -4,8 +4,8 @@ var app = angular.module('app');
 
 app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', function ($http, $q, $rootScope, localStorageService) {
 
-    var serviceBase = 'http://88.150.164.30/NewTrademark/';
-//var serviceBase = 'http://localhost:24322/';
+  //  var serviceBase = 'http://88.150.164.30/NewTrademark/';
+var serviceBase = 'http://localhost:24322/';
 
    
 

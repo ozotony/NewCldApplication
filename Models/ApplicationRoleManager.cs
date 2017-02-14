@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebApplication4.Model2;
 
 namespace WebApplication4.Models
 {
@@ -19,6 +20,8 @@ namespace WebApplication4.Models
         public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
         {
             var appRoleManager = new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
+
+        //    var appRoleManager = new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<Model1>()));
 
             return appRoleManager;
         }

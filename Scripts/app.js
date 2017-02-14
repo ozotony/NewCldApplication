@@ -140,6 +140,14 @@
                         controller: 'Home3Controller'
                     })
 
+                      .state('TopMenu', {
+                         url: '/TopMenu',
+                         templateUrl: 'partial/TopMenu.html',
+                        //resolve: {
+                        //    articles: 'ArticlesService'
+                        //},
+                         controller: 'TopMenuController'
+                    })
 
                      .state('profile', {
                          url: '/profile',
@@ -960,6 +968,87 @@
 
 
 
+
+
+
+       });
+
+      app.controller('TopMenuController', function ($scope, $http, $rootScope, localStorageService, authService,authService2, $state, $location) {
+
+           if (localStorageService.get("username") == null) {
+               //  alert("username=" + localStorageService.get("username"))
+
+               $rootScope.islogin = false;
+
+               $rootScope.islogout = true;
+           }
+
+           else {
+
+               $rootScope.islogin = true;
+
+               $rootScope.islogout = false;
+               $rootScope.username = localStorageService.get("username")
+           }
+
+        
+         
+
+           $scope.submitForm = function (vform, isValid) {
+
+               if (isValid) {
+                   var formData = new FormData();
+
+                   var AgentsData = {
+
+
+                       Menu_Name: vform.role_name
+
+                   };
+
+                   formData.append("CreateRoleBindingModel", JSON.stringify(AgentsData));
+
+
+                   authService.saveMenu(JSON.stringify(AgentsData)).then(function (data, status) {
+
+                       $scope.savedSuccessfully = true;
+                       $scope.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
+
+                       
+                           // $state.transitionTo('Role');
+                           swal("Record Saved Successfully");
+
+                         //  $state.transitionTo('Role.Detail');
+
+                           location.reload(true)
+
+
+                      
+
+
+                       //   $location.path("/")
+                       //  startTimer();
+
+                   },
+               function (response) {
+                   //  ajaxindicatorstop();
+
+                   var errors = [];
+                   for (var key in response.data.modelState) {
+                       for (var i = 0; i < response.data.modelState[key].length; i++) {
+                           errors.push(response.data.modelState[key][i]);
+                       }
+                   }
+                   $scope.message = "Failed to register user due to:" + errors.join(' ');
+               });
+
+
+               }
+
+
+
+
+           }
 
 
 

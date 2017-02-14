@@ -50,15 +50,20 @@ namespace WebApplication4
       public string    vid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             // var session = HttpContext.Current.Session;
             // Shopping_card2 pp3 = (Shopping_card2)session["Shopping_card2"];
-       //   pp3 = Request.Form["txnRef"];
+            //   pp3 = Request.Form["txnRef"];
+            Retriever pdx = new Retriever();
 
-       //  pp3=   Request.QueryString["txnRef"];
-            pp3 = Session["TransactionidID"].ToString(); ;
+           
+        string  pp33=   Request.QueryString["txnRef"];
+
+            pdx.addError2("transaction ref = " + pp33);
+           pp3 = Session["TransactionidID"].ToString(); ;
+            //  txnref = pp3;
             txnref = pp3;
-        product_id = ConfigurationManager.AppSettings["pd_product_id"];
+          product_id = ConfigurationManager.AppSettings["pd_product_id"];
             mackey = ConfigurationManager.AppSettings["pd_mackey"];
             check_trans_page = ConfigurationManager.AppSettings["pd_get_trans_json_page"];
            
@@ -66,7 +71,9 @@ namespace WebApplication4
             c_app = ret.getApplicantByID(c_twall.applicantID);
            
             isw_fields = ret.getISWtransactionByTransactionID(txnref.Trim());
-           
+
+            pdx.addError2("got here 1");
+
             if (c_twall.xid != null)
             {
 

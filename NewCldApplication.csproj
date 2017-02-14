@@ -187,18 +187,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="address.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="admin_lg.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Agent_Mail.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="applicant.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -238,9 +226,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="country.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="DownloadPdf.aspx.cs">
       <DependentUpon>DownloadPdf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -269,15 +254,6 @@
     <Compile Include="DownloadPdf4.aspx.designer.cs">
       <DependentUpon>DownloadPdf4.aspx</DependentUpon>
     </Compile>
-    <Compile Include="fee_details.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="fee_list.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="fee_listx.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Formx.aspx.cs">
       <DependentUpon>Formx.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -288,9 +264,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="hwallet.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Index2.aspx.cs">
       <DependentUpon>Index2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -298,46 +271,118 @@
     <Compile Include="Index2.aspx.designer.cs">
       <DependentUpon>Index2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="InterSwitchPostField.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+    <Compile Include="Migrations3\201612061422248_Initial.cs" />
+    <Compile Include="Migrations3\201612061422248_Initial.Designer.cs">
+      <DependentUpon>201612061422248_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterSwitchPostFields2.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+    <Compile Include="Migrations3\201612061455513_Initial1.cs" />
+    <Compile Include="Migrations3\201612061455513_Initial1.Designer.cs">
+      <DependentUpon>201612061455513_Initial1.cs</DependentUpon>
     </Compile>
-    <Compile Include="lga.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
+    <Compile Include="Migrations3\Configuration.cs" />
+    <Compile Include="Migrations\201611081237586_tt2.cs" />
+    <Compile Include="Migrations\201611081237586_tt2.Designer.cs">
+      <DependentUpon>201611081237586_tt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081241522_tt3.cs" />
+    <Compile Include="Migrations\201611081241522_tt3.Designer.cs">
+      <DependentUpon>201611081241522_tt3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081328263_tt4.cs" />
+    <Compile Include="Migrations\201611081328263_tt4.Designer.cs">
+      <DependentUpon>201611081328263_tt4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091141520_Initial.cs" />
+    <Compile Include="Migrations\201611091141520_Initial.Designer.cs">
+      <DependentUpon>201611091141520_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091147345_Initial1.cs" />
+    <Compile Include="Migrations\201611091147345_Initial1.Designer.cs">
+      <DependentUpon>201611091147345_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091511270_Initial2.cs" />
+    <Compile Include="Migrations\201611091511270_Initial2.Designer.cs">
+      <DependentUpon>201611091511270_Initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091519555_Initial3.cs" />
+    <Compile Include="Migrations\201611091519555_Initial3.Designer.cs">
+      <DependentUpon>201611091519555_Initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091610198_Initial4.cs" />
+    <Compile Include="Migrations\201611091610198_Initial4.Designer.cs">
+      <DependentUpon>201611091610198_Initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091701202_Initial5.cs" />
+    <Compile Include="Migrations\201611091701202_Initial5.Designer.cs">
+      <DependentUpon>201611091701202_Initial5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611111049577_Initial6.cs" />
+    <Compile Include="Migrations\201611111049577_Initial6.Designer.cs">
+      <DependentUpon>201611111049577_Initial6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611130629345_Initial7.cs" />
+    <Compile Include="Migrations\201611130629345_Initial7.Designer.cs">
+      <DependentUpon>201611130629345_Initial7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612280639238_Initial8.cs" />
+    <Compile Include="Migrations\201612280639238_Initial8.Designer.cs">
+      <DependentUpon>201612280639238_Initial8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model2.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model3.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Model2\address.cs" />
+    <Compile Include="Model2\admin_lg.cs" />
+    <Compile Include="Model2\Agent_Mail.cs" />
+    <Compile Include="Model2\country.cs" />
+    <Compile Include="Model2\fee_list.cs" />
+    <Compile Include="Model2\IdentityModels.cs" />
+    <Compile Include="Model2\lga.cs" />
+    <Compile Include="Model2\Model1.cs" />
+    <Compile Include="Model2\pwallet.cs" />
+    <Compile Include="Model2\registration.cs" />
+    <Compile Include="Model2\registration2.cs" />
+    <Compile Include="Model2\role.cs" />
+    <Compile Include="Model2\RolesPriviledges.cs" />
+    <Compile Include="Model2\state.cs" />
+    <Compile Include="Model2\subagent.cs" />
+    <Compile Include="Model2\subagents2.cs" />
+    <Compile Include="Model2\Test2.cs" />
+    <Compile Include="Model2\TopMenu.cs" />
+    <Compile Include="Model2\xagent.cs" />
+    <Compile Include="Model2\xbanker.cs" />
+    <Compile Include="Model2\xmember.cs" />
+    <Compile Include="Model2\xpartner.cs" />
+    <Compile Include="Model2\Xrole_Granted.cs" />
+    <Compile Include="Model3\address.cs" />
+    <Compile Include="Model3\admin_lg.cs" />
+    <Compile Include="Model3\Agents.cs" />
+    <Compile Include="Model3\Agent_Role.cs" />
+    <Compile Include="Model3\applicant.cs" />
+    <Compile Include="Model3\AspNetRole.cs" />
+    <Compile Include="Model3\AspNetUser.cs" />
+    <Compile Include="Model3\AspNetUserClaim.cs" />
+    <Compile Include="Model3\AspNetUserLogin.cs" />
+    <Compile Include="Model3\country.cs" />
+    <Compile Include="Model3\C__MigrationHistory.cs" />
+    <Compile Include="Model3\fee_details.cs" />
+    <Compile Include="Model3\fee_list.cs" />
+    <Compile Include="Model3\fee_listx.cs" />
+    <Compile Include="Model3\hwallet.cs" />
+    <Compile Include="Model3\InterSwitchPostField.cs" />
+    <Compile Include="Model3\InterSwitchPostFields2.cs" />
+    <Compile Include="Model3\lga.cs" />
+    <Compile Include="Model3\Model4.cs" />
+    <Compile Include="Model3\pwallet.cs" />
+    <Compile Include="Model3\p_ratio.cs" />
+    <Compile Include="Model3\role.cs" />
+    <Compile Include="Model3\scard.cs" />
+    <Compile Include="Model3\state.cs" />
+    <Compile Include="Model3\twallet.cs" />
+    <Compile Include="Model3\xadmin.cs" />
+    <Compile Include="Model3\xagent.cs" />
+    <Compile Include="Model3\xbanker.cs" />
+    <Compile Include="Model3\xmember.cs" />
+    <Compile Include="Model3\xpartner.cs" />
+    <Compile Include="Model4Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountStatus.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -352,6 +397,8 @@
     <Compile Include="Models\AppStatus.cs" />
     <Compile Include="Models\Available_Roles.cs" />
     <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\BasicAuthenticationHandler.cs" />
+    <Compile Include="Models\BasicAuthenticationIdentity.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BranchCollect.cs" />
     <Compile Include="Models\Challenge3.cs" />
@@ -420,18 +467,6 @@
     <Compile Include="Models\XObjs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
-    <Compile Include="pwallet.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="p_ratio.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="registration.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="registration2.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="ReturnUrl.aspx.cs">
       <DependentUpon>ReturnUrl.aspx</DependentUpon>
@@ -440,49 +475,13 @@
     <Compile Include="ReturnUrl.aspx.designer.cs">
       <DependentUpon>ReturnUrl.aspx</DependentUpon>
     </Compile>
-    <Compile Include="role.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="scard.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="state.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="subagent.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="subagents2.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="twallet.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="ValidateXml.aspx.cs">
       <DependentUpon>ValidateXml.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ValidateXml.aspx.designer.cs">
       <DependentUpon>ValidateXml.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="xadmin.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xagent.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xbanker.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xmember.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="xpartner.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Xrole_Granted.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -545,59 +544,7 @@
     <Content Include="Formx.aspx" />
     <Content Include="Global.asax" />
     <Content Include="google03af87b30b85be6d.html" />
-    <Content Include="Images\0822.jpg" />
-    <Content Include="Images\0822_lrg.jpg" />
-    <Content Include="Images\ARMY.jpg" />
-    <Content Include="Images\background.jpg" />
-    <Content Include="Images\background2.jpg" />
     <Content Include="Images\brand\xmas_logo.jpg" />
-    <Content Include="Images\Cert.jpg" />
-    <Content Include="Images\certificate.jpg" />
-    <Content Include="Images\check-icon.png" />
-    <Content Include="Images\check_result.jpg" />
-    <Content Include="Images\favicon.png" />
-    <Content Include="Images\footer_bg.gif" />
-    <Content Include="Images\hbg_img.jpg" />
-    <Content Include="Images\hbg_img2.jpg" />
-    <Content Include="Images\hbg_img3.png" />
-    <Content Include="Images\hbg_img4.png" />
-    <Content Include="Images\header.jpg" />
-    <Content Include="Images\header_bg.gif" />
-    <Content Include="Images\ICAN.jpg" />
-    <Content Include="Images\imagesa.jpg" />
-    <Content Include="Images\imagesdf.jpg" />
-    <Content Include="Images\img1.jpg" />
-    <Content Include="Images\img1.png" />
-    <Content Include="Images\img2.jpg" />
-    <Content Include="Images\JAMB.jpg" />
-    <Content Include="Images\li.gif" />
-    <Content Include="Images\logo.png" />
-    <Content Include="Images\logo2.png" />
-    <Content Include="Images\mastercard-logo.png" />
-    <Content Include="Images\menu.gif" />
-    <Content Include="Images\merchantBig.jpg" />
-    <Content Include="Images\NABTEB.jpg" />
-    <Content Include="Images\NECO.jpg" />
-    <Content Include="Images\pay-attitudebig.jpg" />
-    <Content Include="Images\pix1.jpg" />
-    <Content Include="Images\pix2.jpg" />
-    <Content Include="Images\pix3.jpg" />
-    <Content Include="Images\pix4.jpg" />
-    <Content Include="Images\pix5.jpg" />
-    <Content Include="Images\pix6.jpg" />
-    <Content Include="Images\recharge_pin.png" />
-    <Content Include="Images\school.jpg" />
-    <Content Include="Images\school2.jpg" />
-    <Content Include="Images\school3.jpg" />
-    <Content Include="Images\signature.jpg" />
-    <Content Include="Images\spacer.gif" />
-    <Content Include="Images\submit.gif" />
-    <Content Include="Images\switchingBig.jpg" />
-    <Content Include="Images\Transcript.jpg" />
-    <Content Include="Images\userpic.gif" />
-    <Content Include="Images\verve.png" />
-    <Content Include="Images\visa.png" />
-    <Content Include="Images\waec.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\Logo2.png" />
     <Content Include="img\xmas_2.jpg" />
@@ -627,83 +574,7 @@
     <Content Include="js\respond.min.js" />
     <Content Include="js\waypoints.min.js" />
     <Content Include="js\xlsx.core.min.js" />
-    <Content Include="Model2.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model2.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model3.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model3.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.cs</LastGenOutput>
-    </Content>
-    <Content Include="partial\About.html" />
-    <Content Include="partial\AdditionalFee.html" />
-    <Content Include="partial\Agreement.html" />
-    <Content Include="partial\Applicant.html" />
-    <Content Include="partial\Assign_Data.html" />
-    <Content Include="partial\Assign_Role.html" />
-    <Content Include="partial\Bank.html" />
-    <Content Include="partial\Certificate.html" />
-    <Content Include="partial\Fee.html" />
-    <Content Include="partial\Formx.html" />
-    <Content Include="partial\Formx2.html" />
-    <Content Include="partial\InstitutionType.html" />
-    <Content Include="partial\Invoice.html" />
-    <Content Include="partial\ChangePassword.html" />
-    <Content Include="partial\Clients.html" />
-    <Content Include="partial\contact.html" />
-    <Content Include="partial\error.html" />
-    <Content Include="partial\form.html" />
-    <Content Include="partial\index.html" />
     <Content Include="partial\Index2.html" />
-    <Content Include="partial\Info.html" />
-    <Content Include="partial\Invoice2.html" />
-    <Content Include="partial\Login.html" />
-    <Content Include="partial\Minvoice.html" />
-    <Content Include="partial\payment.html" />
-    <Content Include="partial\payment2.html" />
-    <Content Include="partial\PaymentDetail.html" />
-    <Content Include="partial\ProceedToPayment.html" />
-    <Content Include="partial\Products.html" />
-    <Content Include="partial\Profile.html" />
-    <Content Include="partial\Register.html" />
-    <Content Include="partial\Register2.html" />
-    <Content Include="partial\Register3.html" />
-    <Content Include="partial\ResetPassword.html" />
-    <Content Include="partial\Result.html" />
-    <Content Include="partial\ReturnUrl.html" />
-    <Content Include="partial\Role.html" />
-    <Content Include="partial\Role_Detail.html" />
-    <Content Include="partial\search.html" />
-    <Content Include="partial\search2.html" />
-    <Content Include="partial\search3.html" />
-    <Content Include="partial\SelectedItem.html" />
-    <Content Include="partial\style.css" />
-    <Content Include="partial\Subscription.html" />
-    <Content Include="partial\success.html" />
-    <Content Include="partial\Test.html" />
-    <Content Include="partial\TopMenu.html" />
-    <Content Include="partial\transaction.html" />
-    <Content Include="partial\transaction12.html" />
-    <Content Include="partial\transaction2.html" />
-    <Content Include="partial\transaction2b.html" />
-    <Content Include="partial\transaction3.html" />
-    <Content Include="partial\transaction4.html" />
-    <Content Include="partial\UploadData.html" />
-    <Content Include="partial\User.html" />
-    <Content Include="partial\ViewUploadData.html" />
-    <Content Include="partial\ViewUploadData2.html" />
     <Content Include="ReturnUrl.aspx" />
     <Content Include="Scripts\alasql.min.js" />
     <Content Include="Scripts\angular-animate.js" />
@@ -780,20 +651,6 @@
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
     <Content Include="Scripts\GetData2.js" />
-    <EntityDeploy Include="Model2.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model2.edmx.diagram">
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Model3.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model3.edmx.diagram">
-      <DependentUpon>Model3.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
@@ -801,6 +658,7 @@
     <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
     <Content Include="Scripts\select.min.js" />
     <Content Include="skins\color.css" />
+    <Content Include="test.js" />
     <Content Include="ValidateXml.aspx" />
     <Content Include="xml\Student.xml">
       <SubType>Designer</SubType>
@@ -877,6 +735,7 @@
     <Folder Include="img\dividers\" />
     <Folder Include="img\flat-icons\" />
     <Folder Include="img\rev-slider\" />
+    <Folder Include="Model4\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -890,6 +749,50 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations3\201612061422248_Initial.resx">
+      <DependentUpon>201612061422248_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations3\201612061455513_Initial1.resx">
+      <DependentUpon>201612061455513_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081237586_tt2.resx">
+      <DependentUpon>201611081237586_tt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081241522_tt3.resx">
+      <DependentUpon>201611081241522_tt3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081328263_tt4.resx">
+      <DependentUpon>201611081328263_tt4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091141520_Initial.resx">
+      <DependentUpon>201611091141520_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091147345_Initial1.resx">
+      <DependentUpon>201611091147345_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091511270_Initial2.resx">
+      <DependentUpon>201611091511270_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091519555_Initial3.resx">
+      <DependentUpon>201611091519555_Initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091610198_Initial4.resx">
+      <DependentUpon>201611091610198_Initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091701202_Initial5.resx">
+      <DependentUpon>201611091701202_Initial5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611111049577_Initial6.resx">
+      <DependentUpon>201611111049577_Initial6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611130629345_Initial7.resx">
+      <DependentUpon>201611130629345_Initial7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612280639238_Initial8.resx">
+      <DependentUpon>201612280639238_Initial8.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

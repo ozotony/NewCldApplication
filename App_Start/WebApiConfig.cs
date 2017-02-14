@@ -6,6 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using System.Net.Http.Headers;
+using WebApplication4.Models;
 
 namespace WebApplication4
 {
@@ -17,12 +18,15 @@ namespace WebApplication4
             // Configure Web API to use only bearer token authentication.
             
             config.SuppressDefaultHostAuthentication();
+            
+            
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-
+           
             // Web API routes
             config.MapHttpAttributeRoutes();
+            // config.MessageHandlers.Add(new BasicAuthenticationHandler());
 
-           
+            
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

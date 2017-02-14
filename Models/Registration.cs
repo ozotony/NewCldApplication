@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -33,6 +34,8 @@ namespace WebApplication4.Models
         public string xstatus { get; set; }
         public string xvisible { get; set; }
         public string xsync { get; set; }
+
+        public JObject Token { get; set; }
 
         public string imageurl { get; set; }
 

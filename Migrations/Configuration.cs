@@ -5,16 +5,17 @@ namespace WebApplication4.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WebApplication4.Models.ApplicationDbContext>
+   // internal sealed class Configuration : DbMigrationsConfiguration<WebApplication4.Models.ApplicationDbContext>
+     internal sealed class Configuration : DbMigrationsConfiguration<WebApplication4.Model2.Model1>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "WebApplication4.Models.ApplicationDbContext";
+            ContextKey = "WebApplication4.Model2.Model1";
         }
 
-        protected override void Seed(WebApplication4.Models.ApplicationDbContext context)
+        protected override void Seed(WebApplication4.Model2.Model1 context)
         {
             //  This method will be called after migrating to the latest version.
 

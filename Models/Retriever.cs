@@ -613,6 +613,29 @@ namespace WebApplication4.Models
             connection.Close();
           //  return succ;
         }
+
+        public void addError2(string cust_id)
+        {
+            string log_date = DateTime.Today.Date.ToString("yyyy-MM-dd");
+            string log_time = DateTime.Now.ToLongTimeString();
+
+            string connectionString = this.ConnectXpay();
+            string succ = "0";
+            // SqlConnection connection = new SqlConnection(connectionString);
+            SqlConnection connection = new SqlConnection(this.ConnectXpay());
+            SqlCommand command = connection.CreateCommand();
+            command.CommandText = "INSERT INTO Test (xdesc) VALUES (@adminID)";
+            connection.Open();
+            command.Parameters.Add("@adminID", SqlDbType.NVarChar, 200);
+
+
+            command.Parameters["@adminID"].Value = cust_id;
+
+
+            command.ExecuteScalar();
+            connection.Close();
+            //  return succ;
+        }
         public string addAdminLog(string adminID, string ip_addy, string remote_host, string remote_user, string server_name, string server_url)
         {
             string log_date = DateTime.Today.Date.ToString("yyyy-MM-dd");
@@ -1366,6 +1389,41 @@ namespace WebApplication4.Models
             return representative;
         }
 
+
+        public Registration Login(string xpassword, string xemail)
+        {
+            Hasher hash = new Hasher();
+            string tt45 = "";
+            string ccode = ConfigurationManager.AppSettings["ccode"];
+            string x_code = ConfigurationManager.AppSettings["xcode"];
+            string new_hash = "";
+            if (xpassword != "")
+            {
+
+
+                new_hash = hash.GetGetSHA512String(ccode + xpassword + x_code);
+
+
+            }
+            string agentType = "";
+            //if ((Session["agentType"] != null) && (Session["agentType"].ToString() != "")) { agentType = Session["agentType"].ToString(); }
+            Retriever ret = new Retriever();
+            Registration c_reg = new Registration();
+            string adminID = ret.getAgentLogDetails(xemail, new_hash);
+            c_reg = ret.getRegistrationByID2(adminID);
+
+            string vurl = System.Configuration.ConfigurationManager.AppSettings["ipohome"];
+
+            c_reg.imageurl = vurl;
+
+
+
+
+
+            return c_reg;
+
+
+        }
         public MarkInfo getMarkInfoClassByUserID(string ID)
         {
             MarkInfo info = new MarkInfo();
