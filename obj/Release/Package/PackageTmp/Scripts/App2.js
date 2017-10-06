@@ -1,4 +1,4 @@
-﻿var app = angular.module('formApp', []);
+﻿var app = angular.module('formApp', ['angularSpinner']);
 
 
 var serviceBase = 'http://88.150.164.30/NewTrademark/';
@@ -9,7 +9,7 @@ var serviceBase = 'http://88.150.164.30/NewTrademark/';
 
 // our controller for the form
 // =============================================================================
-app.controller('formController', function ($scope, $rootScope, $http, $location) {
+app.controller('formController', function ($scope, $rootScope, $http, $location,usSpinnerService) {
     var cc = "";
     $(document).ready(function () {
 
@@ -48,7 +48,7 @@ app.controller('formController', function ($scope, $rootScope, $http, $location)
             $scope.tech_amt = totaltechamt * 100;
             $scope.init_amt = totalintamt * 100;
            
-
+       //     $("#form1").submit();
           //  $("#form1").submit();
 
 
@@ -60,7 +60,9 @@ app.controller('formController', function ($scope, $rootScope, $http, $location)
         //$scope.xname2 = $("input#xname3").val();
 
     });
-    $scope.submitForm = function () { 
+    $scope.submitForm = function () {
+
+        usSpinnerService.spin('spinner-1');
         var aa = $("#form1").submit();
         }
 

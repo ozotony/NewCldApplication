@@ -1,0 +1,1360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ba2xai_cldxModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="activity_lg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userID" Type="nchar" MaxLength="200" />
+    <Property Name="act_date" Type="datetime" />
+    <Property Name="DocumentId" Type="nchar" MaxLength="200" />
+    <Property Name="Operation" Type="nchar" MaxLength="200" />
+    <Property Name="module" Type="text" />
+    <Property Name="status" Type="nchar" MaxLength="200" />
+    <Property Name="old_title" Type="nchar" MaxLength="400" />
+    <Property Name="new_title" Type="nchar" MaxLength="400" />
+    <Property Name="old_class" Type="nchar" MaxLength="400" />
+    <Property Name="new_class" Type="nchar" MaxLength="400" />
+    <Property Name="old_applicantname" Type="nchar" MaxLength="400" />
+    <Property Name="new_applicantname" Type="nchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="10" />
+    <Property Name="stateID" Type="nvarchar" MaxLength="10" />
+    <Property Name="lgaID" Type="nvarchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="40" />
+    <Property Name="street" Type="text" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="telephone1" Type="nvarchar" MaxLength="40" />
+    <Property Name="telephone2" Type="nvarchar" MaxLength="40" />
+    <Property Name="email1" Type="nvarchar" MaxLength="40" />
+    <Property Name="email2" Type="nvarchar" MaxLength="40" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="40" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="40" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="address_service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="10" />
+    <Property Name="stateID" Type="nvarchar" MaxLength="10" />
+    <Property Name="lgaID" Type="nvarchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="40" />
+    <Property Name="street" Type="text" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="telephone1" Type="nvarchar" MaxLength="40" />
+    <Property Name="telephone2" Type="nvarchar" MaxLength="40" />
+    <Property Name="email1" Type="nvarchar" MaxLength="40" />
+    <Property Name="email2" Type="nvarchar" MaxLength="40" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="40" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="40" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.address2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="address2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="10" />
+    <Property Name="stateID" Type="nvarchar" MaxLength="10" />
+    <Property Name="lgaID" Type="nvarchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="40" />
+    <Property Name="street" Type="text" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="telephone1" Type="nvarchar" MaxLength="40" />
+    <Property Name="telephone2" Type="nvarchar" MaxLength="40" />
+    <Property Name="email1" Type="nvarchar" MaxLength="40" />
+    <Property Name="email2" Type="nvarchar" MaxLength="40" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="40" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="40" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.address4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="address4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="10" />
+    <Property Name="stateID" Type="nvarchar" MaxLength="10" />
+    <Property Name="lgaID" Type="nvarchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="40" />
+    <Property Name="street" Type="text" />
+    <Property Name="zip" Type="nvarchar" MaxLength="10" />
+    <Property Name="telephone1" Type="nvarchar" MaxLength="40" />
+    <Property Name="telephone2" Type="nvarchar" MaxLength="40" />
+    <Property Name="email1" Type="nvarchar" MaxLength="40" />
+    <Property Name="email2" Type="nvarchar" MaxLength="40" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="40" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="40" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="admin_lg">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminID" Type="varchar" MaxLength="200" />
+    <Property Name="ip_addy" Type="text" />
+    <Property Name="remote_host" Type="text" />
+    <Property Name="remote_user" Type="text" />
+    <Property Name="server_name" Type="text" />
+    <Property Name="server_url" Type="text" />
+    <Property Name="log_date" Type="varchar" MaxLength="200" />
+    <Property Name="log_time" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Admin_Mail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subject" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="500" />
+    <Property Name="Date_Sent" Type="datetime" />
+    <Property Name="Agent_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="pt_id" Type="varchar" MaxLength="50" />
+    <Property Name="reg_number" Type="varchar" MaxLength="50" />
+    <Property Name="Recordal_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Agent_FileUpload">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="agent_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="old_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="new_file" Type="nvarchar" MaxLength="500" />
+    <Property Name="Date_Uploaded" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="pt_id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="applicant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="xtype" Type="nvarchar" MaxLength="50" />
+    <Property Name="tax_id_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="tax_id_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="individual_id_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="addressID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="20" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="10" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xold" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="assignment_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="assignment_pwalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="admin_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcomment" Type="text" />
+    <Property Name="xdoc1" Type="text" />
+    <Property Name="xdoc2" Type="text" />
+    <Property Name="xdoc3" Type="text" />
+    <Property Name="xofficer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="bit" />
+  </EntityType>
+  <EntityType Name="assignment_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="assignments">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="applicant_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="applicant_address" Type="text" />
+    <Property Name="prev_renewal_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="certificate_number" Type="nvarchar" MaxLength="100" />
+    <Property Name="nice_class" Type="nvarchar" MaxLength="100" />
+    <Property Name="nice_class_desc" Type="text" />
+    <Property Name="trademark" Type="text" />
+    <Property Name="logo_descID" Type="nvarchar" MaxLength="100" />
+    <Property Name="assignor_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="assignor_address" Type="text" />
+    <Property Name="assignee_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="assignee_address" Type="text" />
+    <Property Name="agreement_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_code" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="assignment_pwalletID" Type="nvarchar" MaxLength="100" />
+    <Property Name="logo_pic" Type="text" />
+    <Property Name="poa_doc" Type="text" />
+    <Property Name="deed_doc" Type="text" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cert_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pub_date" Type="nvarchar(max)" />
+    <Property Name="pub_details" Type="text" />
+    <Property Name="cert_doc" Type="text" />
+    <Property Name="pub_doc" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nchar" MaxLength="10" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="g_agent_info">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="xpassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="text" />
+    <Property Name="telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="xsync" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="g_app_info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rtm_number" Type="nvarchar(max)" />
+    <Property Name="application_no" Type="nvarchar(max)" />
+    <Property Name="filing_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="item_code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_no" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_applicant_info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="address" Type="text" />
+    <Property Name="xemail" Type="nvarchar(max)" />
+    <Property Name="xmobile" Type="nvarchar(max)" />
+    <Property Name="nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="trading_as" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="20" />
+    <Property Name="visible" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="g_ass_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_of_assignment" Type="nvarchar" MaxLength="50" />
+    <Property Name="assignee_name" Type="nvarchar(max)" />
+    <Property Name="assignee_address" Type="text" />
+    <Property Name="assignee_nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="assignor_name" Type="nvarchar(max)" />
+    <Property Name="assignor_address" Type="text" />
+    <Property Name="assignor_nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="ass_doc" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="g_cert_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pub_date" Type="nvarchar(max)" />
+    <Property Name="pub_details" Type="text" />
+    <Property Name="cert_doc" Type="text" />
+    <Property Name="pub_doc" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="g_change_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="old_name" Type="nvarchar(max)" />
+    <Property Name="old_address" Type="text" />
+    <Property Name="old_goods" Type="text" />
+    <Property Name="old_tm_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="new_name" Type="nvarchar(max)" />
+    <Property Name="new_address" Type="text" />
+    <Property Name="new_goods" Type="text" />
+    <Property Name="new_tm_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="g_merger_info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="original_name" Type="nvarchar(max)" />
+    <Property Name="original_address" Type="text" />
+    <Property Name="merging_name" Type="nvarchar(max)" />
+    <Property Name="merging_address" Type="text" />
+    <Property Name="merged_coy_name" Type="nvarchar(max)" />
+    <Property Name="merger_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="merger_doc" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="g_other_items_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="req_details" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="g_prelim_search_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xtitle" Type="nvarchar(max)" />
+    <Property Name="xclass" Type="nvarchar" MaxLength="50" />
+    <Property Name="xclass_desc" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="g_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="twalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicantID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="TransactionId" Type="nvarchar" MaxLength="50" />
+    <Property Name="migrated" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="g_renewal_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prev_renewal_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="renewal_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="g_tm_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reg_number" Type="nvarchar(max)" />
+    <Property Name="xtype" Type="nvarchar" MaxLength="50" />
+    <Property Name="tm_title" Type="nvarchar(max)" />
+    <Property Name="tm_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="tm_desc" Type="text" />
+    <Property Name="logo_descID" Type="nvarchar" MaxLength="50" />
+    <Property Name="disclaimer" Type="text" />
+    <Property Name="logo_pic" Type="text" />
+    <Property Name="auth_doc" Type="text" />
+    <Property Name="sup_doc1" Type="text" />
+    <Property Name="app_letter_doc" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="g_tm_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pwalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="admin_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcomment" Type="text" />
+    <Property Name="xdoc1" Type="text" />
+    <Property Name="xdoc2" Type="text" />
+    <Property Name="xdoc3" Type="text" />
+    <Property Name="xofficer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="bit" />
+  </EntityType>
+  <EntityType Name="lga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateID" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="logo_description">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mark_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reg_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="tm_typeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="logo_descriptionID" Type="nvarchar" MaxLength="50" />
+    <Property Name="national_classID" Type="nvarchar" MaxLength="50" />
+    <Property Name="product_title" Type="nvarchar(max)" />
+    <Property Name="nice_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="nice_class_desc" Type="text" />
+    <Property Name="sign_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="vienna_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="disclaimer" Type="text" />
+    <Property Name="logo_pic" Type="text" />
+    <Property Name="auth_doc" Type="text" />
+    <Property Name="sup_doc1" Type="text" />
+    <Property Name="sup_doc2" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="upload_date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.mark_info2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mark_info2">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reg_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="tm_typeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="logo_descriptionID" Type="nvarchar" MaxLength="50" />
+    <Property Name="national_classID" Type="nvarchar" MaxLength="50" />
+    <Property Name="product_title" Type="nvarchar(max)" />
+    <Property Name="nice_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="nice_class_desc" Type="text" />
+    <Property Name="sign_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="vienna_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="disclaimer" Type="text" />
+    <Property Name="logo_pic" Type="text" />
+    <Property Name="auth_doc" Type="text" />
+    <Property Name="sup_doc1" Type="text" />
+    <Property Name="sup_doc2" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="mark_infoAmendment">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reg_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="tm_typeID" Type="nvarchar" MaxLength="50" />
+    <Property Name="logo_descriptionID" Type="nvarchar" MaxLength="50" />
+    <Property Name="national_classID" Type="nvarchar" MaxLength="50" />
+    <Property Name="product_title" Type="nvarchar(max)" />
+    <Property Name="nice_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="nice_class_desc" Type="text" />
+    <Property Name="sign_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="vienna_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="disclaimer" Type="text" />
+    <Property Name="logo_pic" Type="text" />
+    <Property Name="auth_doc" Type="text" />
+    <Property Name="sup_doc1" Type="text" />
+    <Property Name="sup_doc2" Type="text" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="upload_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="namechange">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="applicant_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="applicant_address" Type="text" />
+    <Property Name="file_number" Type="nvarchar" MaxLength="100" />
+    <Property Name="certificate_number" Type="nvarchar" MaxLength="100" />
+    <Property Name="nice_class" Type="nvarchar" MaxLength="100" />
+    <Property Name="nice_class_desc" Type="text" />
+    <Property Name="old_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="old_name_addy" Type="text" />
+    <Property Name="new_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="new_name_addy" Type="text" />
+    <Property Name="change_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_code" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="namechange_pwalletID" Type="nvarchar" MaxLength="100" />
+    <Property Name="power_of_attorney" Type="text" />
+    <Property Name="regdate" Type="nvarchar" MaxLength="100" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="namechange_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="namechange_pwalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="admin_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcomment" Type="text" />
+    <Property Name="xdoc1" Type="text" />
+    <Property Name="xdoc2" Type="text" />
+    <Property Name="xdoc3" Type="text" />
+    <Property Name="xofficer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="bit" />
+  </EntityType>
+  <EntityType Name="namechange_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="national_classes">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="text" />
+    <Property Name="log_staff" Type="varchar" MaxLength="50" />
+    <Property Name="reg_date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicantID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="10" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="rtm" Type="nvarchar" MaxLength="50" />
+    <Property Name="acc_p" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransactionId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.pwallet2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="pwallet2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicantID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="rtm" Type="nvarchar" MaxLength="50" />
+    <Property Name="acc_p" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.pwallet3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="pwallet3">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicantID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="rtm" Type="nvarchar" MaxLength="50" />
+    <Property Name="acc_p" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.pwallet4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="pwallet4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicantID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="rtm" Type="nvarchar" MaxLength="50" />
+    <Property Name="acc_p" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="pwalletAmendment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pwalletid" Type="nvarchar" MaxLength="50" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicantID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+    <Property Name="rtm" Type="nvarchar" MaxLength="50" />
+    <Property Name="acc_p" Type="nvarchar" MaxLength="50" />
+    <Property Name="AmendmentDate" Type="datetime" Nullable="false" />
+    <Property Name="AmendmentStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="ApprovedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="TransactionId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentRef" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Recordal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OLD_APPLICANTNAME" Type="varchar" MaxLength="200" />
+    <Property Name="NEW_APPLICANTNAME" Type="varchar" MaxLength="200" />
+    <Property Name="RECORDAL_REQUEST_DATE" Type="datetime" />
+    <Property Name="RECORDAL_APPROVE_DATE" Type="datetime" />
+    <Property Name="LOG_STAFF" Type="varchar" MaxLength="20" />
+    <Property Name="STATUS" Type="varchar" MaxLength="20" />
+    <Property Name="AMOUNT" Type="varchar" MaxLength="20" />
+    <Property Name="TRANSACTIONID" Type="varchar" MaxLength="50" />
+    <Property Name="RECORDAL_TYPE" Type="varchar" MaxLength="20" />
+    <Property Name="XOFFICER" Type="varchar" MaxLength="50" />
+    <Property Name="OLD_APPLICANTADDRESS" Type="varchar" MaxLength="500" />
+    <Property Name="NEW_APPLICANTADDRESS" Type="varchar" MaxLength="500" />
+    <Property Name="Xcomment" Type="varchar" MaxLength="500" />
+    <Property Name="OLD_AGENTNAME" Type="varchar" MaxLength="500" />
+    <Property Name="NEW_AGENTNAME" Type="varchar" MaxLength="500" />
+    <Property Name="OLD_AGENTCODE" Type="varchar" MaxLength="500" />
+    <Property Name="NEW_AGENTCODE" Type="varchar" MaxLength="500" />
+    <Property Name="OLD_AGENTEMAIL" Type="varchar" MaxLength="500" />
+    <Property Name="NEW_AGENTEMAIL" Type="varchar" MaxLength="500" />
+    <Property Name="OLD_AGENTPHONE" Type="varchar" MaxLength="500" />
+    <Property Name="NEW_AGENTPHONE" Type="varchar" MaxLength="500" />
+    <Property Name="OLD_PRODUCT_TITLE" Type="varchar" MaxLength="500" />
+    <Property Name="NEW_PRODUCT_TITLE" Type="varchar" MaxLength="500" />
+    <Property Name="OLD_PRODUCT_LOGO" Type="varchar" MaxLength="500" />
+    <Property Name="NEW_PRODUCT_LOGO" Type="varchar" MaxLength="500" />
+    <Property Name="LOGO_DESC" Type="varchar" MaxLength="500" />
+    <Property Name="Detail_Id" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status2" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status3" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="OLDAGENT_ADDRESS" Type="nvarchar" MaxLength="500" />
+    <Property Name="NEWAGENT_ADDRESS" Type="nvarchar" MaxLength="500" />
+    <Property Name="UPLOADPATH" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Recordal2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="oldApplicantName" Type="varchar" MaxLength="200" />
+    <Property Name="newApplicantName" Type="varchar" MaxLength="200" />
+    <Property Name="newApplicantAddress" Type="varchar" MaxLength="200" />
+    <Property Name="oldApplicantAddress" Type="varchar" MaxLength="200" />
+    <Property Name="newApplicantNationality" Type="varchar" MaxLength="200" />
+    <Property Name="OldApplicantNationality" Type="varchar" MaxLength="200" />
+    <Property Name="newApplicantDescription" Type="varchar" MaxLength="500" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="status2" Type="varchar" MaxLength="50" />
+    <Property Name="assignment_upload" Type="varchar" MaxLength="500" />
+    <Property Name="Assignee_upload" Type="varchar" MaxLength="500" />
+    <Property Name="deed_Assignment_upload" Type="varchar" MaxLength="500" />
+    <Property Name="Power_of_Attorney_upload" Type="varchar" MaxLength="500" />
+    <Property Name="Registration_of_Mark_upload" Type="varchar" MaxLength="500" />
+    <Property Name="Assignment_Date" Type="varchar" MaxLength="50" />
+    <Property Name="Day" Type="varchar" MaxLength="50" />
+    <Property Name="Month" Type="varchar" MaxLength="50" />
+    <Property Name="Year" Type="varchar" MaxLength="50" />
+    <Property Name="Registrar_direction" Type="varchar" MaxLength="500" />
+    <Property Name="advertisements_complying" Type="varchar" MaxLength="500" />
+    <Property Name="publication" Type="varchar" MaxLength="500" />
+    <Property Name="name_certificate" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Recordal3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Renewal_DueDate" Type="varchar" MaxLength="200" />
+    <Property Name="Renewal_Type" Type="varchar" MaxLength="200" />
+    <Property Name="power_of_attorney" Type="varchar" MaxLength="500" />
+    <Property Name="Certificate_Of_Registration" Type="varchar" MaxLength="500" />
+    <Property Name="Applicant_name" Type="varchar" MaxLength="200" />
+    <Property Name="Applicant_Address" Type="varchar" MaxLength="200" />
+    <Property Name="Reg_Date" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="renewal">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="applicant_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="applicant_address" Type="text" />
+    <Property Name="prev_renewal_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="certificate_number" Type="nvarchar" MaxLength="100" />
+    <Property Name="nice_class" Type="nvarchar" MaxLength="100" />
+    <Property Name="nice_class_desc" Type="text" />
+    <Property Name="trademark" Type="text" />
+    <Property Name="logo_descID" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_code" Type="nvarchar" MaxLength="100" />
+    <Property Name="agent_mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="renewal_pwalletID" Type="nvarchar" MaxLength="100" />
+    <Property Name="logo_pic" Type="text" />
+    <Property Name="power_of_attorney" Type="text" />
+    <Property Name="regdate" Type="nvarchar" MaxLength="100" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="renewal_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="renewal_pwalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="admin_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcomment" Type="text" />
+    <Property Name="xdoc1" Type="text" />
+    <Property Name="xdoc2" Type="text" />
+    <Property Name="xdoc3" Type="text" />
+    <Property Name="xofficer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="bit" />
+  </EntityType>
+  <EntityType Name="renewal_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="validationID" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="stage" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nvarchar" MaxLength="20" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="representative">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="agent_code" Type="nvarchar(max)" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="individual_id_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="individual_id_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="addressID" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="priv" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="search_wallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mark_infoID" Type="nvarchar(max)" />
+    <Property Name="search_str" Type="text" />
+    <Property Name="search_cri" Type="text" />
+    <Property Name="xclass" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="search_wallet2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mark_infoID" Type="nvarchar(max)" />
+    <Property Name="search_str" Type="text" />
+    <Property Name="search_cri" Type="text" />
+    <Property Name="xclass" Type="nvarchar" MaxLength="50" />
+    <Property Name="log_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="visible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="countryID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.Test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tm_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pwalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="admin_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcomment" Type="text" />
+    <Property Name="xdoc1" Type="text" />
+    <Property Name="xdoc2" Type="text" />
+    <Property Name="xdoc3" Type="text" />
+    <Property Name="xofficer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="bit" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.tm_office2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tm_office2">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="xofficer" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pwalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="admin_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcomment" Type="text" />
+    <Property Name="xdoc1" Type="text" />
+    <Property Name="xdoc2" Type="text" />
+    <Property Name="xdoc3" Type="text" />
+    <Property Name="xofficer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="bit" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ba2xai_cldx.dbo.tm_printed_office' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tm_printed_office">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="xofficer" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pwalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="admin_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcomment" Type="text" />
+    <Property Name="xdoc1" Type="text" />
+    <Property Name="xdoc2" Type="text" />
+    <Property Name="xdoc3" Type="text" />
+    <Property Name="xofficer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="bit" />
+    <Property Name="xtime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tm_type">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" />
+    <Property Name="log_staff" Type="nvarchar" MaxLength="50" />
+    <Property Name="reg_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="xadminz_tm">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xroleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="xname" Type="nvarchar(max)" />
+    <Property Name="xemail" Type="text" />
+    <Property Name="xpass" Type="text" />
+    <Property Name="xtelephone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="xtelephone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="xsection" Type="nvarchar" MaxLength="50" />
+    <Property Name="xlog_officer" Type="nvarchar" MaxLength="50" />
+    <Property Name="xreg_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="xvisible" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ba2xai_cldx.dbo.xtest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="xtest">
+          <Property Name="xdesc" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="xtransactions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transactionID" Type="nvarchar" MaxLength="50" />
+    <Property Name="xcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ptype" Type="nvarchar" MaxLength="50" />
+    <Property Name="amt" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="1" />
+    <Property Name="adminID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_a_address" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="countryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="stateID" Type="nvarchar" Mode="In" />
+    <Parameter Name="lgaID" Type="nvarchar" Mode="In" />
+    <Parameter Name="city" Type="nvarchar" Mode="In" />
+    <Parameter Name="street" Type="text" Mode="In" />
+    <Parameter Name="zip" Type="nvarchar" Mode="In" />
+    <Parameter Name="telephone1" Type="nvarchar" Mode="In" />
+    <Parameter Name="telephone2" Type="nvarchar" Mode="In" />
+    <Parameter Name="email1" Type="nvarchar" Mode="In" />
+    <Parameter Name="email2" Type="nvarchar" Mode="In" />
+    <Parameter Name="log_staff" Type="nvarchar" Mode="In" />
+    <Parameter Name="reg_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="visible" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_a_address_service" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="countryID" Type="nvarchar" Mode="In" />
+    <Parameter Name="stateID" Type="nvarchar" Mode="In" />
+    <Parameter Name="lgaID" Type="nvarchar" Mode="In" />
+    <Parameter Name="city" Type="nvarchar" Mode="In" />
+    <Parameter Name="street" Type="text" Mode="In" />
+    <Parameter Name="zip" Type="nvarchar" Mode="In" />
+    <Parameter Name="telephone1" Type="nvarchar" Mode="In" />
+    <Parameter Name="telephone2" Type="nvarchar" Mode="In" />
+    <Parameter Name="email1" Type="nvarchar" Mode="In" />
+    <Parameter Name="email2" Type="nvarchar" Mode="In" />
+    <Parameter Name="log_staff" Type="nvarchar" Mode="In" />
+    <Parameter Name="reg_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="visible" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_a_applicant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="type" Type="nvarchar" Mode="In" />
+    <Parameter Name="tax_id_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="tax_id_number" Type="nvarchar" Mode="In" />
+    <Parameter Name="individual_id_number" Type="nvarchar" Mode="In" />
+    <Parameter Name="nationality" Type="nvarchar" Mode="In" />
+    <Parameter Name="addressID" Type="nvarchar" Mode="In" />
+    <Parameter Name="log_staff" Type="nvarchar" Mode="In" />
+    <Parameter Name="reg_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="visible" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_a_pwallet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="validationID" Type="nvarchar" Mode="In" />
+    <Parameter Name="stage" Type="nchar" Mode="In" />
+    <Parameter Name="reg_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="applicantID" Type="varchar" Mode="In" />
+    <Parameter Name="data_status" Type="varchar" Mode="In" />
+    <Parameter Name="amt" Type="varchar" Mode="In" />
+    <Parameter Name="visible" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_a_representative" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="agent_code" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="xname" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="individual_id_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="individual_id_number" Type="nvarchar" Mode="In" />
+    <Parameter Name="nationality" Type="nvarchar" Mode="In" />
+    <Parameter Name="addressID" Type="nvarchar" Mode="In" />
+    <Parameter Name="log_staff" Type="nvarchar" Mode="In" />
+    <Parameter Name="reg_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="visible" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_a_tm_office" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pwalletID" Type="nvarchar" Mode="In" />
+    <Parameter Name="admin_status" Type="nvarchar" Mode="In" />
+    <Parameter Name="data_status" Type="nvarchar" Mode="In" />
+    <Parameter Name="xcomment" Type="text" Mode="In" />
+    <Parameter Name="xdoc1" Type="text" Mode="In" />
+    <Parameter Name="xdoc2" Type="text" Mode="In" />
+    <Parameter Name="xdoc3" Type="text" Mode="In" />
+    <Parameter Name="xofficer" Type="nvarchar" Mode="In" />
+    <Parameter Name="reg_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="xvisible" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_a_TmRegAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xroleID" Type="nvarchar" Mode="In" />
+    <Parameter Name="xname" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="xemail" Type="text" Mode="In" />
+    <Parameter Name="xpass" Type="text" Mode="In" />
+    <Parameter Name="xtelephone1" Type="nvarchar" Mode="In" />
+    <Parameter Name="xtelephone2" Type="nvarchar" Mode="In" />
+    <Parameter Name="xsection" Type="nvarchar" Mode="In" />
+    <Parameter Name="xlog_officer" Type="nvarchar" Mode="In" />
+    <Parameter Name="xreg_date" Type="nvarchar" Mode="In" />
+    <Parameter Name="xvisible" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_s_IsValid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_MarkInfoRegNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="reg_number" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_MarkInfoWithDocz" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="logo_pic" Type="text" Mode="In" />
+    <Parameter Name="auth_doc" Type="text" Mode="In" />
+    <Parameter Name="sup_doc1" Type="text" Mode="In" />
+    <Parameter Name="sup_doc2" Type="text" Mode="In" />
+    <Parameter Name="ID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_pwallet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="stage" Type="nchar" Mode="In" />
+    <Parameter Name="validationID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_PwalletAccPrintStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="nvarchar" Mode="In" />
+    <Parameter Name="acc_p" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_PwalletRtmStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="status" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="nvarchar" Mode="In" />
+    <Parameter Name="data_status" Type="varchar" Mode="In" />
+    <Parameter Name="rtm" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_PwalletStage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="applicantID" Type="varchar" Mode="In" />
+    <Parameter Name="amt" Type="varchar" Mode="In" />
+    <Parameter Name="stage" Type="nchar" Mode="In" />
+    <Parameter Name="data_status" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_PwalletStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="status" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="nvarchar" Mode="In" />
+    <Parameter Name="data_status" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_u_xadminz_pass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="xpass" Type="nchar" Mode="In" />
+    <Parameter Name="pwalletID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ba2xai_cldxModelStoreContainer">
+    <EntitySet Name="activity_lg" EntityType="Self.activity_lg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="address" EntityType="Self.address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="address_service" EntityType="Self.address_service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="admin_lg" EntityType="Self.admin_lg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin_Mail" EntityType="Self.Admin_Mail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Agent_FileUpload" EntityType="Self.Agent_FileUpload" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="applicant" EntityType="Self.applicant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="assignment_office" EntityType="Self.assignment_office" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="assignment_pwallet" EntityType="Self.assignment_pwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="assignments" EntityType="Self.assignments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cert_info" EntityType="Self.cert_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="country" EntityType="Self.country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_agent_info" EntityType="Self.g_agent_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_app_info" EntityType="Self.g_app_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_applicant_info" EntityType="Self.g_applicant_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_ass_info" EntityType="Self.g_ass_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_cert_info" EntityType="Self.g_cert_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_change_info" EntityType="Self.g_change_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_merger_info" EntityType="Self.g_merger_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_other_items_info" EntityType="Self.g_other_items_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_prelim_search_info" EntityType="Self.g_prelim_search_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_pwallet" EntityType="Self.g_pwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_renewal_info" EntityType="Self.g_renewal_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_tm_info" EntityType="Self.g_tm_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="g_tm_office" EntityType="Self.g_tm_office" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lga" EntityType="Self.lga" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logo_description" EntityType="Self.logo_description" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mark_info" EntityType="Self.mark_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mark_infoAmendment" EntityType="Self.mark_infoAmendment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="namechange" EntityType="Self.namechange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="namechange_office" EntityType="Self.namechange_office" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="namechange_pwallet" EntityType="Self.namechange_pwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="national_classes" EntityType="Self.national_classes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pwallet" EntityType="Self.pwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pwalletAmendment" EntityType="Self.pwalletAmendment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recordal" EntityType="Self.Recordal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recordal2" EntityType="Self.Recordal2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recordal3" EntityType="Self.Recordal3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="renewal" EntityType="Self.renewal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="renewal_office" EntityType="Self.renewal_office" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="renewal_pwallet" EntityType="Self.renewal_pwallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="representative" EntityType="Self.representative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="search_wallet" EntityType="Self.search_wallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="search_wallet2" EntityType="Self.search_wallet2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="state" EntityType="Self.state" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tm_office" EntityType="Self.tm_office" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tm_type" EntityType="Self.tm_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xadminz_tm" EntityType="Self.xadminz_tm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="xtransactions" EntityType="Self.xtransactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="address2" EntityType="Self.address2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [address2].[ID] AS [ID], 
+    [address2].[countryID] AS [countryID], 
+    [address2].[stateID] AS [stateID], 
+    [address2].[lgaID] AS [lgaID], 
+    [address2].[city] AS [city], 
+    [address2].[street] AS [street], 
+    [address2].[zip] AS [zip], 
+    [address2].[telephone1] AS [telephone1], 
+    [address2].[telephone2] AS [telephone2], 
+    [address2].[email1] AS [email1], 
+    [address2].[email2] AS [email2], 
+    [address2].[log_staff] AS [log_staff], 
+    [address2].[reg_date] AS [reg_date], 
+    [address2].[visible] AS [visible]
+    FROM [dbo].[address2] AS [address2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="address4" EntityType="Self.address4" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [address4].[ID] AS [ID], 
+    [address4].[countryID] AS [countryID], 
+    [address4].[stateID] AS [stateID], 
+    [address4].[lgaID] AS [lgaID], 
+    [address4].[city] AS [city], 
+    [address4].[street] AS [street], 
+    [address4].[zip] AS [zip], 
+    [address4].[telephone1] AS [telephone1], 
+    [address4].[telephone2] AS [telephone2], 
+    [address4].[email1] AS [email1], 
+    [address4].[email2] AS [email2], 
+    [address4].[log_staff] AS [log_staff], 
+    [address4].[reg_date] AS [reg_date], 
+    [address4].[visible] AS [visible]
+    FROM [dbo].[address4] AS [address4]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mark_info2" EntityType="Self.mark_info2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mark_info2].[xID] AS [xID], 
+    [mark_info2].[reg_number] AS [reg_number], 
+    [mark_info2].[tm_typeID] AS [tm_typeID], 
+    [mark_info2].[logo_descriptionID] AS [logo_descriptionID], 
+    [mark_info2].[national_classID] AS [national_classID], 
+    [mark_info2].[product_title] AS [product_title], 
+    [mark_info2].[nice_class] AS [nice_class], 
+    [mark_info2].[nice_class_desc] AS [nice_class_desc], 
+    [mark_info2].[sign_type] AS [sign_type], 
+    [mark_info2].[vienna_class] AS [vienna_class], 
+    [mark_info2].[disclaimer] AS [disclaimer], 
+    [mark_info2].[logo_pic] AS [logo_pic], 
+    [mark_info2].[auth_doc] AS [auth_doc], 
+    [mark_info2].[sup_doc1] AS [sup_doc1], 
+    [mark_info2].[sup_doc2] AS [sup_doc2], 
+    [mark_info2].[log_staff] AS [log_staff], 
+    [mark_info2].[reg_date] AS [reg_date], 
+    [mark_info2].[xvisible] AS [xvisible]
+    FROM [dbo].[mark_info2] AS [mark_info2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="pwallet2" EntityType="Self.pwallet2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [pwallet2].[ID] AS [ID], 
+    [pwallet2].[validationID] AS [validationID], 
+    [pwallet2].[applicantID] AS [applicantID], 
+    [pwallet2].[log_officer] AS [log_officer], 
+    [pwallet2].[amt] AS [amt], 
+    [pwallet2].[stage] AS [stage], 
+    [pwallet2].[status] AS [status], 
+    [pwallet2].[data_status] AS [data_status], 
+    [pwallet2].[reg_date] AS [reg_date], 
+    [pwallet2].[visible] AS [visible], 
+    [pwallet2].[xtime] AS [xtime], 
+    [pwallet2].[rtm] AS [rtm], 
+    [pwallet2].[acc_p] AS [acc_p]
+    FROM [dbo].[pwallet2] AS [pwallet2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="pwallet3" EntityType="Self.pwallet3" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [pwallet3].[ID] AS [ID], 
+    [pwallet3].[validationID] AS [validationID], 
+    [pwallet3].[applicantID] AS [applicantID], 
+    [pwallet3].[log_officer] AS [log_officer], 
+    [pwallet3].[amt] AS [amt], 
+    [pwallet3].[stage] AS [stage], 
+    [pwallet3].[status] AS [status], 
+    [pwallet3].[data_status] AS [data_status], 
+    [pwallet3].[reg_date] AS [reg_date], 
+    [pwallet3].[visible] AS [visible], 
+    [pwallet3].[xtime] AS [xtime], 
+    [pwallet3].[rtm] AS [rtm], 
+    [pwallet3].[acc_p] AS [acc_p]
+    FROM [dbo].[pwallet3] AS [pwallet3]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="pwallet4" EntityType="Self.pwallet4" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [pwallet4].[ID] AS [ID], 
+    [pwallet4].[validationID] AS [validationID], 
+    [pwallet4].[applicantID] AS [applicantID], 
+    [pwallet4].[log_officer] AS [log_officer], 
+    [pwallet4].[amt] AS [amt], 
+    [pwallet4].[stage] AS [stage], 
+    [pwallet4].[status] AS [status], 
+    [pwallet4].[data_status] AS [data_status], 
+    [pwallet4].[reg_date] AS [reg_date], 
+    [pwallet4].[visible] AS [visible], 
+    [pwallet4].[xtime] AS [xtime], 
+    [pwallet4].[rtm] AS [rtm], 
+    [pwallet4].[acc_p] AS [acc_p]
+    FROM [dbo].[pwallet4] AS [pwallet4]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Test" EntityType="Self.Test" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Test].[ID] AS [ID], 
+    [Test].[Description] AS [Description]
+    FROM [dbo].[Test] AS [Test]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tm_office2" EntityType="Self.tm_office2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tm_office2].[ID] AS [ID], 
+    [tm_office2].[pwalletID] AS [pwalletID], 
+    [tm_office2].[admin_status] AS [admin_status], 
+    [tm_office2].[data_status] AS [data_status], 
+    [tm_office2].[xcomment] AS [xcomment], 
+    [tm_office2].[xdoc1] AS [xdoc1], 
+    [tm_office2].[xdoc2] AS [xdoc2], 
+    [tm_office2].[xdoc3] AS [xdoc3], 
+    [tm_office2].[xofficer] AS [xofficer], 
+    [tm_office2].[reg_date] AS [reg_date], 
+    [tm_office2].[xvisible] AS [xvisible], 
+    [tm_office2].[xtime] AS [xtime]
+    FROM [dbo].[tm_office2] AS [tm_office2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tm_printed_office" EntityType="Self.tm_printed_office" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tm_printed_office].[ID] AS [ID], 
+    [tm_printed_office].[pwalletID] AS [pwalletID], 
+    [tm_printed_office].[admin_status] AS [admin_status], 
+    [tm_printed_office].[data_status] AS [data_status], 
+    [tm_printed_office].[xcomment] AS [xcomment], 
+    [tm_printed_office].[xdoc1] AS [xdoc1], 
+    [tm_printed_office].[xdoc2] AS [xdoc2], 
+    [tm_printed_office].[xdoc3] AS [xdoc3], 
+    [tm_printed_office].[xofficer] AS [xofficer], 
+    [tm_printed_office].[reg_date] AS [reg_date], 
+    [tm_printed_office].[xvisible] AS [xvisible], 
+    [tm_printed_office].[xtime] AS [xtime]
+    FROM [dbo].[tm_printed_office] AS [tm_printed_office]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

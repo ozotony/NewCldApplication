@@ -235,6 +235,11 @@ namespace WebApplication4.Models
                 {
                     this.data_status = "Untreated";
                 }
+
+                if (data_status == "Recordal")
+                {
+                    this.data_status = "Recordal";
+                }
             }
 
             if (status == "14")

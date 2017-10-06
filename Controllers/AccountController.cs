@@ -46,6 +46,8 @@ using System.Web.Util;
 using System.Security.Principal;
 using WebApplication4.Model2;
 using WebApplication4.Model3;
+using WebApplication4.model7;
+
 
 namespace WebApplication4.Controllers
 {
@@ -66,6 +68,8 @@ namespace WebApplication4.Controllers
 
         private Model4 db2;
 
+        private ba2xai_cldxEntities db7;
+
 
         public AccountController()
         {
@@ -74,6 +78,8 @@ namespace WebApplication4.Controllers
           // db3 = new ba2xai_xpay_backupEntities();
             db4 = new Model1();
             db2 = new Model4();
+
+            db7 = new ba2xai_cldxEntities();
 
 
 
@@ -1107,7 +1113,7 @@ namespace WebApplication4.Controllers
             XObjs.Twallet twall = new XObjs.Twallet();
             XObjs.Fee_details f_dets = new XObjs.Fee_details();
             XObjs.Hwallet c_hwall = new XObjs.Hwallet();
-            int xtotal_amt = 0;
+            Double xtotal_amt = 0;
             string transID = "";
             string ref_no = "";
             string xreg_date = DateTime.Now.ToString("yyyy-MM-dd");
@@ -1153,8 +1159,10 @@ namespace WebApplication4.Controllers
                             f_dets.xlogstaff = c_reg.xid;
                             f_dets.xqty = Convert.ToString(_card.qty);
                             f_dets.xused = "0";
-                            f_dets.tot_amt = _card.amt.ToString();
-                            xtotal_amt += Convert.ToInt32(_card.amt);
+                            f_dets.tot_amt = Convert.ToString(Convert.ToDouble(_card.amt) * _card.qty);// _card.amt.ToString();
+                            //added by tony
+                            
+                            xtotal_amt += Convert.ToDouble(_card.amt);
                             f_dets.init_amt = Convert.ToString(_card.init_amt) ;
                             f_dets.tech_amt =Convert.ToString(_card.tech_amt) ;
                             f_dets.xreg_date = xreg_date;
@@ -1231,6 +1239,24 @@ namespace WebApplication4.Controllers
            // return vcount;
 
         }
+
+
+        [Route("UpdatePaymentUsed")]
+        [AllowAnonymous]
+        [HttpGet]
+        public IHttpActionResult UpdatePaymentUsed([FromUri] String property1)
+        {
+            var kk = "";
+
+            Retriever pp = new Retriever();
+            pp.updateHwallet2(property1);
+
+            return Ok();
+
+            // return vcount;
+
+        }
+
 
         [Route("getCountry")]
         [AllowAnonymous]
@@ -1426,7 +1452,18 @@ namespace WebApplication4.Controllers
                           c.Principal,
                           c.logo,
                           c.xid,
-                          c.xstatus
+                          c.xstatus ,
+                          c.Email,
+                          c.CompanyAddress,
+                          c.CompanyName,
+                          c.CompanyWebsite,
+                          c.ContactPerson,
+                          c.ContactPersonPhone,
+                          c.DateOfBrith,
+                          c.IncorporatedDate,
+                          c.PhoneNumber,
+                          c.AccrediationType,
+                          c.xreg_date
 
 
                       }).ToList();
@@ -1441,6 +1478,16 @@ namespace WebApplication4.Controllers
                 aa.SurName = ab.Surname;
                 aa.Certificate = ab.Certificate;
                 aa.Introduction = ab.Introduction;
+                aa.Email = ab.Email;
+                aa.DateOfBrith = ab.DateOfBrith;
+                aa.CompanyAddress = ab.CompanyAddress;
+                aa.CompanyName = ab.CompanyName;
+                aa.IncorporatedDate = ab.IncorporatedDate;
+                aa.PhoneNumber = ab.PhoneNumber;
+                aa.ContactPersonPhone = ab.ContactPersonPhone;
+                aa.ContactPerson = ab.ContactPerson;
+                aa.AccrediationType = ab.AccrediationType;
+                aa.xreg_date = ab.xreg_date;
                 if (ab.Sys_ID != null)
                 {
                     aa.Paid_Status = "Paid";
@@ -1677,23 +1724,7 @@ namespace WebApplication4.Controllers
         [HttpPost]
         public XObjs.InterSwitchPostFields ProceedToPayment(Shopping_card2 pp4)
         {
-
-            //if (Session["lt_twall"] != null)
-            //{
-            //    lt_twall = (List<XObjs.Twallet>)Session["lt_twall"];
-            //}
-            //if (Session["lt_fdets"] != null)
-            //{
-            //    lt_fdets = (List<XObjs.Fee_details>)Session["lt_fdets"];
-            //}
-            //if (Session["c_addy"] != null)
-            //{
-            //    c_addy = Session["c_addy"].ToString();
-            //}
-            //if (Session["tot_amtx"] != null)
-            //{
-            //    amt = (double)Session["tot_amtx"];
-            //}
+            
             int num = 0;
             int num2 = 0;
             double amt = 0;
@@ -1752,6 +1783,98 @@ namespace WebApplication4.Controllers
             xispf.product_id = ConfigurationManager.AppSettings["pd_product_id"];
             xispf.currency = ConfigurationManager.AppSettings["pd_currency"];
             xispf.site_redirect_url = ConfigurationManager.AppSettings["pd_site_redirect_url"];
+            xispf.site_name = ConfigurationManager.AppSettings["pd_site_name"];
+            xispf.pay_item_id = ConfigurationManager.AppSettings["pd_pay_item_id"];
+            xispf.mackey = ConfigurationManager.AppSettings["pd_mackey"];
+            xispf.local_date_time = DateTime.Now.ToString("dd-MMM-yy HH:MM:ss");
+            xispf.TransactionDate = "";
+            xispf.MerchantReference = "";
+            xispf.trans_status = "AR";
+            xispf.xreg_date = pp4.ee.xreg_date;
+            xispf.xvisible = "1";
+            xispf.xsync = "0";
+            inputString = xispf.txn_ref + xispf.product_id + xispf.pay_item_id + xispf.amount + xispf.site_redirect_url + xispf.mackey;
+            xispf.hash = hash_value.GetGetSHA512String(inputString);
+            //if ((xispf.hash != null) && (xispf.hash.Length > 5))
+            //{
+            //    Session["hashString"] = xispf.hash;
+            //}
+            //Session["xispf"] = xispf;
+            //if (Session["xispf"] != null)
+            //{
+            //    base.Response.Redirect("../xis/pd/tx/payment_optionsx.aspx");
+            //}
+            var session = HttpContext.Current.Session;
+            session["Shopping_card2"] = pp4;
+            return xispf;
+
+        }
+
+
+        [Route("ProceedToPayment2")]
+        [AllowAnonymous]
+        [HttpPost]
+        public XObjs.InterSwitchPostFields ProceedToPayment2(Shopping_card2 pp4)
+        {
+
+            int num = 0;
+            int num2 = 0;
+            double amt = 0;
+            double total_amt = 0;
+            double isw_conv_fee = 0;
+            XObjs.InterSwitchPostFields xispf = new XObjs.InterSwitchPostFields();
+            string inputString = "";
+
+            Hasher hash_value = new Hasher();
+
+            foreach (Shopping_card _details in pp4.cc)
+            {
+                num += (Convert.ToInt32(_details.init_amt) * Convert.ToInt32(_details.qty)) * 100;
+                num2 += (Convert.ToInt32(_details.tech_amt) * Convert.ToInt32(_details.qty)) * 100;
+                amt = amt + (_details.amt * Convert.ToInt32(_details.qty));
+            }
+            if (amt > 0.0)
+            {
+                total_amt = Math.Round((double)(amt / 0.985), 2);
+                isw_conv_fee = total_amt - amt;
+                if (isw_conv_fee > 2000.0)
+                {
+                    isw_conv_fee = 2000.0;
+                    total_amt = isw_conv_fee + amt;
+                }
+            }
+            //Session["amt"] = amt * 100.0;
+            //Session["isw_conv_fee"] = Math.Round(isw_conv_fee, 2);
+            //Session["total_amt"] = Convert.ToInt32((double)(total_amt * 100.0)).ToString();
+            //Session["name"] = fullname;
+            //Session["coy_name"] = coy_name;
+            //Session["Refno"] = lt_twall[0].transID;
+            //Session["Address"] = c_addy;
+            //Session["einao_split_amt"] = num2.ToString();
+            //Session["cld_split_amt"] = num.ToString();
+            xispf.amount = Convert.ToInt32((double)(total_amt * 100.0)).ToString();
+            xispf.isw_conv_fee = isw_conv_fee.ToString();
+            xispf.cust_id = pp4.dd.Sys_ID;
+            xispf.cust_id_desc = "";
+            xispf.cust_name = pp4.dd.Firstname + " " + pp4.dd.Surname;
+            xispf.resp_desc = "";
+            //if (lt_fdets.Count == 1)
+            //{
+            //    XObjs.Fee_list _list = ret.getFee_listByID(lt_fdets[0].fee_listID);
+            //    xispf.pay_item_name = _list.item;
+            //    Session["item_code"] = _list.item_code;
+            //    item_code = _list.item_code;
+            //    Session["item_desc"] = _list.item;
+            //    item_desc = _list.item;
+            //}
+            //else
+            //{
+            //    xispf.pay_item_name = pay_item_name;
+            //}
+            xispf.txn_ref = pp4.ee.transID;
+            xispf.product_id = ConfigurationManager.AppSettings["pd_product_id"];
+            xispf.currency = ConfigurationManager.AppSettings["pd_currency"];
+            xispf.site_redirect_url = "http://88.150.164.30/NewTrademark/ReturnUrl.aspx";
             xispf.site_name = ConfigurationManager.AppSettings["pd_site_name"];
             xispf.pay_item_id = ConfigurationManager.AppSettings["pd_pay_item_id"];
             xispf.mackey = ConfigurationManager.AppSettings["pd_mackey"];
@@ -1970,6 +2093,183 @@ namespace WebApplication4.Controllers
         }
 
 
+        [Route("getPaymentReport")]
+        [AllowAnonymous]
+        [HttpGet]
+        public List<XObjs.ReportItem> getPaymentReport([FromUri] String property1, [FromUri] String property2)
+        {
+            var kk = "";
+
+            Retriever pp = new Retriever();
+            return pp.getPaymentReportItem(property1, property2,"1", "xpay_isw");
+
+        }
+
+        public String Getpwalletid(string vlog)
+        {
+           
+            var pp = (from c in db7.mark_info where c.reg_number == vlog select c).FirstOrDefault();
+
+            return pp.log_staff;
+
+
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetData")]
+        public XObjs.Office_view GetData([FromUri] String property1, String property2)
+        {
+
+            Retriever bb = new Retriever();
+         return    bb.getNew_MarkInfoRSX8(property2, property1,0,0);
+
+            //return dd;
+
+
+
+
+
+        }
+
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetData2")]
+        public XObjs.Office_view GetData2([FromUri] String property1, String property2)
+        //  public GetData3 GetData2([FromUri] String property1)
+        {
+            // string pwalletId = Getpwalletid(property1);
+
+
+            Retriever bb = new Retriever();
+            return bb.getNew_MarkInfoRSX9(property2, property1, 0, 0);
+
+
+
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetData3")]
+        public PtInfo GetData3([FromUri] String property1, String property2)
+        //  public GetData3 GetData2([FromUri] String property1)
+        {
+            // string pwalletId = Getpwalletid(property1);
+
+
+            Retriever bb = new Retriever();
+            return bb.getPtInfoByPwalletID4(property2, property1);
+
+
+
+        }
+
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetData4")]
+        public PtInfo GetData4([FromUri] String property1, String property2)
+        //  public GetData3 GetData2([FromUri] String property1)
+        {
+            // string pwalletId = Getpwalletid(property1);
+
+
+            Retriever bb = new Retriever();
+            return bb.getPtInfoByPwalletID5(property2, property1);
+
+
+
+        }
+
+
+
+
+
+        [Route("UpdateCertificate")]
+        [AllowAnonymous]
+        [HttpGet]
+        public IHttpActionResult UpdateCertificate([FromUri] String property1, [FromUri] String property2)
+        {
+            var kk = "";
+
+            Retriever ret = new Retriever();
+
+
+            return Ok();
+
+
+        }
+
+        [Route("getPaymentReport2")]
+        [AllowAnonymous]
+        [HttpGet]
+        public PaymentReport2 getPaymentReport2([FromUri] String property1, [FromUri] String property2)
+        {
+            var kk = "";
+
+            Retriever ret = new Retriever();
+            string[] words = property1.Split('-');
+            XObjs.Twallet c_twall = ret.getTwalletByTransIDAdminID(words[0], property2);
+            var c_app = ret.getApplicantByID(c_twall.applicantID);
+            var isw_fields = ret.getISWtransactionByTransactionID(words[0]);
+             List<Fee_details> fd = ret.getFee_detailsByID2(c_twall.xid); ;
+
+            PaymentReport2 xw = new PaymentReport2();
+            xw.applicant = c_app;
+            xw.twallet = c_twall;
+            xw.fee_details = fd;
+            xw.InterSwitchPostField = isw_fields;
+
+            return xw;
+
+        }
+
+        [Route("SaveUser")]
+        [AllowAnonymous]
+        [HttpGet]
+        public IHttpActionResult SaveUser([FromUri] String property1)
+        {
+            var user2 = new ApplicationUser() { UserName = property1, Email = property1, LoginCount = 0 };
+
+          
+                IdentityResult result = UserManager.Create(user2, "1111");
+
+
+
+            return Ok();
+
+        }
+
+        [Route("UploadUser")]
+        [AllowAnonymous]
+        [HttpGet]
+        public IHttpActionResult UploadUser()
+        {
+            var ccd = (from c in db4.registrations select c.Email).Distinct().ToList();
+
+
+
+            foreach (var ccp in ccd)
+            {
+                var user2 = new ApplicationUser() { UserName = ccp, Email = ccp ,LoginCount=0 };
+
+                try
+                {
+                    IdentityResult result = UserManager.Create(user2, "1111");
+
+                }
+
+                catch(Exception ee)
+                {
+
+                    var kk = ee.Message;
+                }
+
+            }
+            return Ok();
+        }
+
         [Route("getEmails2")]
         [AllowAnonymous]
         [HttpGet]
@@ -2049,6 +2349,68 @@ namespace WebApplication4.Controllers
         }
 
 
+
+        [Route("formx2")]
+        [AllowAnonymous]
+        [HttpPost]
+        public Interswitch2 formx2(Shopping_card2 pp4)
+        {
+
+
+
+
+
+
+
+            Interswitch2 pp = new Interswitch2();
+            pp.currency = ConfigurationManager.AppSettings["pd_currency"];
+            pp.pay_item_id = ConfigurationManager.AppSettings["pd_pay_item_id"];
+            pp.pd_payment_page = ConfigurationManager.AppSettings["pd_payment_page"];
+            pp.product_id = ConfigurationManager.AppSettings["pd_product_id"];
+            pp.site_redirect_url = "http://88.150.164.30/NewTrademark/ReturnUrl.aspx";
+
+
+            Retriever ret = new Retriever();
+
+            // var isw_fields = ret.getISWtransactionByTransactionID(pp4.ee.transID.Trim());
+
+            //  pp.amount =isw_fields.amount;
+            //XObjs.InterSwitchPostFields xispf = pp4.ff;
+            //var einao_split_amt = 0.0;
+            //var cld_split_amt = 0.0;
+            //foreach (var px in pp4.cc)
+            //{
+            //    einao_split_amt = einao_split_amt + px.tech_amt;
+            //    cld_split_amt = cld_split_amt + px.init_amt;
+
+            //}
+
+            //einao_split_amt = einao_split_amt * 100;
+            //cld_split_amt = cld_split_amt * 100;
+            //var refno = pp4.ee.transID;
+            //var hashString = pp4.ff.hash;
+            //var appname = pp4.bb.applicantname;
+            //var amount = pp4.ff.amount;
+
+
+
+
+            //if (session["Time"] == null)
+            //{
+            //    session["Time"] = DateTime.Now;
+            //}
+
+
+
+            var session = HttpContext.Current.Session;
+            session["Shopping_card2"] = pp4;
+
+
+            return pp;
+
+        }
+
+
         [Route("ReturnUrl")]
         [AllowAnonymous]
         [HttpGet]
@@ -2057,7 +2419,9 @@ namespace WebApplication4.Controllers
 
             var session = HttpContext.Current.Session;
             var total_amt = "";
+            var vcode = "";
             Shopping_card2 pp3 = (Shopping_card2)session["Shopping_card2"];
+            
     
            var  xstring = new StringBuilder();
            var  product_id = ConfigurationManager.AppSettings["pd_product_id"];
@@ -2108,8 +2472,12 @@ namespace WebApplication4.Controllers
 
                     if (item.item_code == "AA1")
                     {
+                        vcode = "AA1";
+                        //ret.updateRegistrationSysID22(vid, "Paid");
 
-                   
+                        //XObjs.Registration ds = ret.getRegistrationByID(vid);
+                        //sendemail(ds);
+
                     }
                     item.item_desc = _list.xdesc;
                     item.init_amt = string.Format("{0:n}", Convert.ToInt32(_details.init_amt));
@@ -2145,6 +2513,15 @@ namespace WebApplication4.Controllers
                 if (isr.ResponseCode == "00" && (isr.PaymentReference != null || isr.PaymentReference != ""))
                 {
                     xpay_status = "1";
+
+                    if (vcode == "AA1")
+                    {
+                        ret.updateRegistrationSysID22(vid, "Paid");
+
+                        XObjs.Registration ds = ret.getRegistrationByID(vid);
+                        sendemail(ds);
+
+                    }
                 }
                 else
                 {
@@ -2222,6 +2599,20 @@ namespace WebApplication4.Controllers
 
         }
 
+        [Route("UpdateRegistration")]
+        [AllowAnonymous]
+        [HttpPost]
+        public Registration UpdateRegistration(Registration pp4)
+        {
+            var kk = "";
+
+            Retriever pp = new Retriever();
+            pp.updateRegistration(pp4);
+
+            return pp4;
+
+        }
+
 
         [Route("ReturnUrl2")]
         [AllowAnonymous]
@@ -2236,7 +2627,7 @@ namespace WebApplication4.Controllers
             var product_id = ConfigurationManager.AppSettings["pd_product_id"];
             var mackey = ConfigurationManager.AppSettings["pd_mackey"];
             var check_trans_page = ConfigurationManager.AppSettings["pd_get_trans_json_page"];
-            var siteredirect = ConfigurationManager.AppSettings["pd_site_redirect_url"];
+            var siteredirect = "http://88.150.164.30/NewTrademark/ReturnUrl.aspx";
 
             Registration reg = new Registration();
             Hasher hash_value = new Hasher();
@@ -2518,40 +2909,40 @@ namespace WebApplication4.Controllers
 
 
 
-                var ddf = UserManager.GetRoles(ds.Id).ToArray();
-                int vcount = 0;
-                var lf = "{";
-                foreach (var kk in ddf)
-                {
-                    if (vcount != ddf.Length - 1)
-                    {
-                        var ddx = string.Format("\"{0}\"", kk);
-                        lf = lf + ddx + ",";
+                //var ddf = UserManager.GetRoles(ds.Id).ToArray();
+                //int vcount = 0;
+                //var lf = "{";
+                //foreach (var kk in ddf)
+                //{
+                //    if (vcount != ddf.Length - 1)
+                //    {
+                //        var ddx = string.Format("\"{0}\"", kk);
+                //        lf = lf + ddx + ",";
 
-                    }
+                //    }
 
-                    else
-                    {
-                        var ddx = string.Format("\"{0}\"", kk);
-                        lf = lf + ddx + "}";
-                    }
+                //    else
+                //    {
+                //        var ddx = string.Format("\"{0}\"", kk);
+                //        lf = lf + ddx + "}";
+                //    }
 
-                    vcount = vcount + 1;
+                //    vcount = vcount + 1;
 
-                }
+                //}
 
                 // var ddf3 = ddf.ToString();
 
                 //  var ccp = string.Join(" ,", ddf.ToArray()); ;
 
 
-                var ccd = (from c in db4.RolesPriviledges
-                           where
-    ddf.Any(x => x == c.RoleName)
-                           select c).ToList();
-                ;
+    //            var ccd = (from c in db4.RolesPriviledges
+    //                       where
+    //ddf.Any(x => x == c.RoleName)
+    //                       select c).ToList();
+    //            ;
 
-                vreg.Access2 = ccd;
+    //            vreg.Access2 = ccd;
 
 
 
@@ -2624,7 +3015,7 @@ namespace WebApplication4.Controllers
                 new JProperty("token_type", "bearer"),
                 new JProperty("expires_in", TimeSpan.FromDays(365).TotalSeconds.ToString()),
                 new JProperty("issued", currentUtc.ToString("ddd, dd MMM yyyy HH':'mm':'ss 'GMT'")),
-                new JProperty("expires", currentUtc.Add(TimeSpan.FromDays(365)).ToString("ddd, dd MMM yyyy HH:mm:ss 'GMT'"))
+                new JProperty("expires", currentUtc.Add(TimeSpan.FromDays(1)).ToString("ddd, dd MMM yyyy HH:mm:ss 'GMT'"))
             );
 
             //comment by me 
@@ -2632,9 +3023,91 @@ namespace WebApplication4.Controllers
             return token;
 
         }
-       
 
-     
+
+        public model7.pwallet Getpwallet(string vlog, string agent_code)
+        {
+           
+            var pp = (from c in db7.pwallets where c.ID.ToString() == vlog && c.applicantID == agent_code select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+        public mark_info GetMarkInfo(model7.pwallet pwallet)
+        {
+           
+            var pp = (from c in db7.mark_info where c.log_staff == pwallet.ID.ToString() select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+        public address_service GetAddress_Service(model7.pwallet pwallet)
+        {
+            
+            var pp = (from c in db7.address_service where c.log_staff == pwallet.ID.ToString() select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+
+        public representative GetRepresentative(model7.pwallet pwallet)
+        {
+           
+            var pp = (from c in db7.representatives where c.log_staff == pwallet.ID.ToString() select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+
+        public model7.applicant GetApplicant(model7.pwallet pwallet)
+        {
+            
+            var pp = (from c in db7.applicants where c.log_staff == pwallet.ID.ToString() select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+        public model7.pwallet Getpwallet2(string vlog, string agent_code)
+        {
+
+            model7.pwallet pp = (from c in db7.pwallets where c.validationID == vlog && c.applicantID == agent_code select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+        public model7.address GetAddress(model7.applicant applicant)
+        {
+           
+            var pp = (from c in db7.addresses where c.ID.ToString() == applicant.addressID select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+        public model7.address GetAddress2(representative representative)
+        {
+            
+            var pp = (from c in db7.addresses where c.ID.ToString() == representative.addressID select c).FirstOrDefault();
+
+            return pp;
+
+
+        }
+
+
 
 
         public void sendemail(XObjs.Registration px2)
@@ -2679,11 +3152,11 @@ namespace WebApplication4.Controllers
 
                 ss2 = ss2 + "<tr> <td style=\"border:1px solid black;\" > COMPANY ADDRESS </td> <td style=\"border:1px solid black;\" >" + px2.CompanyAddress + "</td> </tr>";
 
-                ss2 = ss2 + "<tr> <td style=\"border:1px solid black;\" > CERTIFICATE </td> <td style=\"border:1px solid black;\" ><a href=\"http://ipo.cldng.com/" + px2.Certificate + " \">Download</a> </td> </tr>";
+                ss2 = ss2 + "<tr> <td style=\"border:1px solid black;\" > CERTIFICATE </td> <td style=\"border:1px solid black;\" ><a href=\"http://88.150.164.30/EinaoTestEnvironment.IPO/" + px2.Certificate + " \">Download</a> </td> </tr>";
 
-                ss2 = ss2 + "<tr> <td style=\"border:1px solid black;\" >  LETTER OF INTRODUCTION </td> <td style=\"border:1px solid black;\" ><a href=\"http://ipo.cldng.com/" + px2.Introduction + " \">Download</a> </td> </tr>";
+                ss2 = ss2 + "<tr> <td style=\"border:1px solid black;\" >  LETTER OF INTRODUCTION </td> <td style=\"border:1px solid black;\" ><a href=\"http://88.150.164.30/EinaoTestEnvironment.IPO/" + px2.Introduction + " \">Download</a> </td> </tr>";
 
-                ss2 = ss2 + "<tr> <td style=\"border:1px solid black;\" >  PASSPORT </td> <td style=\"border:1px solid black;\" ><a href=\"http://ipo.cldng.com/" + px2.logo + " \">Download</a> </td> </tr>";
+                ss2 = ss2 + "<tr> <td style=\"border:1px solid black;\" >  PASSPORT </td> <td style=\"border:1px solid black;\" ><a href=\"http://88.150.164.30/EinaoTestEnvironment.IPO/" + px2.logo + " \">Download</a> </td> </tr>";
 
 
 

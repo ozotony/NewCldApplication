@@ -10,8 +10,8 @@ namespace WebApplication4.Model2
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser2 : IdentityUser
     {
-      
-        
+
+        public int? LoginCount { get; set; }
 
 
 

@@ -225,6 +225,17 @@ namespace WebApplication4.Models
             return num;
         }
 
+        public int updateRegistrationSysID22(string xid, string Sys_ID2)
+        {
+
+            SqlConnection connection = new SqlConnection(this.ConnectXhome());
+            SqlCommand command = new SqlCommand("UPDATE registrations SET xsync='" + Sys_ID2 + "' WHERE xid='" + xid + "'  ", connection);
+            connection.Open();
+            int num = command.ExecuteNonQuery();
+            connection.Close();
+            return num;
+        }
+
         public List<XObjs.UpdateHwallet> getHwalletUsedStatusTmGen(string applicantID)
         {
             List<XObjs.UpdateHwallet> item = new List<XObjs.UpdateHwallet>();
@@ -1645,7 +1656,7 @@ namespace WebApplication4.Models
         //    return xlist;
         //}
 
-        public List<XObjs.ReportItem> getPaymentReportItem(string xcategory, string xmemberID, string xmembertype, string xpay_status, string xgt, string fromDate, string toDate)
+        public List<XObjs.ReportItem> getPaymentReportItem(string xcategory, string xmemberID, string xpay_status, string xgt)
         {
             List<XObjs.ReportItem> xlist = new List<XObjs.ReportItem>();
             int sn = 1; string command_text = "";
@@ -1655,7 +1666,8 @@ namespace WebApplication4.Models
             command_text += " CAST(hwallet.transID AS nvarchar)+'-'+CAST(hwallet.fee_detailsID AS nvarchar)+'-'+CAST(hwallet.xid AS nvarchar) AS newtransID ";
             command_text += " FROM fee_list LEFT OUTER JOIN fee_details ON fee_list.xid=fee_details.fee_listID ";
             command_text += " LEFT OUTER JOIN twallet ON fee_details.twalletID=twallet.xid ";
-            command_text += " LEFT OUTER JOIN hwallet ON twallet.transID=hwallet.transID ";
+           
+            command_text += " INNER JOIN hwallet ON hwallet.fee_detailsID = fee_details.xid ";
             if (xgt == "xpay_isw")
             {
                 command_text += "left outer join InterSwitchPostFields on twallet.transID=InterSwitchPostFields.txn_ref ";
@@ -1673,16 +1685,13 @@ namespace WebApplication4.Models
                     command_text += " (InterSwitchPostFields.trans_status <>'00')  ";
                 }
             }
-            else
-            {
-                command_text += " (twallet.xpay_status='" + xmembertype + "')  ";
-            }
+            
             command_text += "  AND (twallet.xgt='" + xgt + "') AND (twallet.xmemberID='" + xmemberID + "')  ";
 
-            command_text += " AND (twallet.xmembertype='" + xmembertype + "') ";
+          
 
             if (xcategory != "all") { command_text += "AND (fee_list.xcategory='" + xcategory + "')  "; }
-            command_text += " AND (twallet.xreg_date BETWEEN '" + fromDate + "' AND '" + toDate + "') ";
+           
 
             SqlCommand command = new SqlCommand(command_text, connection);
             connection.Open();
@@ -1892,6 +1901,26 @@ namespace WebApplication4.Models
             return xlist;
         }
 
+        public int updateTransID2(string xid, string Sys_ID2)
+        {
+
+            SqlConnection connection = new SqlConnection(this.ConnectTm());
+            SqlCommand command = new SqlCommand("UPDATE pwallet  SET TransactionId='" + Sys_ID2 + "' WHERE ID='" + xid + "'  ", connection);
+            connection.Open();
+            int num = command.ExecuteNonQuery();
+            connection.Close();
+            return num;
+        }
+
+        public int updateHwallet2(string xid)
+        {
+            SqlConnection connection = new SqlConnection(this.ConnectXpay());
+            SqlCommand command = new SqlCommand("UPDATE hwallet SET used_status='Used'   WHERE transid='" + xid + "'  ", connection);
+            connection.Open();
+            int num = command.ExecuteNonQuery();
+            connection.Close();
+            return num;
+        }
         public List<ViewBasket> ViewBasket2(string cat,string agt)
         {
             List<ViewBasket> xlist = new List<ViewBasket>();
@@ -2191,6 +2220,84 @@ namespace WebApplication4.Models
             return x;
         }
 
+
+        public PtInfo getPtInfoByPwalletID4(string ID, string APPID)
+        {
+            List<PtInfo> list = new List<PtInfo>();
+            PtInfo item = null;
+            new PtInfo();
+            SqlConnection connection = new SqlConnection(this.Connect2());
+            SqlCommand command = new SqlCommand("SELECT * FROM pt_info WHERE log_staff=(select cast(ID as varchar) from pwallet where validationID ='" + ID + "' and applicantID ='" + APPID + "' )  ", connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+            while (reader.Read())
+            {
+                item = new PtInfo
+                {
+                    xID = reader["xID"].ToString(),
+                    reg_number = reader["reg_number"].ToString(),
+                    xtype = reader["xtype"].ToString(),
+                    title_of_invention = ConvertTab2Apos(reader["title_of_invention"].ToString()),
+                    pt_desc = reader["pt_desc"].ToString(),
+                    spec_doc = reader["spec_doc"].ToString(),
+                    loa_no = reader["loa_no"].ToString(),
+                    loa_doc = reader["loa_doc"].ToString(),
+                    claim_no = reader["claim_no"].ToString(),
+                    claim_doc = reader["claim_doc"].ToString(),
+                    pct_no = reader["pct_no"].ToString(),
+                    pct_doc = reader["pct_doc"].ToString(),
+                    doa_no = reader["doa_no"].ToString(),
+                    doa_doc = reader["doa_doc"].ToString(),
+                    log_staff = reader["log_staff"].ToString(),
+                    reg_date = reader["reg_date"].ToString(),
+                    xvisible = reader["xvisible"].ToString()
+                };
+                return item;
+                // list.Add(item);
+            }
+            reader.Close();
+            return item;
+        }
+
+        public PtInfo getPtInfoByPwalletID5(string ID, string APPID)
+        {
+
+           // PtInfo xd = getPtInfoByPwalletID3(ID);
+            List<PtInfo> list = new List<PtInfo>();
+            PtInfo item = null;
+            new PtInfo();
+            SqlConnection connection = new SqlConnection(this.Connect2());
+            SqlCommand command = new SqlCommand("SELECT * FROM pt_info WHERE reg_number='" + ID + "' and log_staff=(select ID from pwallet where  applicantID ='" + APPID + "' )  ", connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+            while (reader.Read())
+            {
+                item = new PtInfo
+                {
+                    xID = reader["xID"].ToString(),
+                    reg_number = reader["reg_number"].ToString(),
+                    xtype = reader["xtype"].ToString(),
+                    title_of_invention = ConvertTab2Apos(reader["title_of_invention"].ToString()),
+                    pt_desc = reader["pt_desc"].ToString(),
+                    spec_doc = reader["spec_doc"].ToString(),
+                    loa_no = reader["loa_no"].ToString(),
+                    loa_doc = reader["loa_doc"].ToString(),
+                    claim_no = reader["claim_no"].ToString(),
+                    claim_doc = reader["claim_doc"].ToString(),
+                    pct_no = reader["pct_no"].ToString(),
+                    pct_doc = reader["pct_doc"].ToString(),
+                    doa_no = reader["doa_no"].ToString(),
+                    doa_doc = reader["doa_doc"].ToString(),
+                    log_staff = reader["log_staff"].ToString(),
+                    reg_date = reader["reg_date"].ToString(),
+                    xvisible = reader["xvisible"].ToString()
+                };
+                return item;
+                // list.Add(item);
+            }
+            reader.Close();
+            return item;
+        }
         public List<PtInfo> getPtInfoByPwalletID(string ID)
         {
             List<PtInfo> list = new List<PtInfo>();
@@ -2628,6 +2735,210 @@ namespace WebApplication4.Models
             }
             reader.Close();
             return xlist;
+        }
+
+
+        public XObjs.Office_view getNew_MarkInfoRSX8(string status, string pvalidation, int start, int limit)
+        {
+            SqlCommand command;
+            List<XObjs.Office_view> list = new List<XObjs.Office_view>();
+            new XObjs.Office_view();
+            SqlConnection connection = new SqlConnection(this.ConnectTm());
+
+            XObjs.Office_view item2 = new XObjs.Office_view();
+
+            //  command = new SqlCommand(string.Concat(new object[] { "select   pwallet.rtm,pwallet.ID,pwallet.TransactionId,pwallet.visible,pwallet.applicantID,pwallet.applicantID,applicant.xname,address_service.street ,address_service.telephone1,address_service.email1,mark_info.national_classID 'class',mark_info.xID,mark_info.reg_number 'reg_no',mark_info.product_title,tm_type.type 'tm_type',pwallet.validationID 'oai_no', ISNULL(pwallet.data_status,'None') 'xstat', mark_info.reg_date 'reg_dt',mark_info.log_staff  from mark_info LEFT OUTER JOIN pwallet ON mark_info.log_staff=pwallet.ID   LEFT OUTER JOIN tm_type ON tm_type.xID=mark_info.tm_typeID  LEFT OUTER JOIN applicant ON applicant.log_staff=pwallet.ID LEFT OUTER JOIN address_service ON address_service.log_staff=pwallet.ID    WHERE pwallet.stage='5' AND pwallet.status>='", status, "' AND pwallet.data_status='", data_status, "'  and mark_info.reg_number ='", pvalidation, "' order by pwallet.rtm DESC     " }), connection);
+
+            command = new SqlCommand(string.Concat(new object[] { "select   pwallet.rtm,pwallet.ID,pwallet.TransactionId,pwallet.visible,pwallet.applicantID,pwallet.applicantID,applicant.xname,address.street ,address.telephone1,address.email1,mark_info.national_classID 'class',mark_info.xID,mark_info.reg_number 'reg_no',mark_info.product_title,tm_type.type 'tm_type',pwallet.validationID 'oai_no', ISNULL(pwallet.data_status,'None') 'xstat', mark_info.reg_date 'reg_dt',mark_info.log_staff ,mark_info.logo_pic ,mark_info.auth_doc ,mark_info.sup_doc1 ,mark_info.sup_doc2 from mark_info LEFT OUTER JOIN pwallet ON mark_info.log_staff=pwallet.ID   LEFT OUTER JOIN tm_type ON tm_type.xID=mark_info.tm_typeID  LEFT OUTER JOIN applicant ON applicant.log_staff=pwallet.ID LEFT OUTER JOIN address ON address.ID=applicant.addressID    WHERE pwallet.stage='5'   and mark_info.reg_number ='", pvalidation, "'  and pwallet.applicantid ='", status, "'    " }), connection);
+            //  }
+            // command.CommandTimeout = 0;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+            string pp2 = "";
+            int vcount = 0;
+            int vsn = 0;
+            string voffice = "";
+            while (reader.Read())
+            {
+                vsn = vsn + 1;
+                vcount = vcount + 1;
+
+                XObjs.Registration pdd = getRegistrationBySubagentRegistrationID(reader["applicantID"].ToString());
+                //if (getTmOfficeByMID(reader["log_staff"].ToString()) != "")
+                //{
+                //    voffice = (getTmOfficeByMID(reader["log_staff"].ToString()));
+                //}
+                //else
+                //{
+                //    voffice = "None";
+                //}
+                XObjs.Office_view item = new XObjs.Office_view
+                {
+                    xid = reader["xID"].ToString(),
+                    id = reader["ID"].ToString(),
+                    rtm = reader["rtm"].ToString(),
+                    applicant_name = reader["xname"].ToString(),
+                    xclass = reader["class"].ToString(),
+                    reg_no = reader["reg_no"].ToString(),
+                    tm_type = reader["tm_type"].ToString(),
+                    product_title = reader["product_title"].ToString(),
+                    oai_no = reader["oai_no"].ToString(),
+                    xstat = reader["xstat"].ToString(),
+                    reg_dt = reader["reg_dt"].ToString(),
+                    log_staff = reader["log_staff"].ToString(),
+
+                    logo_pic = reader["logo_pic"].ToString(),
+
+                    auth_doc = reader["auth_doc"].ToString(),
+
+                    sup_doc1 = reader["sup_doc1"].ToString(),
+
+                    sup_doc2 = reader["sup_doc2"].ToString(),
+                    //   batches = reader["visible"].ToString(),
+                    applicantID = reader["applicantID"].ToString(),
+
+                    //Office = reader["data_status"].ToString(),
+                    Sn = Convert.ToString(vsn),
+                    Agent_Code = pdd.Sys_ID,
+                    Agent_Name = pdd.Surname,
+                    TransactionId = reader["TransactionId"].ToString(),
+                    Xaddress = reader["street"].ToString(),
+                    Xemail = reader["email1"].ToString(),
+                    Xmobile = reader["telephone1"].ToString()
+                };
+
+                try
+                {
+                    int dw = Convert.ToInt32(reader["visible"]);
+                    if (dw > 1)
+                    {
+                        pp2 = (Convert.ToInt32(reader["visible"]) - 1).ToString();
+
+                    }
+
+                    else
+                    {
+                        pp2 = (Convert.ToInt32(reader["visible"])).ToString();
+
+                    }
+                }
+                catch (Exception ee)
+                {
+
+                }
+
+                item.batches = pp2;
+
+                item2 = item;
+                // list.Add(item);
+
+
+            }
+            reader.Close();
+            connection.Close();
+            return item2;
+        }
+
+
+        public XObjs.Office_view getNew_MarkInfoRSX9(string status, string pvalidation, int start, int limit)
+        {
+            SqlCommand command;
+            List<XObjs.Office_view> list = new List<XObjs.Office_view>();
+            new XObjs.Office_view();
+            SqlConnection connection = new SqlConnection(this.ConnectTm());
+
+            XObjs.Office_view item2 = new XObjs.Office_view();
+
+            //  command = new SqlCommand(string.Concat(new object[] { "select   pwallet.rtm,pwallet.ID,pwallet.TransactionId,pwallet.visible,pwallet.applicantID,pwallet.applicantID,applicant.xname,address_service.street ,address_service.telephone1,address_service.email1,mark_info.national_classID 'class',mark_info.xID,mark_info.reg_number 'reg_no',mark_info.product_title,tm_type.type 'tm_type',pwallet.validationID 'oai_no', ISNULL(pwallet.data_status,'None') 'xstat', mark_info.reg_date 'reg_dt',mark_info.log_staff  from mark_info LEFT OUTER JOIN pwallet ON mark_info.log_staff=pwallet.ID   LEFT OUTER JOIN tm_type ON tm_type.xID=mark_info.tm_typeID  LEFT OUTER JOIN applicant ON applicant.log_staff=pwallet.ID LEFT OUTER JOIN address_service ON address_service.log_staff=pwallet.ID    WHERE pwallet.stage='5' AND pwallet.status>='", status, "' AND pwallet.data_status='", data_status, "'  and mark_info.reg_number ='", pvalidation, "' order by pwallet.rtm DESC     " }), connection);
+
+            command = new SqlCommand(string.Concat(new object[] { "select   pwallet.rtm,pwallet.ID,pwallet.TransactionId,pwallet.visible,pwallet.applicantID,pwallet.applicantID,applicant.xname,address.street ,address.telephone1,address.email1,mark_info.national_classID 'class',mark_info.xID,mark_info.reg_number 'reg_no',mark_info.product_title,tm_type.type 'tm_type',pwallet.validationID 'oai_no', ISNULL(pwallet.data_status,'None') 'xstat', mark_info.reg_date 'reg_dt',mark_info.log_staff ,mark_info.logo_pic ,mark_info.auth_doc ,mark_info.sup_doc1 ,mark_info.sup_doc2 from mark_info LEFT OUTER JOIN pwallet ON mark_info.log_staff=pwallet.ID   LEFT OUTER JOIN tm_type ON tm_type.xID=mark_info.tm_typeID  LEFT OUTER JOIN applicant ON applicant.log_staff=pwallet.ID LEFT OUTER JOIN address ON address.ID=applicant.addressID    WHERE pwallet.stage='5'   and pwallet.validationid ='", pvalidation, "'  and pwallet.applicantid ='", status, "'    " }), connection);
+            //  }
+            // command.CommandTimeout = 0;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+            string pp2 = "";
+            int vcount = 0;
+            int vsn = 0;
+            string voffice = "";
+            while (reader.Read())
+            {
+                vsn = vsn + 1;
+                vcount = vcount + 1;
+
+               // XObjs.Registration pdd = getRegistrationBySubagentRegistrationID(reader["applicantID"].ToString());
+                //if (getTmOfficeByMID(reader["log_staff"].ToString()) != "")
+                //{
+                //    voffice = (getTmOfficeByMID(reader["log_staff"].ToString()));
+                //}
+                //else
+                //{
+                //    voffice = "None";
+                //}
+                XObjs.Office_view item = new XObjs.Office_view
+                {
+                    xid = reader["xID"].ToString(),
+                    id = reader["ID"].ToString(),
+                    rtm = reader["rtm"].ToString(),
+                    applicant_name = reader["xname"].ToString(),
+                    xclass = reader["class"].ToString(),
+                    reg_no = reader["reg_no"].ToString(),
+                    tm_type = reader["tm_type"].ToString(),
+                    product_title = reader["product_title"].ToString(),
+                    oai_no = reader["oai_no"].ToString(),
+                    xstat = reader["xstat"].ToString(),
+                    reg_dt = reader["reg_dt"].ToString(),
+                    log_staff = reader["log_staff"].ToString(),
+
+                    logo_pic = reader["logo_pic"].ToString(),
+
+                    auth_doc = reader["auth_doc"].ToString(),
+
+                    sup_doc1 = reader["sup_doc1"].ToString(),
+
+                    sup_doc2 = reader["sup_doc2"].ToString(),
+                    //   batches = reader["visible"].ToString(),
+                    applicantID = reader["applicantID"].ToString(),
+
+                    //Office = reader["data_status"].ToString(),
+                    Sn = Convert.ToString(vsn),
+                   // Agent_Code = pdd.Sys_ID,
+                   // Agent_Name = pdd.Surname,
+                    TransactionId = reader["TransactionId"].ToString(),
+                    Xaddress = reader["street"].ToString(),
+                    Xemail = reader["email1"].ToString(),
+                    Xmobile = reader["telephone1"].ToString()
+                };
+
+                try
+                {
+                    int dw = Convert.ToInt32(reader["visible"]);
+                    if (dw > 1)
+                    {
+                        pp2 = (Convert.ToInt32(reader["visible"]) - 1).ToString();
+
+                    }
+
+                    else
+                    {
+                        pp2 = (Convert.ToInt32(reader["visible"])).ToString();
+
+                    }
+                }
+                catch (Exception ee)
+                {
+
+                }
+
+                item.batches = pp2;
+
+                item2 = item;
+                // list.Add(item);
+
+
+            }
+            reader.Close();
+            connection.Close();
+            return item2;
         }
 
         public XObjs.Pwallet getPwalletByID(string xid)
@@ -3772,6 +4083,7 @@ namespace WebApplication4.Models
                 x.xreg_date = reader["xreg_date"].ToString();
                 x.xsync = reader["xsync"].ToString();
                 x.xvisible = reader["xvisible"].ToString();
+               
             }
             reader.Close();
             return x;
@@ -3800,6 +4112,8 @@ namespace WebApplication4.Models
                 x.xreg_date = reader["xreg_date"].ToString();
                 x.xsync = reader["xsync"].ToString();
                 x.xvisible = reader["xvisible"].ToString();
+                var pp = getFee_listByID(x.fee_listID).xdesc;
+                x.xdesc = pp;
                 xx.Add(x);
             }
             reader.Close();

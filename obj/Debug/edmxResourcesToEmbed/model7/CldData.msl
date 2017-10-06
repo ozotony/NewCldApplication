@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ba2xai_cldxModelStoreContainer" CdmEntityContainer="ba2xai_cldxEntities">
+    <EntitySetMapping Name="activity_lg">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.activity_lg">
+        <MappingFragment StoreEntitySet="activity_lg">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="act_date" ColumnName="act_date" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="module" ColumnName="module" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="old_title" ColumnName="old_title" />
+          <ScalarProperty Name="new_title" ColumnName="new_title" />
+          <ScalarProperty Name="old_class" ColumnName="old_class" />
+          <ScalarProperty Name="new_class" ColumnName="new_class" />
+          <ScalarProperty Name="old_applicantname" ColumnName="old_applicantname" />
+          <ScalarProperty Name="new_applicantname" ColumnName="new_applicantname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="addresses">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.address">
+        <MappingFragment StoreEntitySet="address">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="lgaID" ColumnName="lgaID" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="telephone1" ColumnName="telephone1" />
+          <ScalarProperty Name="telephone2" ColumnName="telephone2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="address_service">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.address_service">
+        <MappingFragment StoreEntitySet="address_service">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="lgaID" ColumnName="lgaID" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="telephone1" ColumnName="telephone1" />
+          <ScalarProperty Name="telephone2" ColumnName="telephone2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admin_lg">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.admin_lg">
+        <MappingFragment StoreEntitySet="admin_lg">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="ip_addy" ColumnName="ip_addy" />
+          <ScalarProperty Name="remote_host" ColumnName="remote_host" />
+          <ScalarProperty Name="remote_user" ColumnName="remote_user" />
+          <ScalarProperty Name="server_name" ColumnName="server_name" />
+          <ScalarProperty Name="server_url" ColumnName="server_url" />
+          <ScalarProperty Name="log_date" ColumnName="log_date" />
+          <ScalarProperty Name="log_time" ColumnName="log_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin_Mail">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.Admin_Mail">
+        <MappingFragment StoreEntitySet="Admin_Mail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Date_Sent" ColumnName="Date_Sent" />
+          <ScalarProperty Name="Agent_Code" ColumnName="Agent_Code" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="pt_id" ColumnName="pt_id" />
+          <ScalarProperty Name="reg_number" ColumnName="reg_number" />
+          <ScalarProperty Name="Recordal_id" ColumnName="Recordal_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agent_FileUpload">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.Agent_FileUpload">
+        <MappingFragment StoreEntitySet="Agent_FileUpload">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="agent_code" ColumnName="agent_code" />
+          <ScalarProperty Name="old_file" ColumnName="old_file" />
+          <ScalarProperty Name="new_file" ColumnName="new_file" />
+          <ScalarProperty Name="Date_Uploaded" ColumnName="Date_Uploaded" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="pt_id" ColumnName="pt_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="applicants">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.applicant">
+        <MappingFragment StoreEntitySet="applicant">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="xtype" ColumnName="xtype" />
+          <ScalarProperty Name="tax_id_type" ColumnName="tax_id_type" />
+          <ScalarProperty Name="tax_id_number" ColumnName="tax_id_number" />
+          <ScalarProperty Name="individual_id_number" ColumnName="individual_id_number" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xold" ColumnName="xold" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="assignment_office">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.assignment_office">
+        <MappingFragment StoreEntitySet="assignment_office">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="assignment_pwalletID" ColumnName="assignment_pwalletID" />
+          <ScalarProperty Name="admin_status" ColumnName="admin_status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="xcomment" ColumnName="xcomment" />
+          <ScalarProperty Name="xdoc1" ColumnName="xdoc1" />
+          <ScalarProperty Name="xdoc2" ColumnName="xdoc2" />
+          <ScalarProperty Name="xdoc3" ColumnName="xdoc3" />
+          <ScalarProperty Name="xofficer" ColumnName="xofficer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="assignment_pwallet">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.assignment_pwallet">
+        <MappingFragment StoreEntitySet="assignment_pwallet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="assignments">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.assignment">
+        <MappingFragment StoreEntitySet="assignments">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="applicant_name" ColumnName="applicant_name" />
+          <ScalarProperty Name="applicant_address" ColumnName="applicant_address" />
+          <ScalarProperty Name="prev_renewal_date" ColumnName="prev_renewal_date" />
+          <ScalarProperty Name="certificate_number" ColumnName="certificate_number" />
+          <ScalarProperty Name="nice_class" ColumnName="nice_class" />
+          <ScalarProperty Name="nice_class_desc" ColumnName="nice_class_desc" />
+          <ScalarProperty Name="trademark" ColumnName="trademark" />
+          <ScalarProperty Name="logo_descID" ColumnName="logo_descID" />
+          <ScalarProperty Name="assignor_name" ColumnName="assignor_name" />
+          <ScalarProperty Name="assignor_address" ColumnName="assignor_address" />
+          <ScalarProperty Name="assignee_name" ColumnName="assignee_name" />
+          <ScalarProperty Name="assignee_address" ColumnName="assignee_address" />
+          <ScalarProperty Name="agreement_date" ColumnName="agreement_date" />
+          <ScalarProperty Name="agent_name" ColumnName="agent_name" />
+          <ScalarProperty Name="agent_code" ColumnName="agent_code" />
+          <ScalarProperty Name="agent_mail" ColumnName="agent_mail" />
+          <ScalarProperty Name="assignment_pwalletID" ColumnName="assignment_pwalletID" />
+          <ScalarProperty Name="logo_pic" ColumnName="logo_pic" />
+          <ScalarProperty Name="poa_doc" ColumnName="poa_doc" />
+          <ScalarProperty Name="deed_doc" ColumnName="deed_doc" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cert_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.cert_info">
+        <MappingFragment StoreEntitySet="cert_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="pub_date" ColumnName="pub_date" />
+          <ScalarProperty Name="pub_details" ColumnName="pub_details" />
+          <ScalarProperty Name="cert_doc" ColumnName="cert_doc" />
+          <ScalarProperty Name="pub_doc" ColumnName="pub_doc" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.country">
+        <MappingFragment StoreEntitySet="country">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_agent_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_agent_info">
+        <MappingFragment StoreEntitySet="g_agent_info">
+          <ScalarProperty Name="xid" ColumnName="xid" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="xpassword" ColumnName="xpassword" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="xsync" ColumnName="xsync" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_app_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_app_info">
+        <MappingFragment StoreEntitySet="g_app_info">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="rtm_number" ColumnName="rtm_number" />
+          <ScalarProperty Name="application_no" ColumnName="application_no" />
+          <ScalarProperty Name="filing_date" ColumnName="filing_date" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="item_code" ColumnName="item_code" />
+          <ScalarProperty Name="reg_no" ColumnName="reg_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_applicant_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_applicant_info">
+        <MappingFragment StoreEntitySet="g_applicant_info">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="xemail" ColumnName="xemail" />
+          <ScalarProperty Name="xmobile" ColumnName="xmobile" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="trading_as" ColumnName="trading_as" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_ass_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_ass_info">
+        <MappingFragment StoreEntitySet="g_ass_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="date_of_assignment" ColumnName="date_of_assignment" />
+          <ScalarProperty Name="assignee_name" ColumnName="assignee_name" />
+          <ScalarProperty Name="assignee_address" ColumnName="assignee_address" />
+          <ScalarProperty Name="assignee_nationality" ColumnName="assignee_nationality" />
+          <ScalarProperty Name="assignor_name" ColumnName="assignor_name" />
+          <ScalarProperty Name="assignor_address" ColumnName="assignor_address" />
+          <ScalarProperty Name="assignor_nationality" ColumnName="assignor_nationality" />
+          <ScalarProperty Name="ass_doc" ColumnName="ass_doc" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_cert_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_cert_info">
+        <MappingFragment StoreEntitySet="g_cert_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="pub_date" ColumnName="pub_date" />
+          <ScalarProperty Name="pub_details" ColumnName="pub_details" />
+          <ScalarProperty Name="cert_doc" ColumnName="cert_doc" />
+          <ScalarProperty Name="pub_doc" ColumnName="pub_doc" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_change_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_change_info">
+        <MappingFragment StoreEntitySet="g_change_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="old_name" ColumnName="old_name" />
+          <ScalarProperty Name="old_address" ColumnName="old_address" />
+          <ScalarProperty Name="old_goods" ColumnName="old_goods" />
+          <ScalarProperty Name="old_tm_class" ColumnName="old_tm_class" />
+          <ScalarProperty Name="new_name" ColumnName="new_name" />
+          <ScalarProperty Name="new_address" ColumnName="new_address" />
+          <ScalarProperty Name="new_goods" ColumnName="new_goods" />
+          <ScalarProperty Name="new_tm_class" ColumnName="new_tm_class" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_merger_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_merger_info">
+        <MappingFragment StoreEntitySet="g_merger_info">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="original_name" ColumnName="original_name" />
+          <ScalarProperty Name="original_address" ColumnName="original_address" />
+          <ScalarProperty Name="merging_name" ColumnName="merging_name" />
+          <ScalarProperty Name="merging_address" ColumnName="merging_address" />
+          <ScalarProperty Name="merged_coy_name" ColumnName="merged_coy_name" />
+          <ScalarProperty Name="merger_date" ColumnName="merger_date" />
+          <ScalarProperty Name="merger_doc" ColumnName="merger_doc" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_other_items_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_other_items_info">
+        <MappingFragment StoreEntitySet="g_other_items_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="req_details" ColumnName="req_details" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_prelim_search_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_prelim_search_info">
+        <MappingFragment StoreEntitySet="g_prelim_search_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="xtitle" ColumnName="xtitle" />
+          <ScalarProperty Name="xclass" ColumnName="xclass" />
+          <ScalarProperty Name="xclass_desc" ColumnName="xclass_desc" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_pwallet">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_pwallet">
+        <MappingFragment StoreEntitySet="g_pwallet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="twalletID" ColumnName="twalletID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="applicantID" ColumnName="applicantID" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="migrated" ColumnName="migrated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_renewal_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_renewal_info">
+        <MappingFragment StoreEntitySet="g_renewal_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="prev_renewal_date" ColumnName="prev_renewal_date" />
+          <ScalarProperty Name="renewal_type" ColumnName="renewal_type" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_tm_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_tm_info">
+        <MappingFragment StoreEntitySet="g_tm_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="reg_number" ColumnName="reg_number" />
+          <ScalarProperty Name="xtype" ColumnName="xtype" />
+          <ScalarProperty Name="tm_title" ColumnName="tm_title" />
+          <ScalarProperty Name="tm_class" ColumnName="tm_class" />
+          <ScalarProperty Name="tm_desc" ColumnName="tm_desc" />
+          <ScalarProperty Name="logo_descID" ColumnName="logo_descID" />
+          <ScalarProperty Name="disclaimer" ColumnName="disclaimer" />
+          <ScalarProperty Name="logo_pic" ColumnName="logo_pic" />
+          <ScalarProperty Name="auth_doc" ColumnName="auth_doc" />
+          <ScalarProperty Name="sup_doc1" ColumnName="sup_doc1" />
+          <ScalarProperty Name="app_letter_doc" ColumnName="app_letter_doc" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_tm_office">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.g_tm_office">
+        <MappingFragment StoreEntitySet="g_tm_office">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="pwalletID" ColumnName="pwalletID" />
+          <ScalarProperty Name="admin_status" ColumnName="admin_status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="xcomment" ColumnName="xcomment" />
+          <ScalarProperty Name="xdoc1" ColumnName="xdoc1" />
+          <ScalarProperty Name="xdoc2" ColumnName="xdoc2" />
+          <ScalarProperty Name="xdoc3" ColumnName="xdoc3" />
+          <ScalarProperty Name="xofficer" ColumnName="xofficer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lgas">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.lga">
+        <MappingFragment StoreEntitySet="lga">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logo_description">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.logo_description">
+        <MappingFragment StoreEntitySet="logo_description">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mark_info">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.mark_info">
+        <MappingFragment StoreEntitySet="mark_info">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="reg_number" ColumnName="reg_number" />
+          <ScalarProperty Name="tm_typeID" ColumnName="tm_typeID" />
+          <ScalarProperty Name="logo_descriptionID" ColumnName="logo_descriptionID" />
+          <ScalarProperty Name="national_classID" ColumnName="national_classID" />
+          <ScalarProperty Name="product_title" ColumnName="product_title" />
+          <ScalarProperty Name="nice_class" ColumnName="nice_class" />
+          <ScalarProperty Name="nice_class_desc" ColumnName="nice_class_desc" />
+          <ScalarProperty Name="sign_type" ColumnName="sign_type" />
+          <ScalarProperty Name="vienna_class" ColumnName="vienna_class" />
+          <ScalarProperty Name="disclaimer" ColumnName="disclaimer" />
+          <ScalarProperty Name="logo_pic" ColumnName="logo_pic" />
+          <ScalarProperty Name="auth_doc" ColumnName="auth_doc" />
+          <ScalarProperty Name="sup_doc1" ColumnName="sup_doc1" />
+          <ScalarProperty Name="sup_doc2" ColumnName="sup_doc2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+          <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mark_infoAmendment">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.mark_infoAmendment">
+        <MappingFragment StoreEntitySet="mark_infoAmendment">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="reg_number" ColumnName="reg_number" />
+          <ScalarProperty Name="tm_typeID" ColumnName="tm_typeID" />
+          <ScalarProperty Name="logo_descriptionID" ColumnName="logo_descriptionID" />
+          <ScalarProperty Name="national_classID" ColumnName="national_classID" />
+          <ScalarProperty Name="product_title" ColumnName="product_title" />
+          <ScalarProperty Name="nice_class" ColumnName="nice_class" />
+          <ScalarProperty Name="nice_class_desc" ColumnName="nice_class_desc" />
+          <ScalarProperty Name="sign_type" ColumnName="sign_type" />
+          <ScalarProperty Name="vienna_class" ColumnName="vienna_class" />
+          <ScalarProperty Name="disclaimer" ColumnName="disclaimer" />
+          <ScalarProperty Name="logo_pic" ColumnName="logo_pic" />
+          <ScalarProperty Name="auth_doc" ColumnName="auth_doc" />
+          <ScalarProperty Name="sup_doc1" ColumnName="sup_doc1" />
+          <ScalarProperty Name="sup_doc2" ColumnName="sup_doc2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+          <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="namechanges">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.namechange">
+        <MappingFragment StoreEntitySet="namechange">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="applicant_name" ColumnName="applicant_name" />
+          <ScalarProperty Name="applicant_address" ColumnName="applicant_address" />
+          <ScalarProperty Name="file_number" ColumnName="file_number" />
+          <ScalarProperty Name="certificate_number" ColumnName="certificate_number" />
+          <ScalarProperty Name="nice_class" ColumnName="nice_class" />
+          <ScalarProperty Name="nice_class_desc" ColumnName="nice_class_desc" />
+          <ScalarProperty Name="old_name" ColumnName="old_name" />
+          <ScalarProperty Name="old_name_addy" ColumnName="old_name_addy" />
+          <ScalarProperty Name="new_name" ColumnName="new_name" />
+          <ScalarProperty Name="new_name_addy" ColumnName="new_name_addy" />
+          <ScalarProperty Name="change_date" ColumnName="change_date" />
+          <ScalarProperty Name="agent_name" ColumnName="agent_name" />
+          <ScalarProperty Name="agent_code" ColumnName="agent_code" />
+          <ScalarProperty Name="agent_mail" ColumnName="agent_mail" />
+          <ScalarProperty Name="namechange_pwalletID" ColumnName="namechange_pwalletID" />
+          <ScalarProperty Name="power_of_attorney" ColumnName="power_of_attorney" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="namechange_office">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.namechange_office">
+        <MappingFragment StoreEntitySet="namechange_office">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="namechange_pwalletID" ColumnName="namechange_pwalletID" />
+          <ScalarProperty Name="admin_status" ColumnName="admin_status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="xcomment" ColumnName="xcomment" />
+          <ScalarProperty Name="xdoc1" ColumnName="xdoc1" />
+          <ScalarProperty Name="xdoc2" ColumnName="xdoc2" />
+          <ScalarProperty Name="xdoc3" ColumnName="xdoc3" />
+          <ScalarProperty Name="xofficer" ColumnName="xofficer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="namechange_pwallet">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.namechange_pwallet">
+        <MappingFragment StoreEntitySet="namechange_pwallet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="national_classes">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.national_classes">
+        <MappingFragment StoreEntitySet="national_classes">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pwallets">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.pwallet">
+        <MappingFragment StoreEntitySet="pwallet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="applicantID" ColumnName="applicantID" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+          <ScalarProperty Name="rtm" ColumnName="rtm" />
+          <ScalarProperty Name="acc_p" ColumnName="acc_p" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pwalletAmendments">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.pwalletAmendment">
+        <MappingFragment StoreEntitySet="pwalletAmendment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="pwalletid" ColumnName="pwalletid" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="applicantID" ColumnName="applicantID" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+          <ScalarProperty Name="rtm" ColumnName="rtm" />
+          <ScalarProperty Name="acc_p" ColumnName="acc_p" />
+          <ScalarProperty Name="AmendmentDate" ColumnName="AmendmentDate" />
+          <ScalarProperty Name="AmendmentStatus" ColumnName="AmendmentStatus" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PaymentRef" ColumnName="PaymentRef" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recordals">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.Recordal">
+        <MappingFragment StoreEntitySet="Recordal">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OLD_APPLICANTNAME" ColumnName="OLD_APPLICANTNAME" />
+          <ScalarProperty Name="NEW_APPLICANTNAME" ColumnName="NEW_APPLICANTNAME" />
+          <ScalarProperty Name="RECORDAL_REQUEST_DATE" ColumnName="RECORDAL_REQUEST_DATE" />
+          <ScalarProperty Name="RECORDAL_APPROVE_DATE" ColumnName="RECORDAL_APPROVE_DATE" />
+          <ScalarProperty Name="LOG_STAFF" ColumnName="LOG_STAFF" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="TRANSACTIONID" ColumnName="TRANSACTIONID" />
+          <ScalarProperty Name="RECORDAL_TYPE" ColumnName="RECORDAL_TYPE" />
+          <ScalarProperty Name="XOFFICER" ColumnName="XOFFICER" />
+          <ScalarProperty Name="OLD_APPLICANTADDRESS" ColumnName="OLD_APPLICANTADDRESS" />
+          <ScalarProperty Name="NEW_APPLICANTADDRESS" ColumnName="NEW_APPLICANTADDRESS" />
+          <ScalarProperty Name="Xcomment" ColumnName="Xcomment" />
+          <ScalarProperty Name="OLD_AGENTNAME" ColumnName="OLD_AGENTNAME" />
+          <ScalarProperty Name="NEW_AGENTNAME" ColumnName="NEW_AGENTNAME" />
+          <ScalarProperty Name="OLD_AGENTCODE" ColumnName="OLD_AGENTCODE" />
+          <ScalarProperty Name="NEW_AGENTCODE" ColumnName="NEW_AGENTCODE" />
+          <ScalarProperty Name="OLD_AGENTEMAIL" ColumnName="OLD_AGENTEMAIL" />
+          <ScalarProperty Name="NEW_AGENTEMAIL" ColumnName="NEW_AGENTEMAIL" />
+          <ScalarProperty Name="OLD_AGENTPHONE" ColumnName="OLD_AGENTPHONE" />
+          <ScalarProperty Name="NEW_AGENTPHONE" ColumnName="NEW_AGENTPHONE" />
+          <ScalarProperty Name="OLD_PRODUCT_TITLE" ColumnName="OLD_PRODUCT_TITLE" />
+          <ScalarProperty Name="NEW_PRODUCT_TITLE" ColumnName="NEW_PRODUCT_TITLE" />
+          <ScalarProperty Name="OLD_PRODUCT_LOGO" ColumnName="OLD_PRODUCT_LOGO" />
+          <ScalarProperty Name="NEW_PRODUCT_LOGO" ColumnName="NEW_PRODUCT_LOGO" />
+          <ScalarProperty Name="LOGO_DESC" ColumnName="LOGO_DESC" />
+          <ScalarProperty Name="Detail_Id" ColumnName="Detail_Id" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="data_status2" ColumnName="data_status2" />
+          <ScalarProperty Name="data_status3" ColumnName="data_status3" />
+          <ScalarProperty Name="data_status4" ColumnName="data_status4" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="OLDAGENT_ADDRESS" ColumnName="OLDAGENT_ADDRESS" />
+          <ScalarProperty Name="NEWAGENT_ADDRESS" ColumnName="NEWAGENT_ADDRESS" />
+          <ScalarProperty Name="UPLOADPATH" ColumnName="UPLOADPATH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recordal2">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.Recordal2">
+        <MappingFragment StoreEntitySet="Recordal2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="oldApplicantName" ColumnName="oldApplicantName" />
+          <ScalarProperty Name="newApplicantName" ColumnName="newApplicantName" />
+          <ScalarProperty Name="newApplicantAddress" ColumnName="newApplicantAddress" />
+          <ScalarProperty Name="oldApplicantAddress" ColumnName="oldApplicantAddress" />
+          <ScalarProperty Name="newApplicantNationality" ColumnName="newApplicantNationality" />
+          <ScalarProperty Name="OldApplicantNationality" ColumnName="OldApplicantNationality" />
+          <ScalarProperty Name="newApplicantDescription" ColumnName="newApplicantDescription" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="status2" ColumnName="status2" />
+          <ScalarProperty Name="assignment_upload" ColumnName="assignment_upload" />
+          <ScalarProperty Name="Assignee_upload" ColumnName="Assignee_upload" />
+          <ScalarProperty Name="deed_Assignment_upload" ColumnName="deed_Assignment_upload" />
+          <ScalarProperty Name="Power_of_Attorney_upload" ColumnName="Power_of_Attorney_upload" />
+          <ScalarProperty Name="Registration_of_Mark_upload" ColumnName="Registration_of_Mark_upload" />
+          <ScalarProperty Name="Assignment_Date" ColumnName="Assignment_Date" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Registrar_direction" ColumnName="Registrar_direction" />
+          <ScalarProperty Name="advertisements_complying" ColumnName="advertisements_complying" />
+          <ScalarProperty Name="publication" ColumnName="publication" />
+          <ScalarProperty Name="name_certificate" ColumnName="name_certificate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recordal3">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.Recordal3">
+        <MappingFragment StoreEntitySet="Recordal3">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Renewal_DueDate" ColumnName="Renewal_DueDate" />
+          <ScalarProperty Name="Renewal_Type" ColumnName="Renewal_Type" />
+          <ScalarProperty Name="power_of_attorney" ColumnName="power_of_attorney" />
+          <ScalarProperty Name="Certificate_Of_Registration" ColumnName="Certificate_Of_Registration" />
+          <ScalarProperty Name="Applicant_name" ColumnName="Applicant_name" />
+          <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
+          <ScalarProperty Name="Reg_Date" ColumnName="Reg_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="renewals">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.renewal">
+        <MappingFragment StoreEntitySet="renewal">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="applicant_name" ColumnName="applicant_name" />
+          <ScalarProperty Name="applicant_address" ColumnName="applicant_address" />
+          <ScalarProperty Name="prev_renewal_date" ColumnName="prev_renewal_date" />
+          <ScalarProperty Name="certificate_number" ColumnName="certificate_number" />
+          <ScalarProperty Name="nice_class" ColumnName="nice_class" />
+          <ScalarProperty Name="nice_class_desc" ColumnName="nice_class_desc" />
+          <ScalarProperty Name="trademark" ColumnName="trademark" />
+          <ScalarProperty Name="logo_descID" ColumnName="logo_descID" />
+          <ScalarProperty Name="agent_name" ColumnName="agent_name" />
+          <ScalarProperty Name="agent_code" ColumnName="agent_code" />
+          <ScalarProperty Name="agent_mail" ColumnName="agent_mail" />
+          <ScalarProperty Name="renewal_pwalletID" ColumnName="renewal_pwalletID" />
+          <ScalarProperty Name="logo_pic" ColumnName="logo_pic" />
+          <ScalarProperty Name="power_of_attorney" ColumnName="power_of_attorney" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="renewal_office">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.renewal_office">
+        <MappingFragment StoreEntitySet="renewal_office">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="renewal_pwalletID" ColumnName="renewal_pwalletID" />
+          <ScalarProperty Name="admin_status" ColumnName="admin_status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="xcomment" ColumnName="xcomment" />
+          <ScalarProperty Name="xdoc1" ColumnName="xdoc1" />
+          <ScalarProperty Name="xdoc2" ColumnName="xdoc2" />
+          <ScalarProperty Name="xdoc3" ColumnName="xdoc3" />
+          <ScalarProperty Name="xofficer" ColumnName="xofficer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="renewal_pwallet">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.renewal_pwallet">
+        <MappingFragment StoreEntitySet="renewal_pwallet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="representatives">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.representative">
+        <MappingFragment StoreEntitySet="representative">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="agent_code" ColumnName="agent_code" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="individual_id_type" ColumnName="individual_id_type" />
+          <ScalarProperty Name="individual_id_number" ColumnName="individual_id_number" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="priv" ColumnName="priv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="search_wallet">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.search_wallet">
+        <MappingFragment StoreEntitySet="search_wallet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="mark_infoID" ColumnName="mark_infoID" />
+          <ScalarProperty Name="search_str" ColumnName="search_str" />
+          <ScalarProperty Name="search_cri" ColumnName="search_cri" />
+          <ScalarProperty Name="xclass" ColumnName="xclass" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="search_wallet2">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.search_wallet2">
+        <MappingFragment StoreEntitySet="search_wallet2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="mark_infoID" ColumnName="mark_infoID" />
+          <ScalarProperty Name="search_str" ColumnName="search_str" />
+          <ScalarProperty Name="search_cri" ColumnName="search_cri" />
+          <ScalarProperty Name="xclass" ColumnName="xclass" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.state">
+        <MappingFragment StoreEntitySet="state">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tm_office">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.tm_office">
+        <MappingFragment StoreEntitySet="tm_office">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="pwalletID" ColumnName="pwalletID" />
+          <ScalarProperty Name="admin_status" ColumnName="admin_status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="xcomment" ColumnName="xcomment" />
+          <ScalarProperty Name="xdoc1" ColumnName="xdoc1" />
+          <ScalarProperty Name="xdoc2" ColumnName="xdoc2" />
+          <ScalarProperty Name="xdoc3" ColumnName="xdoc3" />
+          <ScalarProperty Name="xofficer" ColumnName="xofficer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tm_type">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.tm_type">
+        <MappingFragment StoreEntitySet="tm_type">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xadminz_tm">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.xadminz_tm">
+        <MappingFragment StoreEntitySet="xadminz_tm">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="xroleID" ColumnName="xroleID" />
+          <ScalarProperty Name="xname" ColumnName="xname" />
+          <ScalarProperty Name="xemail" ColumnName="xemail" />
+          <ScalarProperty Name="xpass" ColumnName="xpass" />
+          <ScalarProperty Name="xtelephone1" ColumnName="xtelephone1" />
+          <ScalarProperty Name="xtelephone2" ColumnName="xtelephone2" />
+          <ScalarProperty Name="xsection" ColumnName="xsection" />
+          <ScalarProperty Name="xlog_officer" ColumnName="xlog_officer" />
+          <ScalarProperty Name="xreg_date" ColumnName="xreg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xtransactions">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.xtransaction">
+        <MappingFragment StoreEntitySet="xtransactions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+          <ScalarProperty Name="xcode" ColumnName="xcode" />
+          <ScalarProperty Name="ptype" ColumnName="ptype" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="address2">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.address2">
+        <MappingFragment StoreEntitySet="address2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="lgaID" ColumnName="lgaID" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="telephone1" ColumnName="telephone1" />
+          <ScalarProperty Name="telephone2" ColumnName="telephone2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="address4">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.address4">
+        <MappingFragment StoreEntitySet="address4">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="countryID" ColumnName="countryID" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="lgaID" ColumnName="lgaID" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="telephone1" ColumnName="telephone1" />
+          <ScalarProperty Name="telephone2" ColumnName="telephone2" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+          <ScalarProperty Name="email2" ColumnName="email2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mark_info2">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.mark_info2">
+        <MappingFragment StoreEntitySet="mark_info2">
+          <ScalarProperty Name="xID" ColumnName="xID" />
+          <ScalarProperty Name="reg_number" ColumnName="reg_number" />
+          <ScalarProperty Name="tm_typeID" ColumnName="tm_typeID" />
+          <ScalarProperty Name="logo_descriptionID" ColumnName="logo_descriptionID" />
+          <ScalarProperty Name="national_classID" ColumnName="national_classID" />
+          <ScalarProperty Name="product_title" ColumnName="product_title" />
+          <ScalarProperty Name="nice_class" ColumnName="nice_class" />
+          <ScalarProperty Name="nice_class_desc" ColumnName="nice_class_desc" />
+          <ScalarProperty Name="sign_type" ColumnName="sign_type" />
+          <ScalarProperty Name="vienna_class" ColumnName="vienna_class" />
+          <ScalarProperty Name="disclaimer" ColumnName="disclaimer" />
+          <ScalarProperty Name="logo_pic" ColumnName="logo_pic" />
+          <ScalarProperty Name="auth_doc" ColumnName="auth_doc" />
+          <ScalarProperty Name="sup_doc1" ColumnName="sup_doc1" />
+          <ScalarProperty Name="sup_doc2" ColumnName="sup_doc2" />
+          <ScalarProperty Name="log_staff" ColumnName="log_staff" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pwallet2">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.pwallet2">
+        <MappingFragment StoreEntitySet="pwallet2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="applicantID" ColumnName="applicantID" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+          <ScalarProperty Name="rtm" ColumnName="rtm" />
+          <ScalarProperty Name="acc_p" ColumnName="acc_p" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pwallet3">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.pwallet3">
+        <MappingFragment StoreEntitySet="pwallet3">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="applicantID" ColumnName="applicantID" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+          <ScalarProperty Name="rtm" ColumnName="rtm" />
+          <ScalarProperty Name="acc_p" ColumnName="acc_p" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pwallet4">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.pwallet4">
+        <MappingFragment StoreEntitySet="pwallet4">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="validationID" ColumnName="validationID" />
+          <ScalarProperty Name="applicantID" ColumnName="applicantID" />
+          <ScalarProperty Name="log_officer" ColumnName="log_officer" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+          <ScalarProperty Name="rtm" ColumnName="rtm" />
+          <ScalarProperty Name="acc_p" ColumnName="acc_p" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tests">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.Test">
+        <MappingFragment StoreEntitySet="Test">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tm_office2">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.tm_office2">
+        <MappingFragment StoreEntitySet="tm_office2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="pwalletID" ColumnName="pwalletID" />
+          <ScalarProperty Name="admin_status" ColumnName="admin_status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="xcomment" ColumnName="xcomment" />
+          <ScalarProperty Name="xdoc1" ColumnName="xdoc1" />
+          <ScalarProperty Name="xdoc2" ColumnName="xdoc2" />
+          <ScalarProperty Name="xdoc3" ColumnName="xdoc3" />
+          <ScalarProperty Name="xofficer" ColumnName="xofficer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tm_printed_office">
+      <EntityTypeMapping TypeName="ba2xai_cldxModel.tm_printed_office">
+        <MappingFragment StoreEntitySet="tm_printed_office">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="pwalletID" ColumnName="pwalletID" />
+          <ScalarProperty Name="admin_status" ColumnName="admin_status" />
+          <ScalarProperty Name="data_status" ColumnName="data_status" />
+          <ScalarProperty Name="xcomment" ColumnName="xcomment" />
+          <ScalarProperty Name="xdoc1" ColumnName="xdoc1" />
+          <ScalarProperty Name="xdoc2" ColumnName="xdoc2" />
+          <ScalarProperty Name="xdoc3" ColumnName="xdoc3" />
+          <ScalarProperty Name="xofficer" ColumnName="xofficer" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="xvisible" ColumnName="xvisible" />
+          <ScalarProperty Name="xtime" ColumnName="xtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_a_address" FunctionName="ba2xai_cldxModel.Store.sp_a_address" />
+    <FunctionImportMapping FunctionImportName="sp_a_address_service" FunctionName="ba2xai_cldxModel.Store.sp_a_address_service" />
+    <FunctionImportMapping FunctionImportName="sp_a_applicant" FunctionName="ba2xai_cldxModel.Store.sp_a_applicant" />
+    <FunctionImportMapping FunctionImportName="sp_a_pwallet" FunctionName="ba2xai_cldxModel.Store.sp_a_pwallet" />
+    <FunctionImportMapping FunctionImportName="sp_a_representative" FunctionName="ba2xai_cldxModel.Store.sp_a_representative" />
+    <FunctionImportMapping FunctionImportName="sp_a_tm_office" FunctionName="ba2xai_cldxModel.Store.sp_a_tm_office" />
+    <FunctionImportMapping FunctionImportName="sp_a_TmRegAdmin" FunctionName="ba2xai_cldxModel.Store.sp_a_TmRegAdmin" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ba2xai_cldxModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ba2xai_cldxModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ba2xai_cldxModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ba2xai_cldxModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ba2xai_cldxModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ba2xai_cldxModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ba2xai_cldxModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ba2xai_cldxModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_s_IsValid" FunctionName="ba2xai_cldxModel.Store.sp_s_IsValid" />
+    <FunctionImportMapping FunctionImportName="sp_u_MarkInfoRegNumber" FunctionName="ba2xai_cldxModel.Store.sp_u_MarkInfoRegNumber" />
+    <FunctionImportMapping FunctionImportName="sp_u_MarkInfoWithDocz" FunctionName="ba2xai_cldxModel.Store.sp_u_MarkInfoWithDocz" />
+    <FunctionImportMapping FunctionImportName="sp_u_pwallet" FunctionName="ba2xai_cldxModel.Store.sp_u_pwallet" />
+    <FunctionImportMapping FunctionImportName="sp_u_PwalletAccPrintStatus" FunctionName="ba2xai_cldxModel.Store.sp_u_PwalletAccPrintStatus" />
+    <FunctionImportMapping FunctionImportName="sp_u_PwalletRtmStatus" FunctionName="ba2xai_cldxModel.Store.sp_u_PwalletRtmStatus" />
+    <FunctionImportMapping FunctionImportName="sp_u_PwalletStage" FunctionName="ba2xai_cldxModel.Store.sp_u_PwalletStage" />
+    <FunctionImportMapping FunctionImportName="sp_u_PwalletStatus" FunctionName="ba2xai_cldxModel.Store.sp_u_PwalletStatus" />
+    <FunctionImportMapping FunctionImportName="sp_u_xadminz_pass" FunctionName="ba2xai_cldxModel.Store.sp_u_xadminz_pass" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ba2xai_cldxModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

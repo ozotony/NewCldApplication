@@ -280,53 +280,9 @@
       <DependentUpon>201612061455513_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations3\Configuration.cs" />
-    <Compile Include="Migrations\201611081237586_tt2.cs" />
-    <Compile Include="Migrations\201611081237586_tt2.Designer.cs">
-      <DependentUpon>201611081237586_tt2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611081241522_tt3.cs" />
-    <Compile Include="Migrations\201611081241522_tt3.Designer.cs">
-      <DependentUpon>201611081241522_tt3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611081328263_tt4.cs" />
-    <Compile Include="Migrations\201611081328263_tt4.Designer.cs">
-      <DependentUpon>201611081328263_tt4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611091141520_Initial.cs" />
-    <Compile Include="Migrations\201611091141520_Initial.Designer.cs">
-      <DependentUpon>201611091141520_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611091147345_Initial1.cs" />
-    <Compile Include="Migrations\201611091147345_Initial1.Designer.cs">
-      <DependentUpon>201611091147345_Initial1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611091511270_Initial2.cs" />
-    <Compile Include="Migrations\201611091511270_Initial2.Designer.cs">
-      <DependentUpon>201611091511270_Initial2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611091519555_Initial3.cs" />
-    <Compile Include="Migrations\201611091519555_Initial3.Designer.cs">
-      <DependentUpon>201611091519555_Initial3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611091610198_Initial4.cs" />
-    <Compile Include="Migrations\201611091610198_Initial4.Designer.cs">
-      <DependentUpon>201611091610198_Initial4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611091701202_Initial5.cs" />
-    <Compile Include="Migrations\201611091701202_Initial5.Designer.cs">
-      <DependentUpon>201611091701202_Initial5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611111049577_Initial6.cs" />
-    <Compile Include="Migrations\201611111049577_Initial6.Designer.cs">
-      <DependentUpon>201611111049577_Initial6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611130629345_Initial7.cs" />
-    <Compile Include="Migrations\201611130629345_Initial7.Designer.cs">
-      <DependentUpon>201611130629345_Initial7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612280639238_Initial8.cs" />
-    <Compile Include="Migrations\201612280639238_Initial8.Designer.cs">
-      <DependentUpon>201612280639238_Initial8.cs</DependentUpon>
+    <Compile Include="Migrations\201702172228247_Initial.cs" />
+    <Compile Include="Migrations\201702172228247_Initial.Designer.cs">
+      <DependentUpon>201702172228247_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model2\address.cs" />
@@ -383,6 +339,207 @@
     <Compile Include="Model3\xmember.cs" />
     <Compile Include="Model3\xpartner.cs" />
     <Compile Include="Model4Migrations\Configuration.cs" />
+    <Compile Include="model7\activity_lg.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\address.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\address2.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\address4.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\address_service.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\admin_lg.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\Admin_Mail.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\Agent_FileUpload.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\applicant.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\assignment.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\assignment_office.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\assignment_pwallet.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\cert_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\CldData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CldData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\CldData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\CldData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CldData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="model7\country.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_agent_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_applicant_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_app_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_ass_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_cert_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_change_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_merger_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_other_items_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_prelim_search_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_pwallet.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_renewal_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_tm_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\g_tm_office.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\lga.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\logo_description.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\mark_info.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\mark_info2.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\mark_infoAmendment.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\namechange.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\namechange_office.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\namechange_pwallet.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\national_classes.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\pwallet.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\pwallet2.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\pwallet3.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\pwallet4.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\pwalletAmendment.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\Recordal.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\Recordal2.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\Recordal3.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\renewal.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\renewal_office.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\renewal_pwallet.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\representative.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\role.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\search_wallet.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\search_wallet2.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\sp_helpdiagrams_Result.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\state.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\sysdiagram.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\Test.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\tm_office.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\tm_office2.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\tm_printed_office.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\tm_type.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\xadminz_tm.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model7\xtransaction.cs">
+      <DependentUpon>CldData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountStatus.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -416,6 +573,7 @@
     <Compile Include="Models\FeeListReport.cs" />
     <Compile Include="Models\Fee_details.cs" />
     <Compile Include="Models\GenerateUrl.cs" />
+    <Compile Include="Models\GetData3.cs" />
     <Compile Include="Models\GetMenu.cs" />
     <Compile Include="Models\GetService.cs" />
     <Compile Include="Models\GetTransaction.cs" />
@@ -431,6 +589,7 @@
     <Compile Include="Models\Messenger.cs" />
     <Compile Include="Models\NClass.cs" />
     <Compile Include="Models\Partner_Organisation.cs" />
+    <Compile Include="Models\PaymentReport2.cs" />
     <Compile Include="Models\PostUser.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\PtInfo.cs" />
@@ -574,6 +733,16 @@
     <Content Include="js\respond.min.js" />
     <Content Include="js\waypoints.min.js" />
     <Content Include="js\xlsx.core.min.js" />
+    <Content Include="model7\CldData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CldData.edmx</DependentUpon>
+      <LastGenOutput>CldData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="model7\CldData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CldData.edmx</DependentUpon>
+      <LastGenOutput>CldData.cs</LastGenOutput>
+    </Content>
     <Content Include="partial\Index2.html" />
     <Content Include="ReturnUrl.aspx" />
     <Content Include="Scripts\alasql.min.js" />
@@ -587,6 +756,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-spinner.min.js" />
     <Content Include="Scripts\angular-strap.compat.min.js" />
     <Content Include="Scripts\angular-strap.js" />
     <Content Include="Scripts\angular-strap.min.js" />
@@ -651,6 +821,13 @@
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
     <Content Include="Scripts\GetData2.js" />
+    <EntityDeploy Include="model7\CldData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CldData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="model7\CldData.edmx.diagram">
+      <DependentUpon>CldData.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
@@ -757,41 +934,8 @@
     <EmbeddedResource Include="Migrations3\201612061455513_Initial1.resx">
       <DependentUpon>201612061455513_Initial1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611081237586_tt2.resx">
-      <DependentUpon>201611081237586_tt2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611081241522_tt3.resx">
-      <DependentUpon>201611081241522_tt3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611081328263_tt4.resx">
-      <DependentUpon>201611081328263_tt4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611091141520_Initial.resx">
-      <DependentUpon>201611091141520_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611091147345_Initial1.resx">
-      <DependentUpon>201611091147345_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611091511270_Initial2.resx">
-      <DependentUpon>201611091511270_Initial2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611091519555_Initial3.resx">
-      <DependentUpon>201611091519555_Initial3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611091610198_Initial4.resx">
-      <DependentUpon>201611091610198_Initial4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611091701202_Initial5.resx">
-      <DependentUpon>201611091701202_Initial5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611111049577_Initial6.resx">
-      <DependentUpon>201611111049577_Initial6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611130629345_Initial7.resx">
-      <DependentUpon>201611130629345_Initial7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612280639238_Initial8.resx">
-      <DependentUpon>201612280639238_Initial8.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702172228247_Initial.resx">
+      <DependentUpon>201702172228247_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

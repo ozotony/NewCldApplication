@@ -187,6 +187,15 @@ namespace WebApplication4.Models
 
             public string Xmobile { get; set; }
 
+            public string logo_pic { get; set; }
+
+            public string auth_doc { get; set; }
+
+            public string sup_doc1 { get; set; }
+
+            public string sup_doc2 { get; set; }
+
+
 
 
 

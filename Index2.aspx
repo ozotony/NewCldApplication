@@ -4,13 +4,13 @@
 
 <html  ng-app="formApp">
 <head>
-    <title></title>
+   
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Cld Mobile</title>
+    <title>ipPro</title>
     <meta name="description" content="Your description" />
     <meta name="keywords" content="Your,Keywords" />
     <meta name="author" content="ResponsiveWebInc" />
@@ -49,7 +49,6 @@
     <link href="css/overwrite.css" rel="stylesheet" />
 
 
-   <%-- <base href="/NewTrademark/" />--%>
 
 
 
@@ -104,6 +103,8 @@
     <script src="Scripts/loading-bar.js"></script>
     <link href="Content/loading-bar.css" rel="stylesheet" />
     <script src="Scripts/angular-facebook.min.js"></script>
+
+    <script src="Scripts/angular-spinner.min.js"></script>
 
     <script src="Scripts/smart-table.min.js"></script>
     <link href="Content/ng-modal.css" rel="stylesheet" />
@@ -201,9 +202,6 @@
             }
         }
 
-        /*body {
-            padding-top: 70px;
-        }*/
     </style>
 
     <style>
@@ -213,17 +211,26 @@
                     font-family: 'Bree Serif', serif;
                 }
 
-                /*.jumbotron {
-            position: relative;
-            background: #000 url("jumbotron-bg.png") center center;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            overflow: hidden;
-        }*/
+               
 body {
    
     padding-top: 5px;
+}
+
+.blink {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
     </style>
@@ -237,20 +244,15 @@ body {
 
     <meta charset="utf-8" />
 </head>
-<body  class="hold-transition skin-blue sidebar-mini" ng-controller="formController">>
+<body  class="hold-transition skin-blue sidebar-mini" ng-controller="formController">
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-               
-            </div>
-            <div class="col-sm-4">
-                <img alt="Coat of Arms" src="images/LOGOCLD.jpg" width="458" height="76" />
+            <div class="col-sm-12">
               
+                 
             </div>
-            <div class="col-sm-4 " >
-               
-            </div>
+           
 
         </div>
     </div>
@@ -271,15 +273,11 @@ body {
 
                 <tr>
                     <td colspan="2" align="center">
-                        &nbsp;
+                        <span us-spinner spinner-key="spinner-1"></span> 
                     </td>
                 </tr>
 
-                <tr>
-                    <td colspan="2" align="center" style="background-color:#1C5E55; color:#ffffff;">
-                        &nbsp;
-                    </td>
-                </tr>
+               
                 <tr align="center">
                     <td colspan="2">
                         <div class="notice_proceed">
@@ -294,7 +292,7 @@ body {
                 <tr align="center">
                     <td colspan="2">
 
-                       <form id="form1" action="https://stageserv.interswitchng.com/test_paydirect/pay" method="post">
+                       <form id="form1" action="https://sandbox.interswitchng.com/webpay/pay" method="post">
                             <input name="product_id" type="hidden" value="{{AllField.ff.product_id}}"/>
                             <input name="pay_item_id" type="hidden" value= "{{AllField.ff.pay_item_id}}" />
                             <input name="amount" type="hidden" value="{{AllField.ff.amount}}" />
@@ -318,7 +316,9 @@ body {
                            
 
                            
-                            <input id="btnPayment" type="button" value="Make Payment" ng-click="submitForm()" class="btn btn-info" />
+                            <input id="btnPayment" type="button" value="Click To Proceed" ng-click="submitForm()" class="btn btn-info blink" />
+
+                          
 
                         </form>
 

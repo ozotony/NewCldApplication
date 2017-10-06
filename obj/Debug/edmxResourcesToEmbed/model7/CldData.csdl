@@ -1,0 +1,1209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ba2xai_cldxModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="activity_lg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="act_date" Type="DateTime" Precision="3" />
+    <Property Name="DocumentId" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Operation" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="module" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="old_title" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+    <Property Name="new_title" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+    <Property Name="old_class" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+    <Property Name="new_class" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+    <Property Name="old_applicantname" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+    <Property Name="new_applicantname" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countryID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="stateID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="lgaID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="telephone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="telephone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="address_service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countryID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="stateID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="lgaID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="telephone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="telephone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="admin_lg">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adminID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ip_addy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="remote_host" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="remote_user" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="server_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="server_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="log_time" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Admin_Mail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Sent" Type="DateTime" Precision="3" />
+    <Property Name="Agent_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="pt_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reg_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Recordal_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Agent_FileUpload">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="agent_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="old_file" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="new_file" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Uploaded" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pt_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="applicant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tax_id_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tax_id_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="individual_id_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addressID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xold" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="assignment_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="assignment_pwalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xofficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="assignment_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="assignment">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="applicant_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="applicant_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="prev_renewal_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="certificate_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="trademark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="logo_descID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="assignor_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="assignor_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="assignee_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="assignee_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="agreement_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="assignment_pwalletID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="logo_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="poa_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="deed_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="reg_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cert_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pub_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pub_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cert_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pub_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_agent_info">
+    <Key>
+      <PropertyRef Name="xid" />
+    </Key>
+    <Property Name="xid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xsync" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_app_info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rtm_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="application_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="filing_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="item_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="reg_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_applicant_info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xmobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trading_as" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_ass_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date_of_assignment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="assignee_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="assignee_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="assignee_nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="assignor_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="assignor_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="assignor_nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ass_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_cert_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pub_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pub_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cert_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pub_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_change_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="old_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="old_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="old_goods" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="old_tm_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="new_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="new_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="new_goods" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="new_tm_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_merger_info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="original_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="original_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="merging_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="merging_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="merged_coy_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="merger_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="merger_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_other_items_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="req_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_prelim_search_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xtitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xclass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xclass_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="twalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="applicantID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="migrated" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_renewal_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prev_renewal_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="renewal_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_tm_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reg_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tm_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tm_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tm_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="logo_descID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="disclaimer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="logo_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="auth_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sup_doc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="app_letter_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="g_tm_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pwalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xofficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="lga">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stateID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="logo_description">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mark_info">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reg_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tm_typeID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="logo_descriptionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="national_classID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="product_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sign_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vienna_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="disclaimer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="logo_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="auth_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sup_doc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sup_doc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="upload_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mark_infoAmendment">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reg_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tm_typeID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="logo_descriptionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="national_classID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="product_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sign_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vienna_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="disclaimer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="logo_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="auth_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sup_doc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sup_doc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="upload_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="namechange">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="applicant_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="applicant_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="file_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="certificate_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="old_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="old_name_addy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="new_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="new_name_addy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="change_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="namechange_pwalletID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="power_of_attorney" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="regdate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="namechange_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="namechange_pwalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xofficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="namechange_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="national_classes">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="applicantID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rtm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="acc_p" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="pwalletAmendment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pwalletid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="applicantID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rtm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="acc_p" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AmendmentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AmendmentStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentRef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Recordal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OLD_APPLICANTNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_APPLICANTNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RECORDAL_REQUEST_DATE" Type="DateTime" Precision="3" />
+    <Property Name="RECORDAL_APPROVE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="LOG_STAFF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AMOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TRANSACTIONID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RECORDAL_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="XOFFICER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OLD_APPLICANTADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_APPLICANTADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Xcomment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OLD_AGENTNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_AGENTNAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OLD_AGENTCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_AGENTCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OLD_AGENTEMAIL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_AGENTEMAIL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OLD_AGENTPHONE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_AGENTPHONE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OLD_PRODUCT_TITLE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_PRODUCT_TITLE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OLD_PRODUCT_LOGO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_PRODUCT_LOGO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LOGO_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Detail_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="OLDAGENT_ADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NEWAGENT_ADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UPLOADPATH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Recordal2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oldApplicantName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="newApplicantName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="newApplicantAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="oldApplicantAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="newApplicantNationality" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OldApplicantNationality" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="newApplicantDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="assignment_upload" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Assignee_upload" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="deed_Assignment_upload" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Power_of_Attorney_upload" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Registration_of_Mark_upload" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Assignment_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Registrar_direction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="advertisements_complying" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="publication" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="name_certificate" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Recordal3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Renewal_DueDate" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Renewal_Type" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="power_of_attorney" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Certificate_Of_Registration" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Applicant_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Applicant_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Reg_Date" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="renewal">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="applicant_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="applicant_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="prev_renewal_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="certificate_number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="trademark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="logo_descID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="agent_mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="renewal_pwalletID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="logo_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="power_of_attorney" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="regdate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="renewal_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="renewal_pwalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xofficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="renewal_pwallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="representative">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="agent_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="individual_id_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="individual_id_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addressID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="priv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="search_wallet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mark_infoID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="search_str" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="search_cri" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xclass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="search_wallet2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mark_infoID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="search_str" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="search_cri" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xclass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="countryID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tm_office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pwalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xofficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="Boolean" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tm_type">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="xadminz_tm">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xroleID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="xemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xpass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xtelephone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xtelephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xsection" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xlog_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xreg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="xtransaction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ptype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="adminID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="address2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countryID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="stateID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="lgaID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="telephone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="telephone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="address4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="countryID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="stateID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="lgaID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="telephone1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="telephone2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="email2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="log_staff" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mark_info2">
+    <Key>
+      <PropertyRef Name="xID" />
+    </Key>
+    <Property Name="xID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reg_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tm_typeID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="logo_descriptionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="national_classID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="product_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nice_class_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sign_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vienna_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="disclaimer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="logo_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="auth_doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sup_doc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="sup_doc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="log_staff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="pwallet2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="applicantID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rtm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="acc_p" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="pwallet3">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="applicantID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rtm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="acc_p" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="pwallet4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="validationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="applicantID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="log_officer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="visible" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rtm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="acc_p" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tm_office2">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="xofficer" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pwalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xofficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="Boolean" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tm_printed_office">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="xofficer" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pwalletID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="admin_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xcomment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xdoc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="xofficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="xvisible" Type="Boolean" />
+    <Property Name="xtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ba2xai_cldxEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="activity_lg" EntityType="Self.activity_lg" />
+    <EntitySet Name="addresses" EntityType="Self.address" />
+    <EntitySet Name="address_service" EntityType="Self.address_service" />
+    <EntitySet Name="admin_lg" EntityType="Self.admin_lg" />
+    <EntitySet Name="Admin_Mail" EntityType="Self.Admin_Mail" />
+    <EntitySet Name="Agent_FileUpload" EntityType="Self.Agent_FileUpload" />
+    <EntitySet Name="applicants" EntityType="Self.applicant" />
+    <EntitySet Name="assignment_office" EntityType="Self.assignment_office" />
+    <EntitySet Name="assignment_pwallet" EntityType="Self.assignment_pwallet" />
+    <EntitySet Name="assignments" EntityType="Self.assignment" />
+    <EntitySet Name="cert_info" EntityType="Self.cert_info" />
+    <EntitySet Name="countries" EntityType="Self.country" />
+    <EntitySet Name="g_agent_info" EntityType="Self.g_agent_info" />
+    <EntitySet Name="g_app_info" EntityType="Self.g_app_info" />
+    <EntitySet Name="g_applicant_info" EntityType="Self.g_applicant_info" />
+    <EntitySet Name="g_ass_info" EntityType="Self.g_ass_info" />
+    <EntitySet Name="g_cert_info" EntityType="Self.g_cert_info" />
+    <EntitySet Name="g_change_info" EntityType="Self.g_change_info" />
+    <EntitySet Name="g_merger_info" EntityType="Self.g_merger_info" />
+    <EntitySet Name="g_other_items_info" EntityType="Self.g_other_items_info" />
+    <EntitySet Name="g_prelim_search_info" EntityType="Self.g_prelim_search_info" />
+    <EntitySet Name="g_pwallet" EntityType="Self.g_pwallet" />
+    <EntitySet Name="g_renewal_info" EntityType="Self.g_renewal_info" />
+    <EntitySet Name="g_tm_info" EntityType="Self.g_tm_info" />
+    <EntitySet Name="g_tm_office" EntityType="Self.g_tm_office" />
+    <EntitySet Name="lgas" EntityType="Self.lga" />
+    <EntitySet Name="logo_description" EntityType="Self.logo_description" />
+    <EntitySet Name="mark_info" EntityType="Self.mark_info" />
+    <EntitySet Name="mark_infoAmendment" EntityType="Self.mark_infoAmendment" />
+    <EntitySet Name="namechanges" EntityType="Self.namechange" />
+    <EntitySet Name="namechange_office" EntityType="Self.namechange_office" />
+    <EntitySet Name="namechange_pwallet" EntityType="Self.namechange_pwallet" />
+    <EntitySet Name="national_classes" EntityType="Self.national_classes" />
+    <EntitySet Name="pwallets" EntityType="Self.pwallet" />
+    <EntitySet Name="pwalletAmendments" EntityType="Self.pwalletAmendment" />
+    <EntitySet Name="Recordals" EntityType="Self.Recordal" />
+    <EntitySet Name="Recordal2" EntityType="Self.Recordal2" />
+    <EntitySet Name="Recordal3" EntityType="Self.Recordal3" />
+    <EntitySet Name="renewals" EntityType="Self.renewal" />
+    <EntitySet Name="renewal_office" EntityType="Self.renewal_office" />
+    <EntitySet Name="renewal_pwallet" EntityType="Self.renewal_pwallet" />
+    <EntitySet Name="representatives" EntityType="Self.representative" />
+    <EntitySet Name="roles" EntityType="Self.role" />
+    <EntitySet Name="search_wallet" EntityType="Self.search_wallet" />
+    <EntitySet Name="search_wallet2" EntityType="Self.search_wallet2" />
+    <EntitySet Name="states" EntityType="Self.state" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tm_office" EntityType="Self.tm_office" />
+    <EntitySet Name="tm_type" EntityType="Self.tm_type" />
+    <EntitySet Name="xadminz_tm" EntityType="Self.xadminz_tm" />
+    <EntitySet Name="xtransactions" EntityType="Self.xtransaction" />
+    <EntitySet Name="address2" EntityType="Self.address2" />
+    <EntitySet Name="address4" EntityType="Self.address4" />
+    <EntitySet Name="mark_info2" EntityType="Self.mark_info2" />
+    <EntitySet Name="pwallet2" EntityType="Self.pwallet2" />
+    <EntitySet Name="pwallet3" EntityType="Self.pwallet3" />
+    <EntitySet Name="pwallet4" EntityType="Self.pwallet4" />
+    <EntitySet Name="Tests" EntityType="Self.Test" />
+    <EntitySet Name="tm_office2" EntityType="Self.tm_office2" />
+    <EntitySet Name="tm_printed_office" EntityType="Self.tm_printed_office" />
+    <FunctionImport Name="sp_a_address">
+      <Parameter Name="countryID" Mode="In" Type="String" />
+      <Parameter Name="stateID" Mode="In" Type="String" />
+      <Parameter Name="lgaID" Mode="In" Type="String" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="street" Mode="In" Type="String" />
+      <Parameter Name="zip" Mode="In" Type="String" />
+      <Parameter Name="telephone1" Mode="In" Type="String" />
+      <Parameter Name="telephone2" Mode="In" Type="String" />
+      <Parameter Name="email1" Mode="In" Type="String" />
+      <Parameter Name="email2" Mode="In" Type="String" />
+      <Parameter Name="log_staff" Mode="In" Type="String" />
+      <Parameter Name="reg_date" Mode="In" Type="String" />
+      <Parameter Name="visible" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_a_address_service">
+      <Parameter Name="countryID" Mode="In" Type="String" />
+      <Parameter Name="stateID" Mode="In" Type="String" />
+      <Parameter Name="lgaID" Mode="In" Type="String" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="street" Mode="In" Type="String" />
+      <Parameter Name="zip" Mode="In" Type="String" />
+      <Parameter Name="telephone1" Mode="In" Type="String" />
+      <Parameter Name="telephone2" Mode="In" Type="String" />
+      <Parameter Name="email1" Mode="In" Type="String" />
+      <Parameter Name="email2" Mode="In" Type="String" />
+      <Parameter Name="log_staff" Mode="In" Type="String" />
+      <Parameter Name="reg_date" Mode="In" Type="String" />
+      <Parameter Name="visible" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_a_applicant">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="tax_id_type" Mode="In" Type="String" />
+      <Parameter Name="tax_id_number" Mode="In" Type="String" />
+      <Parameter Name="individual_id_number" Mode="In" Type="String" />
+      <Parameter Name="nationality" Mode="In" Type="String" />
+      <Parameter Name="addressID" Mode="In" Type="String" />
+      <Parameter Name="log_staff" Mode="In" Type="String" />
+      <Parameter Name="reg_date" Mode="In" Type="String" />
+      <Parameter Name="visible" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_a_pwallet">
+      <Parameter Name="validationID" Mode="In" Type="String" />
+      <Parameter Name="stage" Mode="In" Type="String" />
+      <Parameter Name="reg_date" Mode="In" Type="String" />
+      <Parameter Name="applicantID" Mode="In" Type="String" />
+      <Parameter Name="data_status" Mode="In" Type="String" />
+      <Parameter Name="amt" Mode="In" Type="String" />
+      <Parameter Name="visible" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_a_representative">
+      <Parameter Name="agent_code" Mode="In" Type="String" />
+      <Parameter Name="xname" Mode="In" Type="String" />
+      <Parameter Name="individual_id_type" Mode="In" Type="String" />
+      <Parameter Name="individual_id_number" Mode="In" Type="String" />
+      <Parameter Name="nationality" Mode="In" Type="String" />
+      <Parameter Name="addressID" Mode="In" Type="String" />
+      <Parameter Name="log_staff" Mode="In" Type="String" />
+      <Parameter Name="reg_date" Mode="In" Type="String" />
+      <Parameter Name="visible" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_a_tm_office">
+      <Parameter Name="pwalletID" Mode="In" Type="String" />
+      <Parameter Name="admin_status" Mode="In" Type="String" />
+      <Parameter Name="data_status" Mode="In" Type="String" />
+      <Parameter Name="xcomment" Mode="In" Type="String" />
+      <Parameter Name="xdoc1" Mode="In" Type="String" />
+      <Parameter Name="xdoc2" Mode="In" Type="String" />
+      <Parameter Name="xdoc3" Mode="In" Type="String" />
+      <Parameter Name="xofficer" Mode="In" Type="String" />
+      <Parameter Name="reg_date" Mode="In" Type="String" />
+      <Parameter Name="xvisible" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_a_TmRegAdmin">
+      <Parameter Name="xroleID" Mode="In" Type="String" />
+      <Parameter Name="xname" Mode="In" Type="String" />
+      <Parameter Name="xemail" Mode="In" Type="String" />
+      <Parameter Name="xpass" Mode="In" Type="String" />
+      <Parameter Name="xtelephone1" Mode="In" Type="String" />
+      <Parameter Name="xtelephone2" Mode="In" Type="String" />
+      <Parameter Name="xsection" Mode="In" Type="String" />
+      <Parameter Name="xlog_officer" Mode="In" Type="String" />
+      <Parameter Name="xreg_date" Mode="In" Type="String" />
+      <Parameter Name="xvisible" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ba2xai_cldxModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ba2xai_cldxModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_s_IsValid">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_MarkInfoRegNumber">
+      <Parameter Name="reg_number" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_MarkInfoWithDocz">
+      <Parameter Name="logo_pic" Mode="In" Type="String" />
+      <Parameter Name="auth_doc" Mode="In" Type="String" />
+      <Parameter Name="sup_doc1" Mode="In" Type="String" />
+      <Parameter Name="sup_doc2" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_pwallet">
+      <Parameter Name="stage" Mode="In" Type="String" />
+      <Parameter Name="validationID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_PwalletAccPrintStatus">
+      <Parameter Name="ID" Mode="In" Type="String" />
+      <Parameter Name="acc_p" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_PwalletRtmStatus">
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="String" />
+      <Parameter Name="data_status" Mode="In" Type="String" />
+      <Parameter Name="rtm" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_PwalletStage">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="applicantID" Mode="In" Type="String" />
+      <Parameter Name="amt" Mode="In" Type="String" />
+      <Parameter Name="stage" Mode="In" Type="String" />
+      <Parameter Name="data_status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_PwalletStatus">
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="String" />
+      <Parameter Name="data_status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_u_xadminz_pass">
+      <Parameter Name="xpass" Mode="In" Type="String" />
+      <Parameter Name="pwalletID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

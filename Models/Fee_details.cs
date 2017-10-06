@@ -19,5 +19,7 @@ namespace WebApplication4.Models
         public string xreg_date { get; set; }
         public string xvisible { get; set; }
         public string xsync { get; set; }
+
+        public string xdesc { get; set; }
     }
 }
